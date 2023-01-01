@@ -34,7 +34,8 @@ def __builtin__free (ptr):
 # # stringToPrint : [rbp + 16]
 def __builtin__print__char__1 (s):
     # collapse char[] to python string
-    print (''.join(s), end="")
+    # -1 to ignore null terminator
+    print (''.join(s[:-1]), end="")
 
 # # ========================================================================
 
@@ -67,7 +68,8 @@ def __builtin__print__float (v):
 # # stringToPrint : [rbp + 16]
 def __builtin__println__char__1 (v):
     # collapse char[] to python string
-    print (''.join(v))
+    # -1 to ignore null terminator
+    print (''.join(v[:-1]))
 
 # # ========================================================================
 
@@ -4891,7 +4893,7 @@ stack.pop ()
 # Assignment - '='
 # RHS
 # String Literal
-stack.append("abcdefghijklmnopqrstuvwxyzSE"+'\0')
+stack.append([*("abcdefghijklmnopqrstuvwxyzSE"+'\0')])
 # LHS
 __main__alphabet = 0
 __rhs = stack.pop()

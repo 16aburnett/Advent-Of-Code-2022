@@ -1,6 +1,6 @@
 
 
-#include "Vector.amy"
+#include "../lib/Vector.amy"
 
 char[] letters = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int letters_size = 26+26+1;

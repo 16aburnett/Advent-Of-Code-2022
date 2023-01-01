@@ -1,6 +1,6 @@
 
-#include "Vector.amy"
-#include "algorithms.amy"
+#include "../lib/Vector.amy"
+#include "../lib/algorithms.amy"
 
 char[] line = input();
 Vector<:char[]:> lines = new Vector<:char[]:> ();
@@ -36,7 +36,7 @@ class Vec
     }
 }
 
-#include "LinkedList.amy"
+#include "../lib/LinkedList.amy"
 
 function void print (Vec p)
 {

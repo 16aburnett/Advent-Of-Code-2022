@@ -1,7 +1,7 @@
 
-#include "Vector.amy"
-#include "algorithms.amy"
-#include "LinkedList.amy"
+#include "../lib/Vector.amy"
+#include "../lib/algorithms.amy"
+#include "../lib/LinkedList.amy"
 
 //========================================================================
 

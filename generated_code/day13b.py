@@ -34,7 +34,8 @@ def __builtin__free (ptr):
 # # stringToPrint : [rbp + 16]
 def __builtin__print__char__1 (s):
     # collapse char[] to python string
-    print (''.join(s), end="")
+    # -1 to ignore null terminator
+    print (''.join(s[:-1]), end="")
 
 # # ========================================================================
 
@@ -67,7 +68,8 @@ def __builtin__print__float (v):
 # # stringToPrint : [rbp + 16]
 def __builtin__println__char__1 (v):
     # collapse char[] to python string
-    print (''.join(v))
+    # -1 to ignore null terminator
+    print (''.join(v[:-1]))
 
 # # ========================================================================
 
@@ -4596,23 +4598,28 @@ def __main____is_correct_order__Element__Element (__main__is_correct_order__a, _
     __rhs = stack.pop ()
     __res = not __rhs
     stack.append (__res)
-    # RHS
-    # Negate
-    # RHS
-    # Member Accessor
-    # LHS
-    stack.append(__main__is_correct_order__b)
-    # RHS
-    stack.append (__field____main____Element____is_list)
-    __child = stack.pop ()
-    __parent = stack.pop ()
-    stack.append (__parent[__child])
-    __rhs = stack.pop ()
-    __res = not __rhs
-    stack.append (__res)
-    __rhs = stack.pop ()
-    __lhs = stack.pop ()
-    __res = __lhs and __rhs
+    # Only check rhs if lhs was true
+    __lhs = stack[-1]
+    if (__lhs):
+        # RHS
+        # Negate
+        # RHS
+        # Member Accessor
+        # LHS
+        stack.append(__main__is_correct_order__b)
+        # RHS
+        stack.append (__field____main____Element____is_list)
+        __child = stack.pop ()
+        __parent = stack.pop ()
+        stack.append (__parent[__child])
+        __rhs = stack.pop ()
+        __res = not __rhs
+        stack.append (__res)
+        __rhs = stack.pop ()
+        __lhs = stack.pop ()
+        __res = __lhs and __rhs
+    else:
+        __res = stack.pop ()
     stack.append (__res)
     __if__95__cond = stack.pop ()
     # get condition from stack
@@ -4715,18 +4722,23 @@ def __main____is_correct_order__Element__Element (__main__is_correct_order__a, _
     __child = stack.pop ()
     __parent = stack.pop ()
     stack.append (__parent[__child])
-    # RHS
-    # Member Accessor
-    # LHS
-    stack.append(__main__is_correct_order__b)
-    # RHS
-    stack.append (__field____main____Element____is_list)
-    __child = stack.pop ()
-    __parent = stack.pop ()
-    stack.append (__parent[__child])
-    __rhs = stack.pop ()
-    __lhs = stack.pop ()
-    __res = __lhs and __rhs
+    # Only check rhs if lhs was true
+    __lhs = stack[-1]
+    if (__lhs):
+        # RHS
+        # Member Accessor
+        # LHS
+        stack.append(__main__is_correct_order__b)
+        # RHS
+        stack.append (__field____main____Element____is_list)
+        __child = stack.pop ()
+        __parent = stack.pop ()
+        stack.append (__parent[__child])
+        __rhs = stack.pop ()
+        __lhs = stack.pop ()
+        __res = __lhs and __rhs
+    else:
+        __res = stack.pop ()
     stack.append (__res)
     __if__98__cond = stack.pop ()
     # get condition from stack
@@ -4774,33 +4786,38 @@ def __main____is_correct_order__Element__Element (__main__is_correct_order__a, _
             __lhs = stack.pop ()
             __res = __lhs < __rhs
             stack.append (__res)
-            # RHS
-            # Less Than
-            # LHS
-            stack.append(__main__is_correct_order__block__94__if__98__block__99__for__100__i)
-            # RHS
-            # Member Accessor
-            # LHS
-            # Member Accessor
-            # LHS
-            stack.append(__main__is_correct_order__b)
-            # RHS
-            stack.append (__field____main____Element____list)
-            __child = stack.pop ()
-            __parent = stack.pop ()
-            stack.append (__parent[__child])
-            # RHS
-            stack.append (__field____main____Vector__Element____size)
-            __child = stack.pop ()
-            __parent = stack.pop ()
-            stack.append (__parent[__child])
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs < __rhs
-            stack.append (__res)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs and __rhs
+            # Only check rhs if lhs was true
+            __lhs = stack[-1]
+            if (__lhs):
+                # RHS
+                # Less Than
+                # LHS
+                stack.append(__main__is_correct_order__block__94__if__98__block__99__for__100__i)
+                # RHS
+                # Member Accessor
+                # LHS
+                # Member Accessor
+                # LHS
+                stack.append(__main__is_correct_order__b)
+                # RHS
+                stack.append (__field____main____Element____list)
+                __child = stack.pop ()
+                __parent = stack.pop ()
+                stack.append (__parent[__child])
+                # RHS
+                stack.append (__field____main____Vector__Element____size)
+                __child = stack.pop ()
+                __parent = stack.pop ()
+                stack.append (__parent[__child])
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs < __rhs
+                stack.append (__res)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs and __rhs
+            else:
+                __res = stack.pop ()
             stack.append (__res)
             __cond = stack.pop ()
             # break out of loop if condition is false

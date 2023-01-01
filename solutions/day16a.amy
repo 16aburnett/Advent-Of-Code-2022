@@ -2,10 +2,10 @@
 println ("Not implemented");
 exit (1);
 
-#include "Vector.amy"
-#include "algorithms.amy"
-#include "LinkedList.amy"
-#include "MinHeap.amy"
+#include "../lib/Vector.amy"
+#include "../lib/algorithms.amy"
+#include "../lib/LinkedList.amy"
+#include "../lib/MinHeap.amy"
 
 //========================================================================
 

@@ -1,6 +1,6 @@
 
-#include "Vector.amy"
-#include "algorithms.amy"
+#include "../lib/Vector.amy"
+#include "../lib/algorithms.amy"
 
 char[] line = input();
 Vector<:char[]:> lines = new Vector<:char[]:> ();
@@ -52,7 +52,7 @@ function int manhattan (int ax, int ay, int bx, int by)
     return abs (ax - bx) + abs (ay - by);
 }
 
-#include "LinkedList.amy"
+#include "../lib/LinkedList.amy"
 
 Vector<:Vector<:int:>:> elevations = new Vector<:Vector<:int:>:> ();
 Vector<:Vector<:int:>:> was_visited = new Vector<:Vector<:int:>:> ();

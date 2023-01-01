@@ -34,7 +34,8 @@ def __builtin__free (ptr):
 # # stringToPrint : [rbp + 16]
 def __builtin__print__char__1 (s):
     # collapse char[] to python string
-    print (''.join(s), end="")
+    # -1 to ignore null terminator
+    print (''.join(s[:-1]), end="")
 
 # # ========================================================================
 
@@ -67,7 +68,8 @@ def __builtin__print__float (v):
 # # stringToPrint : [rbp + 16]
 def __builtin__println__char__1 (v):
     # collapse char[] to python string
-    print (''.join(v))
+    # -1 to ignore null terminator
+    print (''.join(v[:-1]))
 
 # # ========================================================================
 
@@ -988,28 +990,33 @@ while (1):
         __lhs = stack.pop ()
         __res = __lhs != __rhs
         stack.append (__res)
-        # RHS
-        # Not Equal
-        # LHS
-        # Subscript
-        # LHS
-        stack.append(__main__line)
-        # OFFSET
-        # Int Literal
-        stack.append(0)
-        __offset = stack.pop ()
-        __pointer = stack.pop ()
-        stack.append (__pointer[__offset])
-        # RHS
-        # Char Literal
-        stack.append('$')
-        __rhs = stack.pop ()
-        __lhs = stack.pop ()
-        __res = __lhs != __rhs
-        stack.append (__res)
-        __rhs = stack.pop ()
-        __lhs = stack.pop ()
-        __res = __lhs and __rhs
+        # Only check rhs if lhs was true
+        __lhs = stack[-1]
+        if (__lhs):
+            # RHS
+            # Not Equal
+            # LHS
+            # Subscript
+            # LHS
+            stack.append(__main__line)
+            # OFFSET
+            # Int Literal
+            stack.append(0)
+            __offset = stack.pop ()
+            __pointer = stack.pop ()
+            stack.append (__pointer[__offset])
+            # RHS
+            # Char Literal
+            stack.append('$')
+            __rhs = stack.pop ()
+            __lhs = stack.pop ()
+            __res = __lhs != __rhs
+            stack.append (__res)
+            __rhs = stack.pop ()
+            __lhs = stack.pop ()
+            __res = __lhs and __rhs
+        else:
+            __res = stack.pop ()
         stack.append (__res)
         __cond = stack.pop ()
         # break out of loop if condition is false

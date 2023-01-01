@@ -34,7 +34,8 @@ def __builtin__free (ptr):
 # # stringToPrint : [rbp + 16]
 def __builtin__print__char__1 (s):
     # collapse char[] to python string
-    print (''.join(s), end="")
+    # -1 to ignore null terminator
+    print (''.join(s[:-1]), end="")
 
 # # ========================================================================
 
@@ -67,7 +68,8 @@ def __builtin__print__float (v):
 # # stringToPrint : [rbp + 16]
 def __builtin__println__char__1 (v):
     # collapse char[] to python string
-    print (''.join(v))
+    # -1 to ignore null terminator
+    print (''.join(v[:-1]))
 
 # # ========================================================================
 
@@ -4406,28 +4408,33 @@ while (1):
         __lhs = stack.pop ()
         __res = __lhs <= __rhs
         stack.append (__res)
-        # RHS
-        # Less Than or Equal to
-        # LHS
-        stack.append(__main__column)
-        # RHS
-        # Addition
-        # LHS
-        stack.append(__main__registerx)
-        # RHS
-        # Int Literal
-        stack.append(1)
-        __rhs = stack.pop()
-        __lhs = stack.pop()
-        __res = __lhs + __rhs
-        stack.append(__res)
-        __rhs = stack.pop ()
-        __lhs = stack.pop ()
-        __res = __lhs <= __rhs
-        stack.append (__res)
-        __rhs = stack.pop ()
-        __lhs = stack.pop ()
-        __res = __lhs and __rhs
+        # Only check rhs if lhs was true
+        __lhs = stack[-1]
+        if (__lhs):
+            # RHS
+            # Less Than or Equal to
+            # LHS
+            stack.append(__main__column)
+            # RHS
+            # Addition
+            # LHS
+            stack.append(__main__registerx)
+            # RHS
+            # Int Literal
+            stack.append(1)
+            __rhs = stack.pop()
+            __lhs = stack.pop()
+            __res = __lhs + __rhs
+            stack.append(__res)
+            __rhs = stack.pop ()
+            __lhs = stack.pop ()
+            __res = __lhs <= __rhs
+            stack.append (__res)
+            __rhs = stack.pop ()
+            __lhs = stack.pop ()
+            __res = __lhs and __rhs
+        else:
+            __res = stack.pop ()
         stack.append (__res)
         __if__92__cond = stack.pop ()
         # get condition from stack
@@ -4699,28 +4706,33 @@ while (1):
         __lhs = stack.pop ()
         __res = __lhs <= __rhs
         stack.append (__res)
-        # RHS
-        # Less Than or Equal to
-        # LHS
-        stack.append(__main__column)
-        # RHS
-        # Addition
-        # LHS
-        stack.append(__main__registerx)
-        # RHS
-        # Int Literal
-        stack.append(1)
-        __rhs = stack.pop()
-        __lhs = stack.pop()
-        __res = __lhs + __rhs
-        stack.append(__res)
-        __rhs = stack.pop ()
-        __lhs = stack.pop ()
-        __res = __lhs <= __rhs
-        stack.append (__res)
-        __rhs = stack.pop ()
-        __lhs = stack.pop ()
-        __res = __lhs and __rhs
+        # Only check rhs if lhs was true
+        __lhs = stack[-1]
+        if (__lhs):
+            # RHS
+            # Less Than or Equal to
+            # LHS
+            stack.append(__main__column)
+            # RHS
+            # Addition
+            # LHS
+            stack.append(__main__registerx)
+            # RHS
+            # Int Literal
+            stack.append(1)
+            __rhs = stack.pop()
+            __lhs = stack.pop()
+            __res = __lhs + __rhs
+            stack.append(__res)
+            __rhs = stack.pop ()
+            __lhs = stack.pop ()
+            __res = __lhs <= __rhs
+            stack.append (__res)
+            __rhs = stack.pop ()
+            __lhs = stack.pop ()
+            __res = __lhs and __rhs
+        else:
+            __res = stack.pop ()
         stack.append (__res)
         __if__97__cond = stack.pop ()
         # get condition from stack
@@ -4950,28 +4962,33 @@ while (1):
         __lhs = stack.pop ()
         __res = __lhs <= __rhs
         stack.append (__res)
-        # RHS
-        # Less Than or Equal to
-        # LHS
-        stack.append(__main__column)
-        # RHS
-        # Addition
-        # LHS
-        stack.append(__main__registerx)
-        # RHS
-        # Int Literal
-        stack.append(1)
-        __rhs = stack.pop()
-        __lhs = stack.pop()
-        __res = __lhs + __rhs
-        stack.append(__res)
-        __rhs = stack.pop ()
-        __lhs = stack.pop ()
-        __res = __lhs <= __rhs
-        stack.append (__res)
-        __rhs = stack.pop ()
-        __lhs = stack.pop ()
-        __res = __lhs and __rhs
+        # Only check rhs if lhs was true
+        __lhs = stack[-1]
+        if (__lhs):
+            # RHS
+            # Less Than or Equal to
+            # LHS
+            stack.append(__main__column)
+            # RHS
+            # Addition
+            # LHS
+            stack.append(__main__registerx)
+            # RHS
+            # Int Literal
+            stack.append(1)
+            __rhs = stack.pop()
+            __lhs = stack.pop()
+            __res = __lhs + __rhs
+            stack.append(__res)
+            __rhs = stack.pop ()
+            __lhs = stack.pop ()
+            __res = __lhs <= __rhs
+            stack.append (__res)
+            __rhs = stack.pop ()
+            __lhs = stack.pop ()
+            __res = __lhs and __rhs
+        else:
+            __res = stack.pop ()
         stack.append (__res)
         __if__101__cond = stack.pop ()
         # get condition from stack
@@ -5159,7 +5176,7 @@ while (1):
         # Function Call - println(char[]) -> void
         # Arguments
         # String Literal
-        stack.append("Unknown instruction"+'\0')
+        stack.append([*("Unknown instruction"+'\0')])
         __arg0 = stack.pop ()
         # *** println
         __res = __builtin__println__char__1 (__arg0)
@@ -5190,17 +5207,17 @@ while (1):
 # Array Constructor
 # Elements
 # String Literal
-stack.append("###."+'\0')
+stack.append([*("###."+'\0')])
 # String Literal
-stack.append("#..#"+'\0')
+stack.append([*("#..#"+'\0')])
 # String Literal
-stack.append("#..#"+'\0')
+stack.append([*("#..#"+'\0')])
 # String Literal
-stack.append("###."+'\0')
+stack.append([*("###."+'\0')])
 # String Literal
-stack.append("#.#."+'\0')
+stack.append([*("#.#."+'\0')])
 # String Literal
-stack.append("#..#"+'\0')
+stack.append([*("#..#"+'\0')])
 __elem5 = stack.pop ()
 __elem4 = stack.pop ()
 __elem3 = stack.pop ()
@@ -5218,17 +5235,17 @@ stack.append (__list)
 # Array Constructor
 # Elements
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("####"+'\0')
+stack.append([*("####"+'\0')])
 __elem5 = stack.pop ()
 __elem4 = stack.pop ()
 __elem3 = stack.pop ()
@@ -5246,17 +5263,17 @@ stack.append (__list)
 # Array Constructor
 # Elements
 # String Literal
-stack.append("####"+'\0')
+stack.append([*("####"+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("###."+'\0')
+stack.append([*("###."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("####"+'\0')
+stack.append([*("####"+'\0')])
 __elem5 = stack.pop ()
 __elem4 = stack.pop ()
 __elem3 = stack.pop ()
@@ -5274,17 +5291,17 @@ stack.append (__list)
 # Array Constructor
 # Elements
 # String Literal
-stack.append("####"+'\0')
+stack.append([*("####"+'\0')])
 # String Literal
-stack.append("...#"+'\0')
+stack.append([*("...#"+'\0')])
 # String Literal
-stack.append("..#."+'\0')
+stack.append([*("..#."+'\0')])
 # String Literal
-stack.append(".#.."+'\0')
+stack.append([*(".#.."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("####"+'\0')
+stack.append([*("####"+'\0')])
 __elem5 = stack.pop ()
 __elem4 = stack.pop ()
 __elem3 = stack.pop ()
@@ -5302,17 +5319,17 @@ stack.append (__list)
 # Array Constructor
 # Elements
 # String Literal
-stack.append("####"+'\0')
+stack.append([*("####"+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("###."+'\0')
+stack.append([*("###."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 __elem5 = stack.pop ()
 __elem4 = stack.pop ()
 __elem3 = stack.pop ()
@@ -5330,17 +5347,17 @@ stack.append (__list)
 # Array Constructor
 # Elements
 # String Literal
-stack.append(".##."+'\0')
+stack.append([*(".##."+'\0')])
 # String Literal
-stack.append("#..#"+'\0')
+stack.append([*("#..#"+'\0')])
 # String Literal
-stack.append("#..."+'\0')
+stack.append([*("#..."+'\0')])
 # String Literal
-stack.append("#.##"+'\0')
+stack.append([*("#.##"+'\0')])
 # String Literal
-stack.append("#..#"+'\0')
+stack.append([*("#..#"+'\0')])
 # String Literal
-stack.append(".###"+'\0')
+stack.append([*(".###"+'\0')])
 __elem5 = stack.pop ()
 __elem4 = stack.pop ()
 __elem3 = stack.pop ()
@@ -5382,7 +5399,7 @@ stack.pop ()
 # Assignment - '='
 # RHS
 # String Literal
-stack.append("RLEZFG"+'\0')
+stack.append([*("RLEZFG"+'\0')])
 # LHS
 __main__char_index_to_char = 0
 __rhs = stack.pop()

@@ -34,7 +34,8 @@ def __builtin__free (ptr):
 # # stringToPrint : [rbp + 16]
 def __builtin__print__char__1 (s):
     # collapse char[] to python string
-    print (''.join(s), end="")
+    # -1 to ignore null terminator
+    print (''.join(s[:-1]), end="")
 
 # # ========================================================================
 
@@ -67,7 +68,8 @@ def __builtin__print__float (v):
 # # stringToPrint : [rbp + 16]
 def __builtin__println__char__1 (v):
     # collapse char[] to python string
-    print (''.join(v))
+    # -1 to ignore null terminator
+    print (''.join(v[:-1]))
 
 # # ========================================================================
 
@@ -3922,20 +3924,25 @@ while (1):
             __lhs = stack.pop ()
             __res = __lhs == __rhs
             stack.append (__res)
-            # RHS
-            # Greater Than or Equal to
-            # LHS
-            stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__deltay)
-            # RHS
-            # Int Literal
-            stack.append(2)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs >= __rhs
-            stack.append (__res)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs and __rhs
+            # Only check rhs if lhs was true
+            __lhs = stack[-1]
+            if (__lhs):
+                # RHS
+                # Greater Than or Equal to
+                # LHS
+                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__deltay)
+                # RHS
+                # Int Literal
+                stack.append(2)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs >= __rhs
+                stack.append (__res)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs and __rhs
+            else:
+                __res = stack.pop ()
             stack.append (__res)
             __if__78__cond = stack.pop ()
             # Condition for elif #0
@@ -3950,20 +3957,25 @@ while (1):
             __lhs = stack.pop ()
             __res = __lhs == __rhs
             stack.append (__res)
-            # RHS
-            # Greater Than or Equal to
-            # LHS
-            stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__deltax)
-            # RHS
-            # Int Literal
-            stack.append(2)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs >= __rhs
-            stack.append (__res)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs and __rhs
+            # Only check rhs if lhs was true
+            __lhs = stack[-1]
+            if (__lhs):
+                # RHS
+                # Greater Than or Equal to
+                # LHS
+                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__deltax)
+                # RHS
+                # Int Literal
+                stack.append(2)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs >= __rhs
+                stack.append (__res)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs and __rhs
+            else:
+                __res = stack.pop ()
             stack.append (__res)
             __elif__78x0__cond = stack.pop ()
             # Condition for elif #1
@@ -3980,46 +3992,56 @@ while (1):
             __lhs = stack.pop ()
             __res = __lhs != __rhs
             stack.append (__res)
-            # RHS
-            # Not Equal
-            # LHS
-            stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__hy)
-            # RHS
-            stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__ty)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs != __rhs
+            # Only check rhs if lhs was true
+            __lhs = stack[-1]
+            if (__lhs):
+                # RHS
+                # Not Equal
+                # LHS
+                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__hy)
+                # RHS
+                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__ty)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs != __rhs
+                stack.append (__res)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs and __rhs
+            else:
+                __res = stack.pop ()
             stack.append (__res)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs and __rhs
-            stack.append (__res)
-            # RHS
-            # Greater Than
-            # LHS
-            # Function Call - manhattan(int, int, int, int) -> int
-            # Arguments
-            stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__hx)
-            stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__hy)
-            stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__tx)
-            stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__ty)
-            __arg3 = stack.pop ()
-            __arg2 = stack.pop ()
-            __arg1 = stack.pop ()
-            __arg0 = stack.pop ()
-            # *** manhattan
-            __res = __main____manhattan__int__int__int__int (__arg0, __arg1, __arg2, __arg3)
-            stack.append (__res) # function call result
-            # RHS
-            # Int Literal
-            stack.append(2)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs > __rhs
-            stack.append (__res)
-            __rhs = stack.pop ()
-            __lhs = stack.pop ()
-            __res = __lhs and __rhs
+            # Only check rhs if lhs was true
+            __lhs = stack[-1]
+            if (__lhs):
+                # RHS
+                # Greater Than
+                # LHS
+                # Function Call - manhattan(int, int, int, int) -> int
+                # Arguments
+                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__hx)
+                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__hy)
+                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__tx)
+                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__ty)
+                __arg3 = stack.pop ()
+                __arg2 = stack.pop ()
+                __arg1 = stack.pop ()
+                __arg0 = stack.pop ()
+                # *** manhattan
+                __res = __main____manhattan__int__int__int__int (__arg0, __arg1, __arg2, __arg3)
+                stack.append (__res) # function call result
+                # RHS
+                # Int Literal
+                stack.append(2)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs > __rhs
+                stack.append (__res)
+                __rhs = stack.pop ()
+                __lhs = stack.pop ()
+                __res = __lhs and __rhs
+            else:
+                __res = stack.pop ()
             stack.append (__res)
             __elif__78x1__cond = stack.pop ()
             # get condition from stack
@@ -4252,11 +4274,16 @@ while (1):
                 # AND
                 # LHS
                 stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isup)
-                # RHS
-                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isright)
-                __rhs = stack.pop ()
-                __lhs = stack.pop ()
-                __res = __lhs and __rhs
+                # Only check rhs if lhs was true
+                __lhs = stack[-1]
+                if (__lhs):
+                    # RHS
+                    stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isright)
+                    __rhs = stack.pop ()
+                    __lhs = stack.pop ()
+                    __res = __lhs and __rhs
+                else:
+                    __res = stack.pop ()
                 stack.append (__res)
                 __if__88__cond = stack.pop ()
                 # Condition for elif #0
@@ -4268,11 +4295,16 @@ while (1):
                 __rhs = stack.pop ()
                 __res = not __rhs
                 stack.append (__res)
-                # RHS
-                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isright)
-                __rhs = stack.pop ()
-                __lhs = stack.pop ()
-                __res = __lhs and __rhs
+                # Only check rhs if lhs was true
+                __lhs = stack[-1]
+                if (__lhs):
+                    # RHS
+                    stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isright)
+                    __rhs = stack.pop ()
+                    __lhs = stack.pop ()
+                    __res = __lhs and __rhs
+                else:
+                    __res = stack.pop ()
                 stack.append (__res)
                 __elif__88x0__cond = stack.pop ()
                 # Condition for elif #1
@@ -4284,32 +4316,42 @@ while (1):
                 __rhs = stack.pop ()
                 __res = not __rhs
                 stack.append (__res)
-                # RHS
-                # Negate
-                # RHS
-                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isright)
-                __rhs = stack.pop ()
-                __res = not __rhs
-                stack.append (__res)
-                __rhs = stack.pop ()
-                __lhs = stack.pop ()
-                __res = __lhs and __rhs
+                # Only check rhs if lhs was true
+                __lhs = stack[-1]
+                if (__lhs):
+                    # RHS
+                    # Negate
+                    # RHS
+                    stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isright)
+                    __rhs = stack.pop ()
+                    __res = not __rhs
+                    stack.append (__res)
+                    __rhs = stack.pop ()
+                    __lhs = stack.pop ()
+                    __res = __lhs and __rhs
+                else:
+                    __res = stack.pop ()
                 stack.append (__res)
                 __elif__88x1__cond = stack.pop ()
                 # Condition for elif #2
                 # AND
                 # LHS
                 stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isup)
-                # RHS
-                # Negate
-                # RHS
-                stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isright)
-                __rhs = stack.pop ()
-                __res = not __rhs
-                stack.append (__res)
-                __rhs = stack.pop ()
-                __lhs = stack.pop ()
-                __res = __lhs and __rhs
+                # Only check rhs if lhs was true
+                __lhs = stack[-1]
+                if (__lhs):
+                    # RHS
+                    # Negate
+                    # RHS
+                    stack.append(__main__for__67__block__68__for__69__block__70__for__76__block__77__elif__78x1__block__87__isright)
+                    __rhs = stack.pop ()
+                    __res = not __rhs
+                    stack.append (__res)
+                    __rhs = stack.pop ()
+                    __lhs = stack.pop ()
+                    __res = __lhs and __rhs
+                else:
+                    __res = stack.pop ()
                 stack.append (__res)
                 __elif__88x2__cond = stack.pop ()
                 # get condition from stack
@@ -4690,62 +4732,67 @@ while (1):
                 __lhs = stack.pop ()
                 __res = __lhs == __rhs
                 stack.append (__res)
-                # RHS
-                # Equal
-                # LHS
-                # Member Accessor
-                # LHS
-                # Subscript
-                # LHS
-                # Member Accessor
-                # LHS
-                stack.append(__main__tail_positions)
-                # RHS
-                stack.append (__field____main____Vector__Point____data)
-                __child = stack.pop ()
-                __parent = stack.pop ()
-                stack.append (__parent[__child])
-                # OFFSET
-                stack.append(__main__for__67__block__68__for__69__block__70__if__94__block__95__for__96__k)
-                __offset = stack.pop ()
-                __pointer = stack.pop ()
-                stack.append (__pointer[__offset])
-                # RHS
-                stack.append (__field____main____Point____y)
-                __child = stack.pop ()
-                __parent = stack.pop ()
-                stack.append (__parent[__child])
-                # RHS
-                # Member Accessor
-                # LHS
-                # Subscript
-                # LHS
-                # Member Accessor
-                # LHS
-                stack.append(__main__knot_positions)
-                # RHS
-                stack.append (__field____main____Vector__Point____data)
-                __child = stack.pop ()
-                __parent = stack.pop ()
-                stack.append (__parent[__child])
-                # OFFSET
-                # Int Literal
-                stack.append(9)
-                __offset = stack.pop ()
-                __pointer = stack.pop ()
-                stack.append (__pointer[__offset])
-                # RHS
-                stack.append (__field____main____Point____y)
-                __child = stack.pop ()
-                __parent = stack.pop ()
-                stack.append (__parent[__child])
-                __rhs = stack.pop ()
-                __lhs = stack.pop ()
-                __res = __lhs == __rhs
-                stack.append (__res)
-                __rhs = stack.pop ()
-                __lhs = stack.pop ()
-                __res = __lhs and __rhs
+                # Only check rhs if lhs was true
+                __lhs = stack[-1]
+                if (__lhs):
+                    # RHS
+                    # Equal
+                    # LHS
+                    # Member Accessor
+                    # LHS
+                    # Subscript
+                    # LHS
+                    # Member Accessor
+                    # LHS
+                    stack.append(__main__tail_positions)
+                    # RHS
+                    stack.append (__field____main____Vector__Point____data)
+                    __child = stack.pop ()
+                    __parent = stack.pop ()
+                    stack.append (__parent[__child])
+                    # OFFSET
+                    stack.append(__main__for__67__block__68__for__69__block__70__if__94__block__95__for__96__k)
+                    __offset = stack.pop ()
+                    __pointer = stack.pop ()
+                    stack.append (__pointer[__offset])
+                    # RHS
+                    stack.append (__field____main____Point____y)
+                    __child = stack.pop ()
+                    __parent = stack.pop ()
+                    stack.append (__parent[__child])
+                    # RHS
+                    # Member Accessor
+                    # LHS
+                    # Subscript
+                    # LHS
+                    # Member Accessor
+                    # LHS
+                    stack.append(__main__knot_positions)
+                    # RHS
+                    stack.append (__field____main____Vector__Point____data)
+                    __child = stack.pop ()
+                    __parent = stack.pop ()
+                    stack.append (__parent[__child])
+                    # OFFSET
+                    # Int Literal
+                    stack.append(9)
+                    __offset = stack.pop ()
+                    __pointer = stack.pop ()
+                    stack.append (__pointer[__offset])
+                    # RHS
+                    stack.append (__field____main____Point____y)
+                    __child = stack.pop ()
+                    __parent = stack.pop ()
+                    stack.append (__parent[__child])
+                    __rhs = stack.pop ()
+                    __lhs = stack.pop ()
+                    __res = __lhs == __rhs
+                    stack.append (__res)
+                    __rhs = stack.pop ()
+                    __lhs = stack.pop ()
+                    __res = __lhs and __rhs
+                else:
+                    __res = stack.pop ()
                 stack.append (__res)
                 __if__98__cond = stack.pop ()
                 # get condition from stack

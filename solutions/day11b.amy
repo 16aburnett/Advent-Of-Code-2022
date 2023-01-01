@@ -1,6 +1,6 @@
 
-#include "Vector.amy"
-#include "algorithms.amy"
+#include "../lib/Vector.amy"
+#include "../lib/algorithms.amy"
 
 char[] line = input();
 Vector<:char[]:> lines = new Vector<:char[]:> ();

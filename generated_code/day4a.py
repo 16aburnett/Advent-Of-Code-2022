@@ -34,7 +34,8 @@ def __builtin__free (ptr):
 # # stringToPrint : [rbp + 16]
 def __builtin__print__char__1 (s):
     # collapse char[] to python string
-    print (''.join(s), end="")
+    # -1 to ignore null terminator
+    print (''.join(s[:-1]), end="")
 
 # # ========================================================================
 
@@ -67,7 +68,8 @@ def __builtin__print__float (v):
 # # stringToPrint : [rbp + 16]
 def __builtin__println__char__1 (v):
     # collapse char[] to python string
-    print (''.join(v))
+    # -1 to ignore null terminator
+    print (''.join(v[:-1]))
 
 # # ========================================================================
 
@@ -3258,19 +3260,24 @@ while (1):
     __lhs = stack.pop ()
     __res = __lhs >= __rhs
     stack.append (__res)
-    # RHS
-    # Less Than or Equal to
-    # LHS
-    stack.append(__main__for__51__block__52__end0)
-    # RHS
-    stack.append(__main__for__51__block__52__end1)
-    __rhs = stack.pop ()
-    __lhs = stack.pop ()
-    __res = __lhs <= __rhs
-    stack.append (__res)
-    __rhs = stack.pop ()
-    __lhs = stack.pop ()
-    __res = __lhs and __rhs
+    # Only check rhs if lhs was true
+    __lhs = stack[-1]
+    if (__lhs):
+        # RHS
+        # Less Than or Equal to
+        # LHS
+        stack.append(__main__for__51__block__52__end0)
+        # RHS
+        stack.append(__main__for__51__block__52__end1)
+        __rhs = stack.pop ()
+        __lhs = stack.pop ()
+        __res = __lhs <= __rhs
+        stack.append (__res)
+        __rhs = stack.pop ()
+        __lhs = stack.pop ()
+        __res = __lhs and __rhs
+    else:
+        __res = stack.pop ()
     stack.append (__res)
     __if__63__cond = stack.pop ()
     # get condition from stack
@@ -3306,19 +3313,24 @@ while (1):
     __lhs = stack.pop ()
     __res = __lhs >= __rhs
     stack.append (__res)
-    # RHS
-    # Less Than or Equal to
-    # LHS
-    stack.append(__main__for__51__block__52__end1)
-    # RHS
-    stack.append(__main__for__51__block__52__end0)
-    __rhs = stack.pop ()
-    __lhs = stack.pop ()
-    __res = __lhs <= __rhs
-    stack.append (__res)
-    __rhs = stack.pop ()
-    __lhs = stack.pop ()
-    __res = __lhs and __rhs
+    # Only check rhs if lhs was true
+    __lhs = stack[-1]
+    if (__lhs):
+        # RHS
+        # Less Than or Equal to
+        # LHS
+        stack.append(__main__for__51__block__52__end1)
+        # RHS
+        stack.append(__main__for__51__block__52__end0)
+        __rhs = stack.pop ()
+        __lhs = stack.pop ()
+        __res = __lhs <= __rhs
+        stack.append (__res)
+        __rhs = stack.pop ()
+        __lhs = stack.pop ()
+        __res = __lhs and __rhs
+    else:
+        __res = stack.pop ()
     stack.append (__res)
     __if__64__cond = stack.pop ()
     # get condition from stack
