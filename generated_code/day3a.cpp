@@ -233,14 +233,18 @@ class __builtin____main__Object
     void** dtable;
 };
 //=========================================================================
+//### Header section #####################################################
+//=========================================================================
+
+//=========================================================================
+//### Functions section ##################################################
+//=========================================================================
+
+//=========================================================================
 //### Main function ######################################################
 //=========================================================================
 
 int main () {
-    //=====================================================================
-    //### SETUP EXPRESSION RESULT STACK ##################################
-    //=====================================================================
-
     // Function Header
     // This stack is used to store results of expressions
     std::vector<long> stack;
@@ -255,10 +259,9 @@ int main () {
     long __lhs = 0;
     long __rhs = 0;
     long __res = 0;
-    //=====================================================================
-    //### COMPILED CODE ##################################################
-    //=====================================================================
 
+    // Main body
+    //---------------------------------------------------------------------
     //=====================================================================
     // Class Template - 
     // End Class Template - 
@@ -580,6 +583,8 @@ int main () {
         __main__while__0__block__1__for__3__i = *reinterpret_cast<long*>(&__rhs);
         // Result of assignment
         stack.push_back (*reinterpret_cast<long*>(&__main__while__0__block__1__for__3__i));
+        // We can ignore the init result
+        stack.pop_back ();
         // Using an infinite loop so we can write a separate multi-line condition
         while (1)
         {
@@ -618,6 +623,8 @@ int main () {
             __main__while__0__block__1__for__3__block__4__for__5__j = *reinterpret_cast<long*>(&__rhs);
             // Result of assignment
             stack.push_back (*reinterpret_cast<long*>(&__main__while__0__block__1__for__3__block__4__for__5__j));
+            // We can ignore the init result
+            stack.pop_back ();
             // Using an infinite loop so we can write a separate multi-line condition
             while (1)
             {
@@ -733,6 +740,8 @@ int main () {
                     __res = __main__while__0__block__1__for__3__block__4__for__5__j;
                     stack.push_back (*reinterpret_cast<long*>(&__res));
                 }
+                // We can ignore the update result
+                stack.pop_back ();
             }
             //-------------------------------------------------------------
             //-------------------------------------------------------------
@@ -747,6 +756,8 @@ int main () {
                 __res = __main__while__0__block__1__for__3__i;
                 stack.push_back (*reinterpret_cast<long*>(&__res));
             }
+            // We can ignore the update result
+            stack.pop_back ();
         }
         //-----------------------------------------------------------------
         // Statement
@@ -781,6 +792,8 @@ int main () {
         __main__while__0__block__1__for__9__i = *reinterpret_cast<long*>(&__rhs);
         // Result of assignment
         stack.push_back (*reinterpret_cast<long*>(&__main__while__0__block__1__for__9__i));
+        // We can ignore the init result
+        stack.pop_back ();
         // Using an infinite loop so we can write a separate multi-line condition
         while (1)
         {
@@ -869,6 +882,8 @@ int main () {
                 __res = __main__while__0__block__1__for__9__i;
                 stack.push_back (*reinterpret_cast<long*>(&__res));
             }
+            // We can ignore the update result
+            stack.pop_back ();
         }
         //-----------------------------------------------------------------
         // Statement
@@ -935,11 +950,6 @@ int main () {
     // Statement results can be ignored
     stack.pop_back ();
     // End Statement
-
-
-    //=====================================================================
-    //### END OF CODE ####################################################
-    //=====================================================================
 
 }
 //=========================================================================

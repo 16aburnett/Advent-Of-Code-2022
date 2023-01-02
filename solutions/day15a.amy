@@ -102,7 +102,7 @@ int maxy = 0;
 for (int i = 0; i < sensors.size; ++i)
 {
     Sensor sensor = sensors.data[i];
-    println (sensor);
+    //println (sensor);
     minx = min (sensor.position.x-sensor.radius-1, minx);
     maxx = max (sensor.position.x+sensor.radius+1, maxx);
     miny = min (sensor.position.y-sensor.radius-1, miny);
@@ -134,7 +134,7 @@ function void printboard (Vector<:Vector<:char:>:> board)
         println ();
     }
 }
-printboard (board); println ();
+//printboard (board); println ();
 
 // sample and main input files check different rows
 int important_row = 10;
@@ -179,7 +179,7 @@ if (2000000 < maxx)
 board.pushBack (new Vector<:char:> ());
 for (int j = minx; j < maxx; ++j)
 {
-    print (j); print ('/'); println (maxx);
+    //print (j); print ('/'); println (maxx);
     board.data[0].pushBack ('.');
 }
 

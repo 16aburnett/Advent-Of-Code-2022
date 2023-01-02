@@ -1,0 +1,75 @@
++-----+------+--------+-----------+------------+----------+--------------+----------+-----------+
+| day | part | target |    is     |  compile   |   exit   |    result    |    is    |  runtime  |
+|     |      |  lang  | compiled? | time (sec) | success? |              | correct? |   (sec)   |
++-----+------+--------+-----------+------------+----------+--------------+----------+-----------+
+|   1 |    a |    x86 |      True |     0.1376 |     True |        69206 |     True |    0.0014 |
+|   1 |    a |    cpp |      True |     0.1504 |     True |        69206 |     True |    0.0019 |
+|   1 |    b |    x86 |      True |     0.1352 |     True |       197400 |     True |    0.0032 |
+|   1 |    b |    cpp |      True |     0.1429 |     True |       197400 |     True |    0.0123 |
+|   2 |    a |    x86 |      True |     0.1172 |     True |        13675 |     True |    0.0014 |
+|   2 |    a |    cpp |      True |     0.1241 |     True |        13675 |     True |    0.0024 |
+|   2 |    b |    x86 |      True |     0.1101 |     True |        14184 |     True |    0.0016 |
+|   2 |    b |    cpp |      True |     0.1143 |     True |        14184 |     True |    0.0022 |
+|   3 |    a |    x86 |      True |     0.1048 |     True |         7872 |     True |    0.0020 |
+|   3 |    a |    cpp |      True |     0.1406 |     True |         7872 |     True |    0.0030 |
+|   3 |    b |    x86 |      True |     0.1267 |     True |         2497 |     True |    0.0025 |
+|   3 |    b |    cpp |      True |     0.1301 |     True |         2497 |     True |    0.0041 |
+|   4 |    a |    x86 |      True |     0.1890 |     True |          456 |     True |    0.0018 |
+|   4 |    a |    cpp |      True |     0.1871 |     True |          456 |     True |    0.0031 |
+|   4 |    b |    x86 |      True |     0.2449 |     True |          808 |     True |    0.0017 |
+|   4 |    b |    cpp |      True |     0.1772 |     True |          808 |     True |    0.0031 |
+|   5 |    a |    x86 |      True |     0.2364 |     True |    BWNCQRMDB |     True |    0.0017 |
+|   5 |    a |    cpp |      True |     0.1962 |     True |    BWNCQRMDB |     True |    0.0043 |
+|   5 |    b |    x86 |      True |     0.2461 |     True |    NHWZCBNBF |     True |    0.0018 |
+|   5 |    b |    cpp |      True |     0.1795 |     True |    NHWZCBNBF |     True |    0.0050 |
+|   6 |    a |    x86 |      True |     0.1075 |     True |         1833 |     True |    0.0016 |
+|   6 |    a |    cpp |      True |     0.1318 |     True |         1833 |     True |    0.0021 |
+|   6 |    b |    x86 |      True |     0.1126 |     True |         3425 |     True |    0.0017 |
+|   6 |    b |    cpp |      True |     0.1070 |     True |         3425 |     True |    0.0024 |
+|   7 |    a |    x86 |      True |     0.2804 |     True |      1454188 |     True |    0.0022 |
+|   7 |    a |    cpp |      True |     0.2211 |     True |      1454188 |     True |    0.0060 |
+|   7 |    b |    x86 |      True |     0.2834 |     True |      4183246 |     True |    0.0025 |
+|   7 |    b |    cpp |      True |     0.2638 |     True |      4183246 |     True |    0.0044 |
+|   8 |    a |    x86 |      True |     0.2140 |     True |         1763 |     True |    0.0066 |
+|   8 |    a |    cpp |      True |     0.1958 |     True |         1763 |     True |    0.0050 |
+|   8 |    b |    x86 |      True |     0.1999 |     True |       671160 |     True |    0.0036 |
+|   8 |    b |    cpp |      True |     0.1693 |     True |       671160 |     True |    0.0045 |
+|   9 |    a |    x86 |      True |     0.2698 |     True |         5779 |     True |    0.2746 |
+|   9 |    a |    cpp |      True |     0.1597 |     True |         5779 |     True |    0.3670 |
+|   9 |    b |    x86 |      True |     0.2481 |     True |         2331 |     True |    0.0587 |
+|   9 |    b |    cpp |      True |     0.2212 |     True |         2331 |     True |    0.1427 |
+|  10 |    a |    x86 |      True |     0.2040 |     True |        17020 |     True |    0.0017 |
+|  10 |    a |    cpp |      True |     0.1743 |     True |        17020 |     True |    0.0019 |
+|  10 |    b |    x86 |      True |     0.2604 |     True |     RLEZFLGE |     True |    0.0016 |
+|  10 |    b |    cpp |      True |     0.2294 |     True |     RLEZFLGE |     True |    0.0024 |
+|  11 |    a |    x86 |      True |     0.3089 |     True |        51075 |     True |    0.0013 |
+|  11 |    a |    cpp |      True |     0.2285 |     True |        51075 |     True |    0.0026 |
+|  11 |    b |    x86 |      True |     0.2864 |     True |  11741456163 |     True |    0.0621 |
+|  11 |    b |    cpp |      True |     0.2239 |     True |  11741456163 |     True |    0.1818 |
+|  12 |    a |    x86 |      True |     0.3376 |     True |          517 |     True |    0.0068 |
+|  12 |    a |    cpp |      True |     0.2127 |     True |          517 |     True |    0.0241 |
+|  12 |    b |    x86 |      True |     0.3619 |     True |          512 |     True |    0.7159 |
+|  12 |    b |    cpp |      True |     0.2343 |     True |          512 |     True |    2.5350 |
+|  13 |    a |    x86 |      True |     0.2874 |     True |         5555 |     True |    0.0038 |
+|  13 |    a |    cpp |      True |     0.2052 |     True |         5555 |     True |    0.0254 |
+|  13 |    b |    x86 |      True |     0.3493 |     True |        22852 |     True |    0.0379 |
+|  13 |    b |    cpp |      True |     0.2575 |     True |        22852 |     True |    0.1501 |
+|  14 |    a |    x86 |      True |     0.3722 |     True |          843 |     True |    0.0061 |
+|  14 |    a |    cpp |      True |     0.2254 |     True |          843 |     True |    0.0191 |
+|  14 |    b |    x86 |      True |     0.3761 |     True |        27625 |     True |    0.0948 |
+|  14 |    b |    cpp |      True |     0.2339 |     True |        27625 |     True |    0.3587 |
+|  15 |    a |    x86 |      True |     0.3278 |     True |      4748135 |     True |    0.4980 |
+|  15 |    a |    cpp |      True |     0.2111 |     True |      4748135 |     True |    2.3287 |
+|  15 |    b |    x86 |      True |     0.3561 |     True | 137435426... |     True |   11.7366 |
+|  15 |    b |    cpp |      True |     0.2066 |     True | 137435426... |     True |   83.6866 |
+|  16 |    a |    x86 |      True |     0.2599 |    False |    [error 1] |    False |    0.0018 |
+|  16 |    a |    cpp |      True |     0.2101 |    False |    [error 1] |    False |    0.0040 |
+|  16 |    b |    x86 |      True |     0.2712 |    False |    [error 1] |    False |    0.0027 |
+|  16 |    b |    cpp |      True |     0.2452 |    False |    [error 1] |    False |    0.0035 |
+|  17 |    a |    x86 |      True |     0.3910 |     True |            0 |    False |    0.0074 |
+|  17 |    a |    cpp |      True |     0.4634 |     True |            0 |    False |    0.0223 |
+|  17 |    b |    x86 |     False |     0.1431 |    False |          N/A |    False |    0.0000 |
+|  17 |    b |    cpp |     False |     0.0875 |    False |          N/A |    False |    0.0000 |
++-----+------+--------+-----------+------------+----------+--------------+----------+-----------+
+|   total    |        |           |    14.9176 |          |              |          |  103.4709 |
++-----+------+--------+-----------+------------+----------+--------------+----------+-----------+

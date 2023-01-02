@@ -106,7 +106,7 @@ int maxy = 0;
 for (int i = 0; i < sensors.size; ++i)
 {
     Sensor sensor = sensors.data[i];
-    println (sensor);
+    //println (sensor);
     minx = min (sensor.position.x-sensor.radius-1, minx);
     maxx = max (sensor.position.x+sensor.radius+1, maxx);
     miny = min (sensor.position.y-sensor.radius-1, miny);
@@ -206,7 +206,7 @@ Vector<:Vector<:char:>:> board = new Vector<:Vector<:char:>:> ();
 // for each row
 for (int i = 0; i < upper_bound; ++i)
 {
-    print (i); print ('/'); println (upper_bound);
+    //print (i); print ('/'); println (upper_bound);
     Vector<:Point:> adjacent_points = new Vector<:Point:> ();
     // for each sensor
     for (int s = 0; s < sensors.size; ++s)
@@ -241,10 +241,10 @@ for (int i = 0; i < upper_bound; ++i)
                 if (is_outside)
                 {
                     // we found a point that is outside
-                    println (lhs);
+                    //println (lhs);
                     println (lhs.x * 4000000 + lhs.y);
                     // peace!
-                    exit(1);
+                    exit(0);
                 }
 
             }
@@ -278,10 +278,10 @@ for (int i = 0; i < upper_bound; ++i)
                 if (is_outside)
                 {
                     // we found a point that is outside
-                    println (rhs);
+                    //println (rhs);
                     println (rhs.x * 4000000 + rhs.y);
                     // peace!
-                    exit(1);
+                    exit(0);
                 }
 
             }

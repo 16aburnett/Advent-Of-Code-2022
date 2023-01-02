@@ -233,14 +233,18 @@ class __builtin____main__Object
     void** dtable;
 };
 //=========================================================================
+//### Header section #####################################################
+//=========================================================================
+
+//=========================================================================
+//### Functions section ##################################################
+//=========================================================================
+
+//=========================================================================
 //### Main function ######################################################
 //=========================================================================
 
 int main () {
-    //=====================================================================
-    //### SETUP EXPRESSION RESULT STACK ##################################
-    //=====================================================================
-
     // Function Header
     // This stack is used to store results of expressions
     std::vector<long> stack;
@@ -255,10 +259,9 @@ int main () {
     long __lhs = 0;
     long __rhs = 0;
     long __res = 0;
-    //=====================================================================
-    //### COMPILED CODE ##################################################
-    //=====================================================================
 
+    // Main body
+    //---------------------------------------------------------------------
     // Statement
     // Assignment - '='
     // RHS
@@ -358,6 +361,8 @@ int main () {
     __main__for__1__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__for__1__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -426,6 +431,8 @@ int main () {
         __main__for__1__block__2__for__3__j = *reinterpret_cast<long*>(&__rhs);
         // Result of assignment
         stack.push_back (*reinterpret_cast<long*>(&__main__for__1__block__2__for__3__j));
+        // We can ignore the init result
+        stack.pop_back ();
         // Using an infinite loop so we can write a separate multi-line condition
         while (1)
         {
@@ -490,6 +497,8 @@ int main () {
             __main__for__1__block__2__for__3__block__4__for__5__k = *reinterpret_cast<long*>(&__rhs);
             // Result of assignment
             stack.push_back (*reinterpret_cast<long*>(&__main__for__1__block__2__for__3__block__4__for__5__k));
+            // We can ignore the init result
+            stack.pop_back ();
             // Using an infinite loop so we can write a separate multi-line condition
             while (1)
             {
@@ -609,6 +618,8 @@ int main () {
                     __res = __main__for__1__block__2__for__3__block__4__for__5__k;
                     stack.push_back (*reinterpret_cast<long*>(&__res));
                 }
+                // We can ignore the update result
+                stack.pop_back ();
             }
             //-------------------------------------------------------------
             //-------------------------------------------------------------
@@ -648,6 +659,8 @@ int main () {
                 __res = __main__for__1__block__2__for__3__j;
                 stack.push_back (*reinterpret_cast<long*>(&__res));
             }
+            // We can ignore the update result
+            stack.pop_back ();
         }
         //-----------------------------------------------------------------
         //-----------------------------------------------------------------
@@ -714,13 +727,10 @@ int main () {
             __res = __main__for__1__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
-
-    //=====================================================================
-    //### END OF CODE ####################################################
-    //=====================================================================
-
 }
 //=========================================================================
 //### END OF MAIN ########################################################

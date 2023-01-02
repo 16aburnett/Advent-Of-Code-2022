@@ -32,6 +32,7 @@ AMYSCRIPT_COMPILER_PATH = 'amyc'
 AMYASM_PATH = "amyasmi"
 # AMYASM_PATH = "../code/amyasmi/amyAssemblyInterpreter.py"
 CPP_COMPILER = "g++"
+CPP_FLAGS = ["-O3"]
 
 SOLUTIONS_DIR = "solutions"
 SAMPLE_INPUTS_DIR = "sample_inputs"
@@ -40,7 +41,7 @@ SAMPLE_ANSWERS_DIR = "sample_answers"
 FULL_ANSWERS_DIR = "full_answers"
 GENERATED_CODE_DIR = "generated_code"
 
-libraries = ["lib/Vector.amy", "lib/algorithms.amy", "lib/LinkedList.amy"]
+libraries = ["lib/Vector.amy", "lib/algorithms.amy", "lib/LinkedList.amy", "lib/MinHeap.amy"]
 
 SAMPLE = 0
 INPUT = 1
@@ -134,7 +135,7 @@ def run (days, parts, targets, inputset, hide_answers, timeout, verbose):
             pass
         elif (run.target == "x86"):
             # x86 needs to be assembled
-            assembled_filename = f"{GENERATED_CODE_DIR}/day{day}{part}.o"
+            assembled_filename = f"{GENERATED_CODE_DIR}/day{run.day}{run.part}.o"
             nasm_args = ['nasm', '-f','elf64',dest_filename,'-o', assembled_filename]
             if verbose:
                 print ("\tassembling...")
@@ -150,7 +151,7 @@ def run (days, parts, targets, inputset, hide_answers, timeout, verbose):
                 continue
 
             # link
-            bin_filename = f"{GENERATED_CODE_DIR}/day{day}{part}.out"
+            bin_filename = f"{GENERATED_CODE_DIR}/day{run.day}{run.part}.out"
             linking_args = ['ld', assembled_filename, '-o', bin_filename, '-lc', '--dynamic-linker', '/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2']
             if verbose:
                 print ("\tlinking...")
@@ -169,8 +170,8 @@ def run (days, parts, targets, inputset, hide_answers, timeout, verbose):
             pass
         elif (run.target == "cpp"):
             # cpp needs to be compiled
-            bin_filename = f"{GENERATED_CODE_DIR}/day{day}{part}.cpp_exe"
-            cpp_compile_args = [CPP_COMPILER, dest_filename, '-o', bin_filename]
+            bin_filename = f"{GENERATED_CODE_DIR}/day{run.day}{run.part}.cpp_exe"
+            cpp_compile_args = [CPP_COMPILER, dest_filename, '-O3', '-o', bin_filename]
             if verbose:
                 print ("\tcompiling cpp code...")
                 print (' '.join(cpp_compile_args))
@@ -185,41 +186,54 @@ def run (days, parts, targets, inputset, hide_answers, timeout, verbose):
                 continue
 
         # get input
-        with open (acting_input_filename, "r") as f:
-            input_data = f.read()
-        
+        try:
+            with open (acting_input_filename, "r") as f:
+                input_data = f.read()
+        except FileNotFoundError:
+            print (f"{style.RED}Error{style.RESET}: cannot find input file")
+            run.result = "[no-input]"
+            # cannot continue without an input file
+            continue
+ 
         # get answer
-        with open (acting_answer_filename, "r") as f:
-            expected_answer = f.read ().strip ()
+        try:
+            with open (acting_answer_filename, "r") as f:
+                expected_answer = f.read ().strip ()
+        except FileNotFoundError:
+            print (f"{style.RED}Error{style.RESET}: cannot find answer file")
+            expected_answer = "<no-answer-file>"
+            # we don't have to break here since we may still be able to run
+            # without checking the result
 
         # Run generated code
+        run_output = None
         try:  
             rstart = time.perf_counter()
             if (run.target == "amyasm"):
                 cmd_args = [AMYASM_PATH, dest_filename]
                 if verbose:
                     print ("\trunning...")
-                    print (' '.join(cmd_args))
+                    print (' '.join(cmd_args), f"< {acting_input_filename}")
                 run_output = subprocess.run (cmd_args, input=input_data, capture_output=True, text=True, timeout=timeout)
             elif (run.target == "x86"):
                 # we're finally ready to run the code
                 cmd_args = [f"./{bin_filename}"]
                 if verbose:
                     print ("\trunning...")
-                    print (" ".join(cmd_args))
+                    print (" ".join(cmd_args), f"< {acting_input_filename}")
                 run_output = subprocess.run (cmd_args, input=input_data, capture_output=True, text=True, timeout=timeout)
             elif (run.target == "python"):
                 cmd_args = [f'python3', dest_filename]
                 if verbose:
                     print ("\trunning...")
-                    print (" ".join(cmd_args))
+                    print (" ".join(cmd_args), f"< {acting_input_filename}")
                 run_output = subprocess.run (cmd_args, input=input_data, capture_output=True, text=True, timeout=timeout)
             elif (run.target == "cpp"):
                 # we're finally ready to run the code
                 cmd_args = [f"./{bin_filename}"]
                 if verbose:
                     print ("\trunning...")
-                    print (" ".join(cmd_args))
+                    print (" ".join(cmd_args), f"< {acting_input_filename}")
                 run_output = subprocess.run (cmd_args, input=input_data, capture_output=True, text=True, timeout=timeout)
             else: 
                 print ("{style.RED}Error{style.RESET}: invalid target:", run.target)
@@ -230,13 +244,14 @@ def run (days, parts, targets, inputset, hide_answers, timeout, verbose):
                 # catch timeout errors
                 print (f"{style.RED}Error{style.RESET}: timeout of {style.CYAN}{timeout}{style.RESET} seconds exceeded")
                 print (f"   Maybe there is a hang or the timeout needs to be increased or the process is waiting on input or your implementation is too slow")
-                run.result = f"[timed-out]"
+                run.result = f"[timeout]"
+                run.runtime = timeout
                 continue
 
         # Ensure code ran successfully
         run.ran_successfully = run_output.returncode == 0
         if not run.ran_successfully:
-            print (f"{style.RED}Error{style.RESET}: run failed")
+            print (f"{style.RED}Error{style.RESET}: run failed ({run_output.returncode})")
             print (run_output.stdout)
             print (run_output.stderr)
             run.result = f"[error {run_output.returncode}]"
@@ -249,6 +264,15 @@ def run (days, parts, targets, inputset, hide_answers, timeout, verbose):
         # Check if it is correct
         run.is_correct = run.result == expected_answer
 
+        if not run.is_correct:
+            print (f"{style.RED}Error{style.RESET}: wrong answer")
+            print (f"Expected: {expected_answer}")
+            print (f"Got:", run_output.stdout)
+            print (run_output.stderr)
+            continue
+
+        # reaches here if everything passes
+        print (f"{style.GREEN}Success{style.RESET}")
 
     # day, part, target, compiled?, compiletime, result, time
 
@@ -275,7 +299,10 @@ def run (days, parts, targets, inputset, hide_answers, timeout, verbose):
         if hide_answers:
             result = f"{'-'*10}"
         else:
-            result = run.result
+            # only prints the first line
+            result = run.result.split("\n")[0]
+            if len(result) > 12:
+                result = result[:9]+"..."
         print (f"| {run.day:>3} | {run.part:>4} | {run.target:>6} | {run.is_compiled!s:>9} | {  run.compile_time:>10.4f} | {run.ran_successfully!s:>8} | {    result:>12} | {run.is_correct!s:>8} | {   run.runtime:>9.4f} |")
         print(style.RESET, end="")
         total_compile_time += run.compile_time
@@ -303,7 +330,7 @@ if __name__ == "__main__":
 
     # print (args)
 
-    valid_days = [str(i) for i in range(1, 15)]
+    valid_days = [str(i) for i in range(1, 18)]
     days = args.days
     if "all" in args.days:
         days = valid_days

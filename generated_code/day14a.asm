@@ -3121,42 +3121,42 @@ jmp .__for__29
 ; ====================================================================================
 
 ; ====================================================================================
-         ; Class Declaration - __main____Vector__Vector inherits __builtin____main__Object
+         ; Class Declaration - __main____Vector__char inherits __builtin____main__Object
          ; Class data
          section .data
          ; Dispatch Table - this might need to be a malloc**
-         .__dtable____main____Vector__Vector:
+         .__dtable____main____Vector__char:
          ; Dispatch Table Entries
-         dq .__method____main____Vector__Vector____pushBack__Vector ; 0
-         dq .__method____main____Vector__Vector____popBack ; 1
-         dq .__method____main____Vector__Vector____clear ; 2
-         dq .__method____main____Vector__Vector____get__int ; 3
-         dq .__method____main____Vector__Vector____set__int__Vector ; 4
+         dq .__method____main____Vector__char____pushBack__char ; 0
+         dq .__method____main____Vector__char____popBack ; 1
+         dq .__method____main____Vector__char____clear ; 2
+         dq .__method____main____Vector__char____get__int ; 3
+         dq .__method____main____Vector__char____set__int__char ; 4
          section .text
 ;---------------------------------------------------------------------------------
-         ; Field - Vector<:char:>[] Vector<:Vector<:char:>:>::data
+         ; Field - char[] Vector<:char:>::data
          section .data
-         .__field____main____Vector__Vector____data: dq 1
-         section .text
-;---------------------------------------------------------------------------------
-;---------------------------------------------------------------------------------
-         ; Field - int Vector<:Vector<:char:>:>::size
-         section .data
-         .__field____main____Vector__Vector____size: dq 2
+         .__field____main____Vector__char____data: dq 1
          section .text
 ;---------------------------------------------------------------------------------
 ;---------------------------------------------------------------------------------
-         ; Field - int Vector<:Vector<:char:>:>::capacity
+         ; Field - int Vector<:char:>::size
          section .data
-         .__field____main____Vector__Vector____capacity: dq 3
+         .__field____main____Vector__char____size: dq 2
+         section .text
+;---------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------
+         ; Field - int Vector<:char:>::capacity
+         section .data
+         .__field____main____Vector__char____capacity: dq 3
          section .text
 ;---------------------------------------------------------------------------------
          ; skip over class methods
-         jmp .__endclass____main____Vector__Vector
+         jmp .__endclass____main____Vector__char
 ;---------------------------------------------------------------------------------
-         ; Constructor Declaration - Vector<:Vector<:char:>:>::Vector() -> Vector<:Vector<:char:>:>
-         jmp .__end__ctor____main____Vector__Vector____Vector
-         .__ctor____main____Vector__Vector____Vector:
+         ; Constructor Declaration - Vector<:char:>::Vector() -> Vector<:char:>
+         jmp .__end__ctor____main____Vector__char____Vector
+         .__ctor____main____Vector__char____Vector:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -3170,7 +3170,7 @@ jmp .__for__29
          mov qword [rbp - 8], rax ; save class instance as 'this'
          ; Add Dispatch Table
          mov rax, qword [rbp - 8] ; this
-         mov qword [rax + 0], .__dtable____main____Vector__Vector ; this[0] = &dtable
+         mov qword [rax + 0], .__dtable____main____Vector__char ; this[0] = &dtable
          ; Parameters
          ; Body
 ;------------------------------------------------------------------------------
@@ -3186,7 +3186,7 @@ jmp .__for__29
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__Vector____capacity] ; 
+                  push qword [.__field____main____Vector__char____capacity] ; 
                pop rdi ; rhs
                pop rbx ; lhs
          pop rdx ; rhs value
@@ -3205,7 +3205,7 @@ jmp .__for__29
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__Vector____size] ; 
+                  push qword [.__field____main____Vector__char____size] ; 
                pop rdi ; rhs
                pop rbx ; lhs
          pop rdx ; rhs value
@@ -3221,13 +3221,12 @@ jmp .__for__29
                      ; This keyword
                         push qword [rbp - 8] ; __this
                   ; RHS
-                     push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
+                     push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
                   pop rdx ; rhs
                   pop rax ; lhs
                   push qword [rax + 8*rdx] ; lhs.rhs
                pop rdx ; num elements for dimension[0]
-               imul rdx, 8 ; 8 bytes per element
-               mov rdi, rdx ; num bytes to allocate
+               mov rdi, rdx ; num bytes to allocate (1 byte per element)
                call malloc ; allocates edi bytes on heap and stores pointer in rax
                push rax ; __ptr
          ; LHS
@@ -3236,7 +3235,7 @@ jmp .__for__29
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__Vector____data] ; 
+                  push qword [.__field____main____Vector__char____data] ; 
                pop rdi ; rhs
                pop rbx ; lhs
          pop rdx ; rhs value
@@ -3250,14 +3249,14 @@ jmp .__for__29
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__ctor____main____Vector__Vector____Vector:
-         ; End Constructor Declaration - __ctor____main____Vector__Vector____Vector
+         .__end__ctor____main____Vector__char____Vector:
+         ; End Constructor Declaration - __ctor____main____Vector__char____Vector
 ;------------------------------------------------------------------------------------
 
 ;------------------------------------------------------------------------------------
-         ; Constructor Declaration - Vector<:Vector<:char:>:>::Vector(int) -> Vector<:Vector<:char:>:>
-         jmp .__end__ctor____main____Vector__Vector____Vector__int
-         .__ctor____main____Vector__Vector____Vector__int:
+         ; Constructor Declaration - Vector<:char:>::Vector(int) -> Vector<:char:>
+         jmp .__end__ctor____main____Vector__char____Vector__int
+         .__ctor____main____Vector__char____Vector__int:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -3271,7 +3270,7 @@ jmp .__for__29
          mov qword [rbp - 8], rax ; save class instance as 'this'
          ; Add Dispatch Table
          mov rax, qword [rbp - 8] ; this
-         mov qword [rax + 0], .__dtable____main____Vector__Vector ; this[0] = &dtable
+         mov qword [rax + 0], .__dtable____main____Vector__char ; this[0] = &dtable
          ; Parameters
          ; Param: size [rbp + 16]
          ; Body
@@ -3297,7 +3296,7 @@ jmp .__for__29
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__Vector____capacity] ; 
+               push qword [.__field____main____Vector__char____capacity] ; 
             pop rdi ; rhs
             pop rbx ; lhs
          pop rdx ; rhs value
@@ -3315,7 +3314,7 @@ jmp .__for__29
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__Vector____size] ; 
+               push qword [.__field____main____Vector__char____size] ; 
             pop rdi ; rhs
             pop rbx ; lhs
          pop rdx ; rhs value
@@ -3331,13 +3330,12 @@ jmp .__for__29
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
+                  push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
                pop rdx ; rhs
                pop rax ; lhs
                push qword [rax + 8*rdx] ; lhs.rhs
             pop rdx ; num elements for dimension[0]
-            imul rdx, 8 ; 8 bytes per element
-            mov rdi, rdx ; num bytes to allocate
+            mov rdi, rdx ; num bytes to allocate (1 byte per element)
             call malloc ; allocates edi bytes on heap and stores pointer in rax
             push rax ; __ptr
          ; LHS
@@ -3346,7 +3344,7 @@ jmp .__for__29
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__Vector____data] ; 
+               push qword [.__field____main____Vector__char____data] ; 
             pop rdi ; rhs
             pop rbx ; lhs
          pop rdx ; rhs value
@@ -3360,14 +3358,14 @@ jmp .__for__29
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__ctor____main____Vector__Vector____Vector__int:
-         ; End Constructor Declaration - __ctor____main____Vector__Vector____Vector__int
+         .__end__ctor____main____Vector__char____Vector__int:
+         ; End Constructor Declaration - __ctor____main____Vector__char____Vector__int
 ;---------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:Vector<:char:>:>::pushBack(Vector<:char:>) -> void
-         jmp .__end__method____main____Vector__Vector____pushBack__Vector
-         .__method____main____Vector__Vector____pushBack__Vector:
+         ; Method Declaration - Vector<:char:>::pushBack(char) -> void
+         jmp .__end__method____main____Vector__char____pushBack__char
+         .__method____main____Vector__char____pushBack__char:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -3377,10 +3375,10 @@ jmp .__for__29
          ; [rbp - 8] - this - Reference to 'this' object instance
          mov rdx, qword [rbp + 16] ; param passed 'this'
          mov qword [rbp - 8], rdx ; save this to a local
-         ; [rbp - 16] - Vector<:char:>[] nData (<unset-scope-name>)
+         ; [rbp - 16] - char[] nData (<unset-scope-name>)
          ; [rbp - 24] - int i (<unset-scope-name>)
          ; Parameters
-         ; Param: val [rbp + 24] (__main____Vector__Vector__pushBack__val)
+         ; Param: val [rbp + 24] (__main____Vector__char__pushBack__val)
          ; Body
 ;---------------------------------------------------------------------------------
          ; Code Block
@@ -3396,7 +3394,7 @@ jmp .__for__29
                            ; This keyword
                               push qword [rbp - 8] ; __this
                         ; RHS
-                           push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
+                           push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
                         pop rdx ; rhs
                         pop rax ; lhs
                         push qword [rax + 8*rdx] ; lhs.rhs
@@ -3414,7 +3412,7 @@ jmp .__for__29
                      ; This keyword
                         push qword [rbp - 8] ; __this
                   ; RHS
-                     push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
+                     push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
                   pop rdx ; rhs
                   pop rax ; lhs
                   push qword [rax + 8*rdx] ; lhs.rhs
@@ -3439,7 +3437,7 @@ jmp .__for__29
                               ; This keyword
                                  push qword [rbp - 8] ; __this
                            ; RHS
-                              push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
+                              push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
                            pop rdx ; rhs
                            pop rax ; lhs
                            push qword [rax + 8*rdx] ; lhs.rhs
@@ -3457,7 +3455,7 @@ jmp .__for__29
                         ; This keyword
                            push qword [rbp - 8] ; __this
                      ; RHS
-                        push qword [.__field____main____Vector__Vector____capacity] ; 
+                        push qword [.__field____main____Vector__char____capacity] ; 
                      pop rdi ; rhs
                      pop rbx ; lhs
                pop rdx ; rhs value
@@ -3473,18 +3471,17 @@ jmp .__for__29
                            ; This keyword
                               push qword [rbp - 8] ; __this
                         ; RHS
-                           push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
+                           push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
                         pop rdx ; rhs
                         pop rax ; lhs
                         push qword [rax + 8*rdx] ; lhs.rhs
                      pop rdx ; num elements for dimension[0]
-                     imul rdx, 8 ; 8 bytes per element
-                     mov rdi, rdx ; num bytes to allocate
+                     mov rdi, rdx ; num bytes to allocate (1 byte per element)
                      call malloc ; allocates edi bytes on heap and stores pointer in rax
                      push rax ; __ptr
                ; LHS
                   ; Variable Declaration - nData
-                     mov rax, qword [rbp - 16]  ; __main____Vector__Vector__pushBack__block__38__if__39__block__40__nData
+                     mov rax, qword [rbp - 16]  ; __main____Vector__char__pushBack__block__38__if__39__block__40__nData
                pop rdx ; rhs value
                mov qword [rbp - 16], rdx
                push rdx
@@ -3500,7 +3497,7 @@ jmp .__for__29
                         push rax
                   ; LHS
                      ; Variable Declaration - i
-                        mov rax, qword [rbp - 24]  ; __main____Vector__Vector__pushBack__block__38__if__39__block__40__for__41__i
+                        mov rax, qword [rbp - 24]  ; __main____Vector__char__pushBack__block__38__if__39__block__40__for__41__i
                   pop rdx ; rhs value
                   mov qword [rbp - 24], rdx
                   push rdx
@@ -3531,7 +3528,7 @@ jmp .__for__29
                               ; This keyword
                                  push qword [rbp - 8] ; __this
                            ; RHS
-                              push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
+                              push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
                            pop rdx ; rhs
                            pop rax ; lhs
                            push qword [rax + 8*rdx] ; lhs.rhs
@@ -3556,7 +3553,7 @@ jmp .__for__29
                                        ; This keyword
                                           push qword [rbp - 8] ; __this
                                     ; RHS
-                                       push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
+                                       push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
                                     pop rdx ; rhs
                                     pop rax ; lhs
                                     push qword [rax + 8*rdx] ; lhs.rhs
@@ -3565,11 +3562,13 @@ jmp .__for__29
                                     push qword [rbp - 24]
                               pop rdx ; __offset
                               pop rax ; __pointer
-                              push qword [rax + 8*rdx] ; pointer + sizeof(data_t) * offset
+                              mov al, byte [rax + rdx] ; pointer + sizeof(data_t) * offset
+                              movzx rax, al ; zero extend because we need to push 64bit to stack
+                              push rax ; push char onto stack
                         ; LHS
                            ; Subscript assignment
                               ; LHS
-                                 ; Identifier - Vector<:char:>[] nData
+                                 ; Identifier - char[] nData
                                     push qword [rbp - 16]
                               ; OFFSET
                                  ; Identifier - int i
@@ -3577,7 +3576,7 @@ jmp .__for__29
                               pop rdi ; __offset
                               pop rbx ; __pointer
                         pop rdx ; rhs value
-                        mov qword [rbx + 8*rdi], rdx
+                        mov byte [rbx + rdi], dl
                         push rdx
                      ; Statement results can be ignored
                      pop rdx
@@ -3594,7 +3593,7 @@ jmp .__for__41
                         ; This keyword
                            push qword [rbp - 8] ; __this
                      ; RHS
-                        push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
+                        push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
                      pop rdx ; rhs
                      pop rax ; lhs
                      push qword [rax + 8*rdx] ; lhs.rhs
@@ -3606,7 +3605,7 @@ jmp .__for__41
             pop rdx
             ; Assignment - '='
                ; RHS
-                  ; Identifier - Vector<:char:>[] nData
+                  ; Identifier - char[] nData
                      push qword [rbp - 16]
                ; LHS
                   ; Member Accessor Assignment
@@ -3614,7 +3613,7 @@ jmp .__for__41
                         ; This keyword
                            push qword [rbp - 8] ; __this
                      ; RHS
-                        push qword [.__field____main____Vector__Vector____data] ; 
+                        push qword [.__field____main____Vector__char____data] ; 
                      pop rdi ; rhs
                      pop rbx ; lhs
                pop rdx ; rhs value
@@ -3629,8 +3628,10 @@ jmp .__for__41
 ;------------------------------------------------------------------------------
          ; Assignment - '='
          ; RHS
-         ; Identifier - Vector<:char:> val
-            push qword [rbp - -24]
+         ; Identifier - char val
+            mov al, byte [rbp - -24]
+            movzx rax, al
+            push rax
          ; LHS
          ; Subscript assignment
             ; LHS
@@ -3639,7 +3640,7 @@ jmp .__for__41
                      ; This keyword
                         push qword [rbp - 8] ; __this
                   ; RHS
-                     push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
+                     push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
                   pop rdx ; rhs
                   pop rax ; lhs
                   push qword [rax + 8*rdx] ; lhs.rhs
@@ -3649,14 +3650,14 @@ jmp .__for__41
                      ; This keyword
                         push qword [rbp - 8] ; __this
                   ; RHS
-                     push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
+                     push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
                   pop rdx ; rhs
                   pop rax ; lhs
                   push qword [rax + 8*rdx] ; lhs.rhs
             pop rdi ; __offset
             pop rbx ; __pointer
          pop rdx ; rhs value
-         mov qword [rbx + 8*rdi], rdx
+         mov byte [rbx + rdi], dl
          push rdx
          ; Statement results can be ignored
          pop rdx
@@ -3667,7 +3668,7 @@ jmp .__for__41
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
+               push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
             pop rdx ; rhs
             pop rax ; lhs
             push qword [rax + 8*rdx] ; lhs.rhs
@@ -3678,7 +3679,7 @@ jmp .__for__41
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__Vector____size] ; size
+               push qword [.__field____main____Vector__char____size] ; size
             pop rdi ; rhs
             pop rbx ; lhs
             mov rax, qword [rbx + 8*rdi]
@@ -3692,14 +3693,14 @@ jmp .__for__41
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__Vector____pushBack__Vector:
-         ; End Method Declaration - .__method____main____Vector__Vector____pushBack__Vector
+         .__end__method____main____Vector__char____pushBack__char:
+         ; End Method Declaration - .__method____main____Vector__char____pushBack__char
 ;---------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:Vector<:char:>:>::popBack() -> Vector<:char:>
-         jmp .__end__method____main____Vector__Vector____popBack
-         .__method____main____Vector__Vector____popBack:
+         ; Method Declaration - Vector<:char:>::popBack() -> char
+         jmp .__end__method____main____Vector__char____popBack
+         .__method____main____Vector__char____popBack:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -3721,7 +3722,7 @@ jmp .__for__41
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
+                  push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
                pop rdx ; rhs
                pop rax ; lhs
                push qword [rax + 8*rdx] ; lhs.rhs
@@ -3733,7 +3734,7 @@ jmp .__for__41
                         ; This keyword
                            push qword [rbp - 8] ; __this
                      ; RHS
-                        push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
+                        push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
                      pop rdx ; rhs
                      pop rax ; lhs
                      push qword [rax + 8*rdx] ; lhs.rhs
@@ -3744,7 +3745,7 @@ jmp .__for__41
                         ; This keyword
                            push qword [rbp - 8] ; __this
                      ; RHS
-                        push qword [.__field____main____Vector__Vector____size] ; size
+                        push qword [.__field____main____Vector__char____size] ; size
                      pop rdi ; rhs
                      pop rbx ; lhs
                      mov rax, qword [rbx + 8*rdi]
@@ -3753,8 +3754,10 @@ jmp .__for__41
                push rax ; push result
          pop rdx ; __offset
          pop rax ; __pointer
-         push qword [rax + 8*rdx] ; pointer + sizeof(data_t) * offset
-         pop rax ; return value (Vector<:char:>)
+         mov al, byte [rax + rdx] ; pointer + sizeof(data_t) * offset
+         movzx rax, al ; zero extend because we need to push 64bit to stack
+         push rax ; push char onto stack
+         pop rax ; return value (char)
          ; Clean up stack and return
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
@@ -3764,14 +3767,14 @@ jmp .__for__41
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__Vector____popBack:
-         ; End Method Declaration - .__method____main____Vector__Vector____popBack
+         .__end__method____main____Vector__char____popBack:
+         ; End Method Declaration - .__method____main____Vector__char____popBack
 ;---------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:Vector<:char:>:>::clear() -> void
-         jmp .__end__method____main____Vector__Vector____clear
-         .__method____main____Vector__Vector____clear:
+         ; Method Declaration - Vector<:char:>::clear() -> void
+         jmp .__end__method____main____Vector__char____clear
+         .__method____main____Vector__char____clear:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -3796,7 +3799,7 @@ jmp .__for__41
                      ; This keyword
                         push qword [rbp - 8] ; __this
                   ; RHS
-                     push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
+                     push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
                   pop rdx ; rhs
                   pop rax ; lhs
                   push qword [rax + 8*rdx] ; lhs.rhs
@@ -3814,7 +3817,7 @@ jmp .__for__41
          cmp rax, 0 ; __cond
          je .__endwhile__45
          ; Body
-         ; Method Call - Vector<:Vector<:char:>:>::popBack() -> Vector<:char:>
+         ; Method Call - Vector<:char:>::popBack() -> char
             ; Make space for 0 arg(s) and object parameter
             sub rsp, 8
             ; LHS
@@ -3824,7 +3827,7 @@ jmp .__for__41
                mov qword [rsp + 0], rax ; place as first parameter
             ; RHS
             ; Arguments
-            call .__method____main____Vector__Vector____popBack
+            call .__method____main____Vector__char____popBack
             ; Remove args
             add rsp, 8
             ; Push return value
@@ -3840,14 +3843,14 @@ jmp .__for__41
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__Vector____clear:
-         ; End Method Declaration - .__method____main____Vector__Vector____clear
+         .__end__method____main____Vector__char____clear:
+         ; End Method Declaration - .__method____main____Vector__char____clear
 ;---------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:Vector<:char:>:>::get(int) -> Vector<:char:>
-         jmp .__end__method____main____Vector__Vector____get__int
-         .__method____main____Vector__Vector____get__int:
+         ; Method Declaration - Vector<:char:>::get(int) -> char
+         jmp .__end__method____main____Vector__char____get__int
+         .__method____main____Vector__char____get__int:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -3858,7 +3861,7 @@ jmp .__for__41
          mov rdx, qword [rbp + 16] ; param passed 'this'
          mov qword [rbp - 8], rdx ; save this to a local
          ; Parameters
-         ; Param: index [rbp + 24] (__main____Vector__Vector__get__index)
+         ; Param: index [rbp + 24] (__main____Vector__char__get__index)
          ; Body
 ;---------------------------------------------------------------------------------
          ; Code Block
@@ -3870,7 +3873,7 @@ jmp .__for__41
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
+                  push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
                pop rdx ; rhs
                pop rax ; lhs
                push qword [rax + 8*rdx] ; lhs.rhs
@@ -3879,8 +3882,10 @@ jmp .__for__41
                push qword [rbp - -24]
          pop rdx ; __offset
          pop rax ; __pointer
-         push qword [rax + 8*rdx] ; pointer + sizeof(data_t) * offset
-         pop rax ; return value (Vector<:char:>)
+         mov al, byte [rax + rdx] ; pointer + sizeof(data_t) * offset
+         movzx rax, al ; zero extend because we need to push 64bit to stack
+         push rax ; push char onto stack
+         pop rax ; return value (char)
          ; Clean up stack and return
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
@@ -3890,14 +3895,14 @@ jmp .__for__41
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__Vector____get__int:
-         ; End Method Declaration - .__method____main____Vector__Vector____get__int
+         .__end__method____main____Vector__char____get__int:
+         ; End Method Declaration - .__method____main____Vector__char____get__int
 ;---------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:Vector<:char:>:>::set(int, Vector<:char:>) -> void
-         jmp .__end__method____main____Vector__Vector____set__int__Vector
-         .__method____main____Vector__Vector____set__int__Vector:
+         ; Method Declaration - Vector<:char:>::set(int, char) -> void
+         jmp .__end__method____main____Vector__char____set__int__char
+         .__method____main____Vector__char____set__int__char:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -3908,15 +3913,17 @@ jmp .__for__41
          mov rdx, qword [rbp + 16] ; param passed 'this'
          mov qword [rbp - 8], rdx ; save this to a local
          ; Parameters
-         ; Param: index [rbp + 24] (__main____Vector__Vector__set__index)
-         ; Param: value [rbp + 32] (__main____Vector__Vector__set__value)
+         ; Param: index [rbp + 24] (__main____Vector__char__set__index)
+         ; Param: value [rbp + 32] (__main____Vector__char__set__value)
          ; Body
 ;---------------------------------------------------------------------------------
          ; Code Block
          ; Assignment - '='
          ; RHS
-         ; Identifier - Vector<:char:> value
-            push qword [rbp - -32]
+         ; Identifier - char value
+            mov al, byte [rbp - -32]
+            movzx rax, al
+            push rax
          ; LHS
          ; Subscript assignment
             ; LHS
@@ -3925,7 +3932,7 @@ jmp .__for__41
                      ; This keyword
                         push qword [rbp - 8] ; __this
                   ; RHS
-                     push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
+                     push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
                   pop rdx ; rhs
                   pop rax ; lhs
                   push qword [rax + 8*rdx] ; lhs.rhs
@@ -3935,7 +3942,7 @@ jmp .__for__41
             pop rdi ; __offset
             pop rbx ; __pointer
          pop rdx ; rhs value
-         mov qword [rbx + 8*rdi], rdx
+         mov byte [rbx + rdi], dl
          push rdx
          ; Statement results can be ignored
          pop rdx
@@ -3944,51 +3951,51 @@ jmp .__for__41
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__Vector____set__int__Vector:
-         ; End Method Declaration - .__method____main____Vector__Vector____set__int__Vector
+         .__end__method____main____Vector__char____set__int__char:
+         ; End Method Declaration - .__method____main____Vector__char____set__int__char
 ;---------------------------------------------------------------------------------------
 
-.__endclass____main____Vector__Vector:
-         ; End Class Declaration - __main____Vector__Vector
+.__endclass____main____Vector__char:
+         ; End Class Declaration - __main____Vector__char
 ; ==========================================================================================
 
 ; ==========================================================================================
-         ; Class Declaration - __main____Vector__char inherits __builtin____main__Object
+         ; Class Declaration - __main____Vector__Vector inherits __builtin____main__Object
          ; Class data
          section .data
          ; Dispatch Table - this might need to be a malloc**
-         .__dtable____main____Vector__char:
+         .__dtable____main____Vector__Vector:
          ; Dispatch Table Entries
-         dq .__method____main____Vector__char____pushBack__char ; 0
-         dq .__method____main____Vector__char____popBack ; 1
-         dq .__method____main____Vector__char____clear ; 2
-         dq .__method____main____Vector__char____get__int ; 3
-         dq .__method____main____Vector__char____set__int__char ; 4
+         dq .__method____main____Vector__Vector____pushBack__Vector ; 0
+         dq .__method____main____Vector__Vector____popBack ; 1
+         dq .__method____main____Vector__Vector____clear ; 2
+         dq .__method____main____Vector__Vector____get__int ; 3
+         dq .__method____main____Vector__Vector____set__int__Vector ; 4
          section .text
 ;---------------------------------------------------------------------------------------
-         ; Field - char[] Vector<:char:>::data
+         ; Field - Vector<:char:>[] Vector<:Vector<:char:>:>::data
          section .data
-         .__field____main____Vector__char____data: dq 1
-         section .text
-;---------------------------------------------------------------------------------------
-;---------------------------------------------------------------------------------------
-         ; Field - int Vector<:char:>::size
-         section .data
-         .__field____main____Vector__char____size: dq 2
+         .__field____main____Vector__Vector____data: dq 1
          section .text
 ;---------------------------------------------------------------------------------------
 ;---------------------------------------------------------------------------------------
-         ; Field - int Vector<:char:>::capacity
+         ; Field - int Vector<:Vector<:char:>:>::size
          section .data
-         .__field____main____Vector__char____capacity: dq 3
+         .__field____main____Vector__Vector____size: dq 2
+         section .text
+;---------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------
+         ; Field - int Vector<:Vector<:char:>:>::capacity
+         section .data
+         .__field____main____Vector__Vector____capacity: dq 3
          section .text
 ;---------------------------------------------------------------------------------------
          ; skip over class methods
-         jmp .__endclass____main____Vector__char
+         jmp .__endclass____main____Vector__Vector
 ;---------------------------------------------------------------------------------------
-         ; Constructor Declaration - Vector<:char:>::Vector() -> Vector<:char:>
-         jmp .__end__ctor____main____Vector__char____Vector
-         .__ctor____main____Vector__char____Vector:
+         ; Constructor Declaration - Vector<:Vector<:char:>:>::Vector() -> Vector<:Vector<:char:>:>
+         jmp .__end__ctor____main____Vector__Vector____Vector
+         .__ctor____main____Vector__Vector____Vector:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -4002,7 +4009,7 @@ jmp .__for__41
          mov qword [rbp - 8], rax ; save class instance as 'this'
          ; Add Dispatch Table
          mov rax, qword [rbp - 8] ; this
-         mov qword [rax + 0], .__dtable____main____Vector__char ; this[0] = &dtable
+         mov qword [rax + 0], .__dtable____main____Vector__Vector ; this[0] = &dtable
          ; Parameters
          ; Body
 ;------------------------------------------------------------------------------------
@@ -4018,7 +4025,7 @@ jmp .__for__41
             ; This keyword
                push qword [rbp - 8] ; __this
          ; RHS
-            push qword [.__field____main____Vector__char____capacity] ; 
+            push qword [.__field____main____Vector__Vector____capacity] ; 
          pop rdi ; rhs
          pop rbx ; lhs
          pop rdx ; rhs value
@@ -4037,7 +4044,7 @@ jmp .__for__41
             ; This keyword
                push qword [rbp - 8] ; __this
          ; RHS
-            push qword [.__field____main____Vector__char____size] ; 
+            push qword [.__field____main____Vector__Vector____size] ; 
          pop rdi ; rhs
          pop rbx ; lhs
          pop rdx ; rhs value
@@ -4053,12 +4060,13 @@ jmp .__for__41
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
+               push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
             pop rdx ; rhs
             pop rax ; lhs
             push qword [rax + 8*rdx] ; lhs.rhs
          pop rdx ; num elements for dimension[0]
-         mov rdi, rdx ; num bytes to allocate (1 byte per element)
+         imul rdx, 8 ; 8 bytes per element
+         mov rdi, rdx ; num bytes to allocate
          call malloc ; allocates edi bytes on heap and stores pointer in rax
          push rax ; __ptr
          ; LHS
@@ -4067,7 +4075,7 @@ jmp .__for__41
             ; This keyword
                push qword [rbp - 8] ; __this
          ; RHS
-            push qword [.__field____main____Vector__char____data] ; 
+            push qword [.__field____main____Vector__Vector____data] ; 
          pop rdi ; rhs
          pop rbx ; lhs
          pop rdx ; rhs value
@@ -4081,14 +4089,14 @@ jmp .__for__41
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__ctor____main____Vector__char____Vector:
-         ; End Constructor Declaration - __ctor____main____Vector__char____Vector
+         .__end__ctor____main____Vector__Vector____Vector:
+         ; End Constructor Declaration - __ctor____main____Vector__Vector____Vector
 ;------------------------------------------------------------------------------------------
 
 ;------------------------------------------------------------------------------------------
-         ; Constructor Declaration - Vector<:char:>::Vector(int) -> Vector<:char:>
-         jmp .__end__ctor____main____Vector__char____Vector__int
-         .__ctor____main____Vector__char____Vector__int:
+         ; Constructor Declaration - Vector<:Vector<:char:>:>::Vector(int) -> Vector<:Vector<:char:>:>
+         jmp .__end__ctor____main____Vector__Vector____Vector__int
+         .__ctor____main____Vector__Vector____Vector__int:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -4102,7 +4110,7 @@ jmp .__for__41
          mov qword [rbp - 8], rax ; save class instance as 'this'
          ; Add Dispatch Table
          mov rax, qword [rbp - 8] ; this
-         mov qword [rax + 0], .__dtable____main____Vector__char ; this[0] = &dtable
+         mov qword [rax + 0], .__dtable____main____Vector__Vector ; this[0] = &dtable
          ; Parameters
          ; Param: size [rbp + 16]
          ; Body
@@ -4128,7 +4136,7 @@ jmp .__for__41
          ; This keyword
             push qword [rbp - 8] ; __this
          ; RHS
-         push qword [.__field____main____Vector__char____capacity] ; 
+         push qword [.__field____main____Vector__Vector____capacity] ; 
          pop rdi ; rhs
          pop rbx ; lhs
          pop rdx ; rhs value
@@ -4146,7 +4154,7 @@ jmp .__for__41
          ; This keyword
             push qword [rbp - 8] ; __this
          ; RHS
-         push qword [.__field____main____Vector__char____size] ; 
+         push qword [.__field____main____Vector__Vector____size] ; 
          pop rdi ; rhs
          pop rbx ; lhs
          pop rdx ; rhs value
@@ -4162,12 +4170,13 @@ jmp .__for__41
             ; This keyword
                push qword [rbp - 8] ; __this
          ; RHS
-            push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
+            push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
          pop rdx ; rhs
          pop rax ; lhs
          push qword [rax + 8*rdx] ; lhs.rhs
          pop rdx ; num elements for dimension[0]
-         mov rdi, rdx ; num bytes to allocate (1 byte per element)
+         imul rdx, 8 ; 8 bytes per element
+         mov rdi, rdx ; num bytes to allocate
          call malloc ; allocates edi bytes on heap and stores pointer in rax
          push rax ; __ptr
          ; LHS
@@ -4176,7 +4185,7 @@ jmp .__for__41
          ; This keyword
             push qword [rbp - 8] ; __this
          ; RHS
-         push qword [.__field____main____Vector__char____data] ; 
+         push qword [.__field____main____Vector__Vector____data] ; 
          pop rdi ; rhs
          pop rbx ; lhs
          pop rdx ; rhs value
@@ -4190,14 +4199,14 @@ jmp .__for__41
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__ctor____main____Vector__char____Vector__int:
-         ; End Constructor Declaration - __ctor____main____Vector__char____Vector__int
+         .__end__ctor____main____Vector__Vector____Vector__int:
+         ; End Constructor Declaration - __ctor____main____Vector__Vector____Vector__int
 ;---------------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:char:>::pushBack(char) -> void
-         jmp .__end__method____main____Vector__char____pushBack__char
-         .__method____main____Vector__char____pushBack__char:
+         ; Method Declaration - Vector<:Vector<:char:>:>::pushBack(Vector<:char:>) -> void
+         jmp .__end__method____main____Vector__Vector____pushBack__Vector
+         .__method____main____Vector__Vector____pushBack__Vector:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -4207,10 +4216,10 @@ jmp .__for__41
          ; [rbp - 8] - this - Reference to 'this' object instance
          mov rdx, qword [rbp + 16] ; param passed 'this'
          mov qword [rbp - 8], rdx ; save this to a local
-         ; [rbp - 16] - char[] nData (<unset-scope-name>)
+         ; [rbp - 16] - Vector<:char:>[] nData (<unset-scope-name>)
          ; [rbp - 24] - int i (<unset-scope-name>)
          ; Parameters
-         ; Param: val [rbp + 24] (__main____Vector__char__pushBack__val)
+         ; Param: val [rbp + 24] (__main____Vector__Vector__pushBack__val)
          ; Body
 ;---------------------------------------------------------------------------------------
          ; Code Block
@@ -4226,7 +4235,7 @@ jmp .__for__41
                      ; This keyword
                         push qword [rbp - 8] ; __this
                   ; RHS
-                     push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
+                     push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
                   pop rdx ; rhs
                   pop rax ; lhs
                   push qword [rax + 8*rdx] ; lhs.rhs
@@ -4244,7 +4253,7 @@ jmp .__for__41
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
+               push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
             pop rdx ; rhs
             pop rax ; lhs
             push qword [rax + 8*rdx] ; lhs.rhs
@@ -4269,7 +4278,7 @@ jmp .__for__41
                         ; This keyword
                            push qword [rbp - 8] ; __this
                      ; RHS
-                        push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
+                        push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
                      pop rdx ; rhs
                      pop rax ; lhs
                      push qword [rax + 8*rdx] ; lhs.rhs
@@ -4287,7 +4296,7 @@ jmp .__for__41
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__char____capacity] ; 
+                  push qword [.__field____main____Vector__Vector____capacity] ; 
                pop rdi ; rhs
                pop rbx ; lhs
          pop rdx ; rhs value
@@ -4303,17 +4312,18 @@ jmp .__for__41
                      ; This keyword
                         push qword [rbp - 8] ; __this
                   ; RHS
-                     push qword [.__field____main____Vector__char____capacity] ; stored index associated with field that is being accessed
+                     push qword [.__field____main____Vector__Vector____capacity] ; stored index associated with field that is being accessed
                   pop rdx ; rhs
                   pop rax ; lhs
                   push qword [rax + 8*rdx] ; lhs.rhs
                pop rdx ; num elements for dimension[0]
-               mov rdi, rdx ; num bytes to allocate (1 byte per element)
+               imul rdx, 8 ; 8 bytes per element
+               mov rdi, rdx ; num bytes to allocate
                call malloc ; allocates edi bytes on heap and stores pointer in rax
                push rax ; __ptr
          ; LHS
             ; Variable Declaration - nData
-               mov rax, qword [rbp - 16]  ; __main____Vector__char__pushBack__block__50__if__51__block__52__nData
+               mov rax, qword [rbp - 16]  ; __main____Vector__Vector__pushBack__block__50__if__51__block__52__nData
          pop rdx ; rhs value
          mov qword [rbp - 16], rdx
          push rdx
@@ -4329,7 +4339,7 @@ jmp .__for__41
                   push rax
             ; LHS
                ; Variable Declaration - i
-                  mov rax, qword [rbp - 24]  ; __main____Vector__char__pushBack__block__50__if__51__block__52__for__53__i
+                  mov rax, qword [rbp - 24]  ; __main____Vector__Vector__pushBack__block__50__if__51__block__52__for__53__i
             pop rdx ; rhs value
             mov qword [rbp - 24], rdx
             push rdx
@@ -4360,7 +4370,7 @@ jmp .__for__41
                         ; This keyword
                            push qword [rbp - 8] ; __this
                      ; RHS
-                        push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
+                        push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
                      pop rdx ; rhs
                      pop rax ; lhs
                      push qword [rax + 8*rdx] ; lhs.rhs
@@ -4385,7 +4395,7 @@ jmp .__for__41
                                  ; This keyword
                                     push qword [rbp - 8] ; __this
                               ; RHS
-                                 push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
+                                 push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
                               pop rdx ; rhs
                               pop rax ; lhs
                               push qword [rax + 8*rdx] ; lhs.rhs
@@ -4394,13 +4404,11 @@ jmp .__for__41
                               push qword [rbp - 24]
                         pop rdx ; __offset
                         pop rax ; __pointer
-                        mov al, byte [rax + rdx] ; pointer + sizeof(data_t) * offset
-                        movzx rax, al ; zero extend because we need to push 64bit to stack
-                        push rax ; push char onto stack
+                        push qword [rax + 8*rdx] ; pointer + sizeof(data_t) * offset
                   ; LHS
                      ; Subscript assignment
                         ; LHS
-                           ; Identifier - char[] nData
+                           ; Identifier - Vector<:char:>[] nData
                               push qword [rbp - 16]
                         ; OFFSET
                            ; Identifier - int i
@@ -4408,7 +4416,7 @@ jmp .__for__41
                         pop rdi ; __offset
                         pop rbx ; __pointer
                   pop rdx ; rhs value
-                  mov byte [rbx + rdi], dl
+                  mov qword [rbx + 8*rdi], rdx
                   push rdx
                ; Statement results can be ignored
                pop rdx
@@ -4425,7 +4433,7 @@ jmp .__for__53
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
+                  push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
                pop rdx ; rhs
                pop rax ; lhs
                push qword [rax + 8*rdx] ; lhs.rhs
@@ -4437,7 +4445,7 @@ jmp .__for__53
          pop rdx
          ; Assignment - '='
          ; RHS
-            ; Identifier - char[] nData
+            ; Identifier - Vector<:char:>[] nData
                push qword [rbp - 16]
          ; LHS
             ; Member Accessor Assignment
@@ -4445,7 +4453,7 @@ jmp .__for__53
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__char____data] ; 
+                  push qword [.__field____main____Vector__Vector____data] ; 
                pop rdi ; rhs
                pop rbx ; lhs
          pop rdx ; rhs value
@@ -4460,10 +4468,8 @@ jmp .__for__53
 ;------------------------------------------------------------------------------------
          ; Assignment - '='
          ; RHS
-         ; Identifier - char val
-         mov al, byte [rbp - -24]
-         movzx rax, al
-         push rax
+         ; Identifier - Vector<:char:> val
+         push qword [rbp - -24]
          ; LHS
          ; Subscript assignment
          ; LHS
@@ -4472,7 +4478,7 @@ jmp .__for__53
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
+               push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
             pop rdx ; rhs
             pop rax ; lhs
             push qword [rax + 8*rdx] ; lhs.rhs
@@ -4482,14 +4488,14 @@ jmp .__for__53
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
+               push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
             pop rdx ; rhs
             pop rax ; lhs
             push qword [rax + 8*rdx] ; lhs.rhs
          pop rdi ; __offset
          pop rbx ; __pointer
          pop rdx ; rhs value
-         mov byte [rbx + rdi], dl
+         mov qword [rbx + 8*rdi], rdx
          push rdx
          ; Statement results can be ignored
          pop rdx
@@ -4500,7 +4506,7 @@ jmp .__for__53
          ; This keyword
             push qword [rbp - 8] ; __this
          ; RHS
-         push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
+         push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
          pop rdx ; rhs
          pop rax ; lhs
          push qword [rax + 8*rdx] ; lhs.rhs
@@ -4511,7 +4517,7 @@ jmp .__for__53
          ; This keyword
             push qword [rbp - 8] ; __this
          ; RHS
-         push qword [.__field____main____Vector__char____size] ; size
+         push qword [.__field____main____Vector__Vector____size] ; size
          pop rdi ; rhs
          pop rbx ; lhs
          mov rax, qword [rbx + 8*rdi]
@@ -4525,14 +4531,14 @@ jmp .__for__53
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__char____pushBack__char:
-         ; End Method Declaration - .__method____main____Vector__char____pushBack__char
+         .__end__method____main____Vector__Vector____pushBack__Vector:
+         ; End Method Declaration - .__method____main____Vector__Vector____pushBack__Vector
 ;---------------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:char:>::popBack() -> char
-         jmp .__end__method____main____Vector__char____popBack
-         .__method____main____Vector__char____popBack:
+         ; Method Declaration - Vector<:Vector<:char:>:>::popBack() -> Vector<:char:>
+         jmp .__end__method____main____Vector__Vector____popBack
+         .__method____main____Vector__Vector____popBack:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -4554,7 +4560,7 @@ jmp .__for__53
             ; This keyword
                push qword [rbp - 8] ; __this
          ; RHS
-            push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
+            push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
          pop rdx ; rhs
          pop rax ; lhs
          push qword [rax + 8*rdx] ; lhs.rhs
@@ -4566,7 +4572,7 @@ jmp .__for__53
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
+                  push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
                pop rdx ; rhs
                pop rax ; lhs
                push qword [rax + 8*rdx] ; lhs.rhs
@@ -4577,7 +4583,7 @@ jmp .__for__53
                   ; This keyword
                      push qword [rbp - 8] ; __this
                ; RHS
-                  push qword [.__field____main____Vector__char____size] ; size
+                  push qword [.__field____main____Vector__Vector____size] ; size
                pop rdi ; rhs
                pop rbx ; lhs
                mov rax, qword [rbx + 8*rdi]
@@ -4586,10 +4592,8 @@ jmp .__for__53
          push rax ; push result
          pop rdx ; __offset
          pop rax ; __pointer
-         mov al, byte [rax + rdx] ; pointer + sizeof(data_t) * offset
-         movzx rax, al ; zero extend because we need to push 64bit to stack
-         push rax ; push char onto stack
-         pop rax ; return value (char)
+         push qword [rax + 8*rdx] ; pointer + sizeof(data_t) * offset
+         pop rax ; return value (Vector<:char:>)
          ; Clean up stack and return
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
@@ -4599,14 +4603,14 @@ jmp .__for__53
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__char____popBack:
-         ; End Method Declaration - .__method____main____Vector__char____popBack
+         .__end__method____main____Vector__Vector____popBack:
+         ; End Method Declaration - .__method____main____Vector__Vector____popBack
 ;---------------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:char:>::clear() -> void
-         jmp .__end__method____main____Vector__char____clear
-         .__method____main____Vector__char____clear:
+         ; Method Declaration - Vector<:Vector<:char:>:>::clear() -> void
+         jmp .__end__method____main____Vector__Vector____clear
+         .__method____main____Vector__Vector____clear:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -4631,7 +4635,7 @@ jmp .__for__53
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__char____size] ; stored index associated with field that is being accessed
+               push qword [.__field____main____Vector__Vector____size] ; stored index associated with field that is being accessed
             pop rdx ; rhs
             pop rax ; lhs
             push qword [rax + 8*rdx] ; lhs.rhs
@@ -4649,7 +4653,7 @@ jmp .__for__53
          cmp rax, 0 ; __cond
          je .__endwhile__57
          ; Body
-         ; Method Call - Vector<:char:>::popBack() -> char
+         ; Method Call - Vector<:Vector<:char:>:>::popBack() -> Vector<:char:>
          ; Make space for 0 arg(s) and object parameter
          sub rsp, 8
          ; LHS
@@ -4659,7 +4663,7 @@ jmp .__for__53
          mov qword [rsp + 0], rax ; place as first parameter
          ; RHS
          ; Arguments
-         call .__method____main____Vector__char____popBack
+         call .__method____main____Vector__Vector____popBack
          ; Remove args
          add rsp, 8
          ; Push return value
@@ -4675,14 +4679,14 @@ jmp .__for__53
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__char____clear:
-         ; End Method Declaration - .__method____main____Vector__char____clear
+         .__end__method____main____Vector__Vector____clear:
+         ; End Method Declaration - .__method____main____Vector__Vector____clear
 ;---------------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:char:>::get(int) -> char
-         jmp .__end__method____main____Vector__char____get__int
-         .__method____main____Vector__char____get__int:
+         ; Method Declaration - Vector<:Vector<:char:>:>::get(int) -> Vector<:char:>
+         jmp .__end__method____main____Vector__Vector____get__int
+         .__method____main____Vector__Vector____get__int:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -4693,7 +4697,7 @@ jmp .__for__53
          mov rdx, qword [rbp + 16] ; param passed 'this'
          mov qword [rbp - 8], rdx ; save this to a local
          ; Parameters
-         ; Param: index [rbp + 24] (__main____Vector__char__get__index)
+         ; Param: index [rbp + 24] (__main____Vector__Vector__get__index)
          ; Body
 ;---------------------------------------------------------------------------------------
          ; Code Block
@@ -4705,7 +4709,7 @@ jmp .__for__53
             ; This keyword
                push qword [rbp - 8] ; __this
          ; RHS
-            push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
+            push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
          pop rdx ; rhs
          pop rax ; lhs
          push qword [rax + 8*rdx] ; lhs.rhs
@@ -4714,10 +4718,8 @@ jmp .__for__53
          push qword [rbp - -24]
          pop rdx ; __offset
          pop rax ; __pointer
-         mov al, byte [rax + rdx] ; pointer + sizeof(data_t) * offset
-         movzx rax, al ; zero extend because we need to push 64bit to stack
-         push rax ; push char onto stack
-         pop rax ; return value (char)
+         push qword [rax + 8*rdx] ; pointer + sizeof(data_t) * offset
+         pop rax ; return value (Vector<:char:>)
          ; Clean up stack and return
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
@@ -4727,14 +4729,14 @@ jmp .__for__53
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__char____get__int:
-         ; End Method Declaration - .__method____main____Vector__char____get__int
+         .__end__method____main____Vector__Vector____get__int:
+         ; End Method Declaration - .__method____main____Vector__Vector____get__int
 ;---------------------------------------------------------------------------------------------
 
 ;---------------------------------------------------------------------------------------------
-         ; Method Declaration - Vector<:char:>::set(int, char) -> void
-         jmp .__end__method____main____Vector__char____set__int__char
-         .__method____main____Vector__char____set__int__char:
+         ; Method Declaration - Vector<:Vector<:char:>:>::set(int, Vector<:char:>) -> void
+         jmp .__end__method____main____Vector__Vector____set__int__Vector
+         .__method____main____Vector__Vector____set__int__Vector:
          ; Function Header:
          ; Setup stack frame
          push rbp
@@ -4745,17 +4747,15 @@ jmp .__for__53
          mov rdx, qword [rbp + 16] ; param passed 'this'
          mov qword [rbp - 8], rdx ; save this to a local
          ; Parameters
-         ; Param: index [rbp + 24] (__main____Vector__char__set__index)
-         ; Param: value [rbp + 32] (__main____Vector__char__set__value)
+         ; Param: index [rbp + 24] (__main____Vector__Vector__set__index)
+         ; Param: value [rbp + 32] (__main____Vector__Vector__set__value)
          ; Body
 ;---------------------------------------------------------------------------------------
          ; Code Block
          ; Assignment - '='
          ; RHS
-         ; Identifier - char value
-         mov al, byte [rbp - -32]
-         movzx rax, al
-         push rax
+         ; Identifier - Vector<:char:> value
+         push qword [rbp - -32]
          ; LHS
          ; Subscript assignment
          ; LHS
@@ -4764,7 +4764,7 @@ jmp .__for__53
                ; This keyword
                   push qword [rbp - 8] ; __this
             ; RHS
-               push qword [.__field____main____Vector__char____data] ; stored index associated with field that is being accessed
+               push qword [.__field____main____Vector__Vector____data] ; stored index associated with field that is being accessed
             pop rdx ; rhs
             pop rax ; lhs
             push qword [rax + 8*rdx] ; lhs.rhs
@@ -4774,7 +4774,7 @@ jmp .__for__53
          pop rdi ; __offset
          pop rbx ; __pointer
          pop rdx ; rhs value
-         mov byte [rbx + rdi], dl
+         mov qword [rbx + 8*rdi], rdx
          push rdx
          ; Statement results can be ignored
          pop rdx
@@ -4783,12 +4783,12 @@ jmp .__for__53
          mov rsp, rbp ; remove local vars + unpopped pushes
          pop rbp
          ret
-         .__end__method____main____Vector__char____set__int__char:
-         ; End Method Declaration - .__method____main____Vector__char____set__int__char
+         .__end__method____main____Vector__Vector____set__int__Vector:
+         ; End Method Declaration - .__method____main____Vector__Vector____set__int__Vector
 ;---------------------------------------------------------------------------------------------
 
-.__endclass____main____Vector__char:
-         ; End Class Declaration - __main____Vector__char
+.__endclass____main____Vector__Vector:
+         ; End Class Declaration - __main____Vector__Vector
 ; ================================================================================================
 
          ; End Class Template - 

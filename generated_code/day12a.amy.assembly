@@ -973,722 +973,6 @@ __endOfLibrary:
       //==================================================================
 
       //==================================================================
-      // Class Declaration - __main____Vector__Vector inherits __builtin____main__Object
-         // Creating Dispatch Table
-            MALLOC __dtable____main____Vector__Vector 5
-            // Populate Dispatch Table
-            ASSIGN __dtable____main____Vector__Vector[0] __method____main____Vector__Vector____pushBack__Vector
-            ASSIGN __dtable____main____Vector__Vector[1] __method____main____Vector__Vector____popBack
-            ASSIGN __dtable____main____Vector__Vector[2] __method____main____Vector__Vector____clear
-            ASSIGN __dtable____main____Vector__Vector[3] __method____main____Vector__Vector____get__int
-            ASSIGN __dtable____main____Vector__Vector[4] __method____main____Vector__Vector____set__int__Vector
-         //---------------------------------------------------------------
-         // Field - Vector<:int:>[] Vector<:Vector<:int:>:>::data
-         ASSIGN __field____main____Vector__Vector____data 1
-         //---------------------------------------------------------------
-         //---------------------------------------------------------------
-         // Field - int Vector<:Vector<:int:>:>::size
-         ASSIGN __field____main____Vector__Vector____size 2
-         //---------------------------------------------------------------
-         //---------------------------------------------------------------
-         // Field - int Vector<:Vector<:int:>:>::capacity
-         ASSIGN __field____main____Vector__Vector____capacity 3
-         //---------------------------------------------------------------
-      // skip over class methods
-      JUMP __endclass____main____Vector__Vector
-         //---------------------------------------------------------------
-         // Constructor Declaration - Vector<:Vector<:int:>:>::Vector() -> Vector<:Vector<:int:>:>
-         JUMP __end__ctor____main____Vector__Vector____Vector
-         __ctor____main____Vector__Vector____Vector:
-            // Creating Class Instance
-               MALLOC __this 4
-               // Add Dispatch Table
-               ASSIGN __this[0] __dtable____main____Vector__Vector
-            // Parameters
-            // Body
-               //---------------------------------------------------------
-               // Code Block
-                  // Assignment - '='
-                     // RHS
-                        // Int Literal
-                           PUSH 10
-                     // LHS
-                        // Member Accessor Assignment
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                              PUSH __field____main____Vector__Vector____capacity
-                           POP __child
-                           POP __parent
-                           POP __rhs
-                     ASSIGN __parent[__child] __rhs
-                     PUSH __rhs
-                  // Statement results can be ignored
-                  POP __void
-                  // Assignment - '='
-                     // RHS
-                        // Int Literal
-                           PUSH 0
-                     // LHS
-                        // Member Accessor Assignment
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                              PUSH __field____main____Vector__Vector____size
-                           POP __child
-                           POP __parent
-                           POP __rhs
-                     ASSIGN __parent[__child] __rhs
-                     PUSH __rhs
-                  // Statement results can be ignored
-                  POP __void
-                  // Assignment - '='
-                     // RHS
-                        // Array Allocator
-                           // Member Accessor
-                              // LHS
-                                 // This keyword
-                                    PUSH __this
-                              // RHS
-                                 PUSH __field____main____Vector__Vector____capacity
-                              POP __child
-                              POP __parent
-                              PUSH __parent[__child]
-                           POP __size
-                           MALLOC __ptr __size
-                           PUSH __ptr
-                     // LHS
-                        // Member Accessor Assignment
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                              PUSH __field____main____Vector__Vector____data
-                           POP __child
-                           POP __parent
-                           POP __rhs
-                     ASSIGN __parent[__child] __rhs
-                     PUSH __rhs
-                  // Statement results can be ignored
-                  POP __void
-               //---------------------------------------------------------
-            RETURN __this
-         __end__ctor____main____Vector__Vector____Vector:
-         // End Constructor Declaration - __ctor____main____Vector__Vector____Vector
-         //---------------------------------------------------------------
-
-         //---------------------------------------------------------------
-         // Constructor Declaration - Vector<:Vector<:int:>:>::Vector(int) -> Vector<:Vector<:int:>:>
-         JUMP __end__ctor____main____Vector__Vector____Vector__int
-         __ctor____main____Vector__Vector____Vector__int:
-            // Creating Class Instance
-               MALLOC __this 4
-               // Add Dispatch Table
-               ASSIGN __this[0] __dtable____main____Vector__Vector
-            // Parameters
-               // Param: size
-               STACKGET __main____Vector__Vector__Vector__size 0
-            // Body
-               //---------------------------------------------------------
-               // Code Block
-                  // Assignment - '='
-                     // RHS
-                        // Addition
-                           // LHS
-                              // Identifier - size
-                                 PUSH __main____Vector__Vector__Vector__size
-                           // RHS
-                              // Int Literal
-                                 PUSH 10
-                           POP __rhs
-                           POP __lhs
-                           ADD __res __lhs __rhs
-                           PUSH __res
-                     // LHS
-                        // Member Accessor Assignment
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                              PUSH __field____main____Vector__Vector____capacity
-                           POP __child
-                           POP __parent
-                           POP __rhs
-                     ASSIGN __parent[__child] __rhs
-                     PUSH __rhs
-                  // Statement results can be ignored
-                  POP __void
-                  // Assignment - '='
-                     // RHS
-                        // Identifier - size
-                           PUSH __main____Vector__Vector__Vector__size
-                     // LHS
-                        // Member Accessor Assignment
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                              PUSH __field____main____Vector__Vector____size
-                           POP __child
-                           POP __parent
-                           POP __rhs
-                     ASSIGN __parent[__child] __rhs
-                     PUSH __rhs
-                  // Statement results can be ignored
-                  POP __void
-                  // Assignment - '='
-                     // RHS
-                        // Array Allocator
-                           // Member Accessor
-                              // LHS
-                                 // This keyword
-                                    PUSH __this
-                              // RHS
-                                 PUSH __field____main____Vector__Vector____capacity
-                              POP __child
-                              POP __parent
-                              PUSH __parent[__child]
-                           POP __size
-                           MALLOC __ptr __size
-                           PUSH __ptr
-                     // LHS
-                        // Member Accessor Assignment
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                              PUSH __field____main____Vector__Vector____data
-                           POP __child
-                           POP __parent
-                           POP __rhs
-                     ASSIGN __parent[__child] __rhs
-                     PUSH __rhs
-                  // Statement results can be ignored
-                  POP __void
-               //---------------------------------------------------------
-            RETURN __this
-         __end__ctor____main____Vector__Vector____Vector__int:
-         // End Constructor Declaration - __ctor____main____Vector__Vector____Vector__int
-         //---------------------------------------------------------------
-
-         //---------------------------------------------------------------
-         // Method Declaration - Vector<:Vector<:int:>:>::pushBack(Vector<:int:>) -> void
-         JUMP __end__method____main____Vector__Vector____pushBack__Vector
-         __method____main____Vector__Vector____pushBack__Vector:
-            // Class Instance
-               STACKGET __this 0
-            // Parameters
-               // Param: val
-               STACKGET __main____Vector__Vector__pushBack__val 1
-            // Body
-               //---------------------------------------------------------
-               // Code Block
-                  //------------------------------------------------------
-                  // If-Statement
-                     // Condition
-                        // Greater Than or Equal to
-                           // LHS
-                              // Addition
-                                 // LHS
-                                    // Member Accessor
-                                       // LHS
-                                          // This keyword
-                                             PUSH __this
-                                       // RHS
-                                          PUSH __field____main____Vector__Vector____size
-                                       POP __child
-                                       POP __parent
-                                       PUSH __parent[__child]
-                                 // RHS
-                                    // Int Literal
-                                       PUSH 1
-                                 POP __rhs
-                                 POP __lhs
-                                 ADD __res __lhs __rhs
-                                 PUSH __res
-                           // RHS
-                              // Member Accessor
-                                 // LHS
-                                    // This keyword
-                                       PUSH __this
-                                 // RHS
-                                    PUSH __field____main____Vector__Vector____capacity
-                                 POP __child
-                                 POP __parent
-                                 PUSH __parent[__child]
-                           POP __rhs
-                           POP __lhs
-                           GE __res __lhs __rhs
-                           PUSH __res
-                        POP __cond
-                        CMP __cond 0
-                        JEQ __endif__15
-                     // Body
-                        //------------------------------------------------
-                        // Code Block
-                           // Assignment - '='
-                              // RHS
-                                 // Multiplication
-                                    // LHS
-                                       // Member Accessor
-                                          // LHS
-                                             // This keyword
-                                                PUSH __this
-                                          // RHS
-                                             PUSH __field____main____Vector__Vector____capacity
-                                          POP __child
-                                          POP __parent
-                                          PUSH __parent[__child]
-                                    // RHS
-                                       // Int Literal
-                                          PUSH 2
-                                    POP __rhs
-                                    POP __lhs
-                                    MULTIPLY __res __lhs __rhs
-                                    PUSH __res
-                              // LHS
-                                 // Member Accessor Assignment
-                                    // LHS
-                                       // This keyword
-                                          PUSH __this
-                                    // RHS
-                                       PUSH __field____main____Vector__Vector____capacity
-                                    POP __child
-                                    POP __parent
-                                    POP __rhs
-                              ASSIGN __parent[__child] __rhs
-                              PUSH __rhs
-                           // Statement results can be ignored
-                           POP __void
-                           // Assignment - '='
-                              // RHS
-                                 // Array Allocator
-                                    // Member Accessor
-                                       // LHS
-                                          // This keyword
-                                             PUSH __this
-                                       // RHS
-                                          PUSH __field____main____Vector__Vector____capacity
-                                       POP __child
-                                       POP __parent
-                                       PUSH __parent[__child]
-                                    POP __size
-                                    MALLOC __ptr __size
-                                    PUSH __ptr
-                              // LHS
-                                 // Variable Declaration
-                                    ASSIGN __main____Vector__Vector__pushBack__block__14__if__15__block__16__nData 0
-                              POP __rhs
-                              ASSIGN __main____Vector__Vector__pushBack__block__14__if__15__block__16__nData __rhs
-                              PUSH __rhs
-                           // Statement results can be ignored
-                           POP __void
-                           //---------------------------------------------
-                           // For-Loop
-                           // Init
-                              // Assignment - '='
-                                 // RHS
-                                    // Int Literal
-                                       PUSH 0
-                                 // LHS
-                                    // Variable Declaration
-                                       ASSIGN __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i 0
-                                 POP __rhs
-                                 ASSIGN __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i __rhs
-                                 PUSH __rhs
-                           JUMP __forcond__17
-                           __for__17:
-                              // Update
-                                 // Pre-Increment
-                                    // RHS
-                                       // Identifier - i
-                                          PUSH __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i
-                                    POP __rhs
-                                    ADD __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i 1
-                                    ASSIGN __res __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i
-                                    PUSH __res
-                              __forcond__17:
-                              // Condition
-                                 // Less Than
-                                    // LHS
-                                       // Identifier - i
-                                          PUSH __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i
-                                    // RHS
-                                       // Member Accessor
-                                          // LHS
-                                             // This keyword
-                                                PUSH __this
-                                          // RHS
-                                             PUSH __field____main____Vector__Vector____size
-                                          POP __child
-                                          POP __parent
-                                          PUSH __parent[__child]
-                                    POP __rhs
-                                    POP __lhs
-                                    LT __res __lhs __rhs
-                                    PUSH __res
-                                 POP __cond
-                                 CMP __cond 0
-                                 JEQ __endfor__17
-                              // Body
-                                 //---------------------------------------
-                                 // Code Block
-                                    // Assignment - '='
-                                       // RHS
-                                          // Subscript
-                                             // LHS
-                                                // Member Accessor
-                                                   // LHS
-                                                      // This keyword
-                                                         PUSH __this
-                                                   // RHS
-                                                      PUSH __field____main____Vector__Vector____data
-                                                   POP __child
-                                                   POP __parent
-                                                   PUSH __parent[__child]
-                                             // OFFSET
-                                                // Identifier - i
-                                                   PUSH __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i
-                                             POP __offset
-                                             POP __pointer
-                                             PUSH __pointer[__offset]
-                                       // LHS
-                                          // Subscript assignment
-                                             // LHS
-                                                // Identifier - nData
-                                                   PUSH __main____Vector__Vector__pushBack__block__14__if__15__block__16__nData
-                                             // OFFSET
-                                                // Identifier - i
-                                                   PUSH __main____Vector__Vector__pushBack__block__14__if__15__block__16__for__17__i
-                                             POP __offset
-                                             POP __pointer
-                                       POP __rhs
-                                       ASSIGN __pointer[__offset] __rhs
-                                       PUSH __rhs
-                                    // Statement results can be ignored
-                                    POP __void
-                                 //---------------------------------------
-                              // Repeat
-                              JUMP __for__17
-                              // End of For
-                              __endfor__17:
-                           //---------------------------------------------
-                           // Free Operator
-                              // RHS
-                                 // Member Accessor
-                                    // LHS
-                                       // This keyword
-                                          PUSH __this
-                                    // RHS
-                                       PUSH __field____main____Vector__Vector____data
-                                    POP __child
-                                    POP __parent
-                                    PUSH __parent[__child]
-                              // Free array
-                              POP __array
-                              FREE __array
-                              PUSH __array
-                           // Statement results can be ignored
-                           POP __void
-                           // Assignment - '='
-                              // RHS
-                                 // Identifier - nData
-                                    PUSH __main____Vector__Vector__pushBack__block__14__if__15__block__16__nData
-                              // LHS
-                                 // Member Accessor Assignment
-                                    // LHS
-                                       // This keyword
-                                          PUSH __this
-                                    // RHS
-                                       PUSH __field____main____Vector__Vector____data
-                                    POP __child
-                                    POP __parent
-                                    POP __rhs
-                              ASSIGN __parent[__child] __rhs
-                              PUSH __rhs
-                           // Statement results can be ignored
-                           POP __void
-                        //------------------------------------------------
-                     JUMP __endif__15
-                     // End of if
-                     __endif__15:
-                  //------------------------------------------------------
-                  // Assignment - '='
-                     // RHS
-                        // Identifier - val
-                           PUSH __main____Vector__Vector__pushBack__val
-                     // LHS
-                        // Subscript assignment
-                           // LHS
-                              // Member Accessor
-                                 // LHS
-                                    // This keyword
-                                       PUSH __this
-                                 // RHS
-                                    PUSH __field____main____Vector__Vector____data
-                                 POP __child
-                                 POP __parent
-                                 PUSH __parent[__child]
-                           // OFFSET
-                              // Member Accessor
-                                 // LHS
-                                    // This keyword
-                                       PUSH __this
-                                 // RHS
-                                    PUSH __field____main____Vector__Vector____size
-                                 POP __child
-                                 POP __parent
-                                 PUSH __parent[__child]
-                           POP __offset
-                           POP __pointer
-                     POP __rhs
-                     ASSIGN __pointer[__offset] __rhs
-                     PUSH __rhs
-                  // Statement results can be ignored
-                  POP __void
-                  // Pre-Increment
-                     // RHS
-                        // Member Accessor
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                              PUSH __field____main____Vector__Vector____size
-                           POP __child
-                           POP __parent
-                           PUSH __parent[__child]
-                     POP __rhs
-                     // LHS
-                        // Member Accessor Assignment
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                              PUSH __field____main____Vector__Vector____size
-                           POP __child
-                           POP __parent
-                           ADD __parent[__child] __parent[__child] 1
-                           ASSIGN __res __parent[__child]
-                     PUSH __res
-                  // Statement results can be ignored
-                  POP __void
-               //---------------------------------------------------------
-            RETURN 0
-         __end__method____main____Vector__Vector____pushBack__Vector:
-         // End Method Declaration - __method____main____Vector__Vector____pushBack__Vector
-         //---------------------------------------------------------------
-
-         //---------------------------------------------------------------
-         // Method Declaration - Vector<:Vector<:int:>:>::popBack() -> Vector<:int:>
-         JUMP __end__method____main____Vector__Vector____popBack
-         __method____main____Vector__Vector____popBack:
-            // Class Instance
-               STACKGET __this 0
-            // Parameters
-            // Body
-               //---------------------------------------------------------
-               // Code Block
-                  // Return
-                     // Subscript
-                        // LHS
-                           // Member Accessor
-                              // LHS
-                                 // This keyword
-                                    PUSH __this
-                              // RHS
-                                 PUSH __field____main____Vector__Vector____data
-                              POP __child
-                              POP __parent
-                              PUSH __parent[__child]
-                        // OFFSET
-                           // Pre-Decrement
-                              // RHS
-                                 // Member Accessor
-                                    // LHS
-                                       // This keyword
-                                          PUSH __this
-                                    // RHS
-                                       PUSH __field____main____Vector__Vector____size
-                                    POP __child
-                                    POP __parent
-                                    PUSH __parent[__child]
-                              POP __rhs
-                              // LHS
-                                 // Member Accessor Assignment
-                                    // LHS
-                                       // This keyword
-                                          PUSH __this
-                                    // RHS
-                                       PUSH __field____main____Vector__Vector____size
-                                    POP __child
-                                    POP __parent
-                                    SUBTRACT __parent[__child] __parent[__child] 1
-                                    ASSIGN __res __parent[__child]
-                              PUSH __res
-                        POP __offset
-                        POP __pointer
-                        PUSH __pointer[__offset]
-                     POP __rVal
-                     RETURN __rVal
-               //---------------------------------------------------------
-            RETURN 0
-         __end__method____main____Vector__Vector____popBack:
-         // End Method Declaration - __method____main____Vector__Vector____popBack
-         //---------------------------------------------------------------
-
-         //---------------------------------------------------------------
-         // Method Declaration - Vector<:Vector<:int:>:>::clear() -> void
-         JUMP __end__method____main____Vector__Vector____clear
-         __method____main____Vector__Vector____clear:
-            // Class Instance
-               STACKGET __this 0
-            // Parameters
-            // Body
-               //---------------------------------------------------------
-               // Code Block
-                  //------------------------------------------------------
-                  // While-Loop
-                  __while__21:
-                     // Condition
-                        // Greater Than
-                           // LHS
-                              // Member Accessor
-                                 // LHS
-                                    // This keyword
-                                       PUSH __this
-                                 // RHS
-                                    PUSH __field____main____Vector__Vector____size
-                                 POP __child
-                                 POP __parent
-                                 PUSH __parent[__child]
-                           // RHS
-                              // Int Literal
-                                 PUSH 0
-                           POP __rhs
-                           POP __lhs
-                           GT __res __lhs __rhs
-                           PUSH __res
-                        POP __cond
-                        CMP __cond 0
-                        JEQ __endwhile__21
-                     // Body
-                        // Method Call - Vector<:Vector<:int:>:>::popBack() -> Vector<:int:>
-                           // LHS
-                              // This keyword
-                                 PUSH __this
-                           // RHS
-                           // Arguments
-                           POP __obj
-                           // Pushing args in reverse order
-                           PUSH __obj
-                           CALL __method____main____Vector__Vector____popBack
-                           POP __void
-                           // Remove args
-                           RESPONSE __retval
-                           PUSH __retval
-                        // Statement results can be ignored
-                        POP __void
-                     JUMP __while__21
-                     // End of While
-                     __endwhile__21:
-                  //------------------------------------------------------
-               //---------------------------------------------------------
-            RETURN 0
-         __end__method____main____Vector__Vector____clear:
-         // End Method Declaration - __method____main____Vector__Vector____clear
-         //---------------------------------------------------------------
-
-         //---------------------------------------------------------------
-         // Method Declaration - Vector<:Vector<:int:>:>::get(int) -> Vector<:int:>
-         JUMP __end__method____main____Vector__Vector____get__int
-         __method____main____Vector__Vector____get__int:
-            // Class Instance
-               STACKGET __this 0
-            // Parameters
-               // Param: index
-               STACKGET __main____Vector__Vector__get__index 1
-            // Body
-               //---------------------------------------------------------
-               // Code Block
-                  // Return
-                     // Subscript
-                        // LHS
-                           // Member Accessor
-                              // LHS
-                                 // This keyword
-                                    PUSH __this
-                              // RHS
-                                 PUSH __field____main____Vector__Vector____data
-                              POP __child
-                              POP __parent
-                              PUSH __parent[__child]
-                        // OFFSET
-                           // Identifier - index
-                              PUSH __main____Vector__Vector__get__index
-                        POP __offset
-                        POP __pointer
-                        PUSH __pointer[__offset]
-                     POP __rVal
-                     RETURN __rVal
-               //---------------------------------------------------------
-            RETURN 0
-         __end__method____main____Vector__Vector____get__int:
-         // End Method Declaration - __method____main____Vector__Vector____get__int
-         //---------------------------------------------------------------
-
-         //---------------------------------------------------------------
-         // Method Declaration - Vector<:Vector<:int:>:>::set(int, Vector<:int:>) -> void
-         JUMP __end__method____main____Vector__Vector____set__int__Vector
-         __method____main____Vector__Vector____set__int__Vector:
-            // Class Instance
-               STACKGET __this 0
-            // Parameters
-               // Param: index
-               STACKGET __main____Vector__Vector__set__index 1
-               // Param: value
-               STACKGET __main____Vector__Vector__set__value 2
-            // Body
-               //---------------------------------------------------------
-               // Code Block
-                  // Assignment - '='
-                     // RHS
-                        // Identifier - value
-                           PUSH __main____Vector__Vector__set__value
-                     // LHS
-                        // Subscript assignment
-                           // LHS
-                              // Member Accessor
-                                 // LHS
-                                    // This keyword
-                                       PUSH __this
-                                 // RHS
-                                    PUSH __field____main____Vector__Vector____data
-                                 POP __child
-                                 POP __parent
-                                 PUSH __parent[__child]
-                           // OFFSET
-                              // Identifier - index
-                                 PUSH __main____Vector__Vector__set__index
-                           POP __offset
-                           POP __pointer
-                     POP __rhs
-                     ASSIGN __pointer[__offset] __rhs
-                     PUSH __rhs
-                  // Statement results can be ignored
-                  POP __void
-               //---------------------------------------------------------
-            RETURN 0
-         __end__method____main____Vector__Vector____set__int__Vector:
-         // End Method Declaration - __method____main____Vector__Vector____set__int__Vector
-         //---------------------------------------------------------------
-
-      __endclass____main____Vector__Vector:
-      // End Class Declaration - __main____Vector__Vector
-      //==================================================================
-
-      //==================================================================
       // Class Declaration - __main____Vector__int inherits __builtin____main__Object
          // Creating Dispatch Table
             MALLOC __dtable____main____Vector__int 5
@@ -1940,7 +1224,7 @@ __endOfLibrary:
                            PUSH __res
                         POP __cond
                         CMP __cond 0
-                        JEQ __endif__27
+                        JEQ __endif__15
                      // Body
                         //------------------------------------------------
                         // Code Block
@@ -1995,9 +1279,9 @@ __endOfLibrary:
                                     PUSH __ptr
                               // LHS
                                  // Variable Declaration
-                                    ASSIGN __main____Vector__int__pushBack__block__26__if__27__block__28__nData 0
+                                    ASSIGN __main____Vector__int__pushBack__block__14__if__15__block__16__nData 0
                               POP __rhs
-                              ASSIGN __main____Vector__int__pushBack__block__26__if__27__block__28__nData __rhs
+                              ASSIGN __main____Vector__int__pushBack__block__14__if__15__block__16__nData __rhs
                               PUSH __rhs
                            // Statement results can be ignored
                            POP __void
@@ -2010,27 +1294,27 @@ __endOfLibrary:
                                        PUSH 0
                                  // LHS
                                     // Variable Declaration
-                                       ASSIGN __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i 0
+                                       ASSIGN __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i 0
                                  POP __rhs
-                                 ASSIGN __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i __rhs
+                                 ASSIGN __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i __rhs
                                  PUSH __rhs
-                           JUMP __forcond__29
-                           __for__29:
+                           JUMP __forcond__17
+                           __for__17:
                               // Update
                                  // Pre-Increment
                                     // RHS
                                        // Identifier - i
-                                          PUSH __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i
+                                          PUSH __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i
                                     POP __rhs
-                                    ADD __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i 1
-                                    ASSIGN __res __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i
+                                    ADD __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i 1
+                                    ASSIGN __res __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i
                                     PUSH __res
-                              __forcond__29:
+                              __forcond__17:
                               // Condition
                                  // Less Than
                                     // LHS
                                        // Identifier - i
-                                          PUSH __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i
+                                          PUSH __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i
                                     // RHS
                                        // Member Accessor
                                           // LHS
@@ -2047,7 +1331,7 @@ __endOfLibrary:
                                     PUSH __res
                                  POP __cond
                                  CMP __cond 0
-                                 JEQ __endfor__29
+                                 JEQ __endfor__17
                               // Body
                                  //---------------------------------------
                                  // Code Block
@@ -2066,7 +1350,7 @@ __endOfLibrary:
                                                    PUSH __parent[__child]
                                              // OFFSET
                                                 // Identifier - i
-                                                   PUSH __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i
+                                                   PUSH __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i
                                              POP __offset
                                              POP __pointer
                                              PUSH __pointer[__offset]
@@ -2074,10 +1358,10 @@ __endOfLibrary:
                                           // Subscript assignment
                                              // LHS
                                                 // Identifier - nData
-                                                   PUSH __main____Vector__int__pushBack__block__26__if__27__block__28__nData
+                                                   PUSH __main____Vector__int__pushBack__block__14__if__15__block__16__nData
                                              // OFFSET
                                                 // Identifier - i
-                                                   PUSH __main____Vector__int__pushBack__block__26__if__27__block__28__for__29__i
+                                                   PUSH __main____Vector__int__pushBack__block__14__if__15__block__16__for__17__i
                                              POP __offset
                                              POP __pointer
                                        POP __rhs
@@ -2087,9 +1371,9 @@ __endOfLibrary:
                                     POP __void
                                  //---------------------------------------
                               // Repeat
-                              JUMP __for__29
+                              JUMP __for__17
                               // End of For
-                              __endfor__29:
+                              __endfor__17:
                            //---------------------------------------------
                            // Free Operator
                               // RHS
@@ -2111,7 +1395,7 @@ __endOfLibrary:
                            // Assignment - '='
                               // RHS
                                  // Identifier - nData
-                                    PUSH __main____Vector__int__pushBack__block__26__if__27__block__28__nData
+                                    PUSH __main____Vector__int__pushBack__block__14__if__15__block__16__nData
                               // LHS
                                  // Member Accessor Assignment
                                     // LHS
@@ -2127,9 +1411,9 @@ __endOfLibrary:
                            // Statement results can be ignored
                            POP __void
                         //------------------------------------------------
-                     JUMP __endif__27
+                     JUMP __endif__15
                      // End of if
-                     __endif__27:
+                     __endif__15:
                   //------------------------------------------------------
                   // Assignment - '='
                      // RHS
@@ -2266,7 +1550,7 @@ __endOfLibrary:
                // Code Block
                   //------------------------------------------------------
                   // While-Loop
-                  __while__33:
+                  __while__21:
                      // Condition
                         // Greater Than
                            // LHS
@@ -2288,7 +1572,7 @@ __endOfLibrary:
                            PUSH __res
                         POP __cond
                         CMP __cond 0
-                        JEQ __endwhile__33
+                        JEQ __endwhile__21
                      // Body
                         // Method Call - Vector<:int:>::popBack() -> int
                            // LHS
@@ -2306,9 +1590,9 @@ __endOfLibrary:
                            PUSH __retval
                         // Statement results can be ignored
                         POP __void
-                     JUMP __while__33
+                     JUMP __while__21
                      // End of While
-                     __endwhile__33:
+                     __endwhile__21:
                   //------------------------------------------------------
                //---------------------------------------------------------
             RETURN 0
@@ -2402,6 +1686,722 @@ __endOfLibrary:
 
       __endclass____main____Vector__int:
       // End Class Declaration - __main____Vector__int
+      //==================================================================
+
+      //==================================================================
+      // Class Declaration - __main____Vector__Vector inherits __builtin____main__Object
+         // Creating Dispatch Table
+            MALLOC __dtable____main____Vector__Vector 5
+            // Populate Dispatch Table
+            ASSIGN __dtable____main____Vector__Vector[0] __method____main____Vector__Vector____pushBack__Vector
+            ASSIGN __dtable____main____Vector__Vector[1] __method____main____Vector__Vector____popBack
+            ASSIGN __dtable____main____Vector__Vector[2] __method____main____Vector__Vector____clear
+            ASSIGN __dtable____main____Vector__Vector[3] __method____main____Vector__Vector____get__int
+            ASSIGN __dtable____main____Vector__Vector[4] __method____main____Vector__Vector____set__int__Vector
+         //---------------------------------------------------------------
+         // Field - Vector<:int:>[] Vector<:Vector<:int:>:>::data
+         ASSIGN __field____main____Vector__Vector____data 1
+         //---------------------------------------------------------------
+         //---------------------------------------------------------------
+         // Field - int Vector<:Vector<:int:>:>::size
+         ASSIGN __field____main____Vector__Vector____size 2
+         //---------------------------------------------------------------
+         //---------------------------------------------------------------
+         // Field - int Vector<:Vector<:int:>:>::capacity
+         ASSIGN __field____main____Vector__Vector____capacity 3
+         //---------------------------------------------------------------
+      // skip over class methods
+      JUMP __endclass____main____Vector__Vector
+         //---------------------------------------------------------------
+         // Constructor Declaration - Vector<:Vector<:int:>:>::Vector() -> Vector<:Vector<:int:>:>
+         JUMP __end__ctor____main____Vector__Vector____Vector
+         __ctor____main____Vector__Vector____Vector:
+            // Creating Class Instance
+               MALLOC __this 4
+               // Add Dispatch Table
+               ASSIGN __this[0] __dtable____main____Vector__Vector
+            // Parameters
+            // Body
+               //---------------------------------------------------------
+               // Code Block
+                  // Assignment - '='
+                     // RHS
+                        // Int Literal
+                           PUSH 10
+                     // LHS
+                        // Member Accessor Assignment
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                              PUSH __field____main____Vector__Vector____capacity
+                           POP __child
+                           POP __parent
+                           POP __rhs
+                     ASSIGN __parent[__child] __rhs
+                     PUSH __rhs
+                  // Statement results can be ignored
+                  POP __void
+                  // Assignment - '='
+                     // RHS
+                        // Int Literal
+                           PUSH 0
+                     // LHS
+                        // Member Accessor Assignment
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                              PUSH __field____main____Vector__Vector____size
+                           POP __child
+                           POP __parent
+                           POP __rhs
+                     ASSIGN __parent[__child] __rhs
+                     PUSH __rhs
+                  // Statement results can be ignored
+                  POP __void
+                  // Assignment - '='
+                     // RHS
+                        // Array Allocator
+                           // Member Accessor
+                              // LHS
+                                 // This keyword
+                                    PUSH __this
+                              // RHS
+                                 PUSH __field____main____Vector__Vector____capacity
+                              POP __child
+                              POP __parent
+                              PUSH __parent[__child]
+                           POP __size
+                           MALLOC __ptr __size
+                           PUSH __ptr
+                     // LHS
+                        // Member Accessor Assignment
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                              PUSH __field____main____Vector__Vector____data
+                           POP __child
+                           POP __parent
+                           POP __rhs
+                     ASSIGN __parent[__child] __rhs
+                     PUSH __rhs
+                  // Statement results can be ignored
+                  POP __void
+               //---------------------------------------------------------
+            RETURN __this
+         __end__ctor____main____Vector__Vector____Vector:
+         // End Constructor Declaration - __ctor____main____Vector__Vector____Vector
+         //---------------------------------------------------------------
+
+         //---------------------------------------------------------------
+         // Constructor Declaration - Vector<:Vector<:int:>:>::Vector(int) -> Vector<:Vector<:int:>:>
+         JUMP __end__ctor____main____Vector__Vector____Vector__int
+         __ctor____main____Vector__Vector____Vector__int:
+            // Creating Class Instance
+               MALLOC __this 4
+               // Add Dispatch Table
+               ASSIGN __this[0] __dtable____main____Vector__Vector
+            // Parameters
+               // Param: size
+               STACKGET __main____Vector__Vector__Vector__size 0
+            // Body
+               //---------------------------------------------------------
+               // Code Block
+                  // Assignment - '='
+                     // RHS
+                        // Addition
+                           // LHS
+                              // Identifier - size
+                                 PUSH __main____Vector__Vector__Vector__size
+                           // RHS
+                              // Int Literal
+                                 PUSH 10
+                           POP __rhs
+                           POP __lhs
+                           ADD __res __lhs __rhs
+                           PUSH __res
+                     // LHS
+                        // Member Accessor Assignment
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                              PUSH __field____main____Vector__Vector____capacity
+                           POP __child
+                           POP __parent
+                           POP __rhs
+                     ASSIGN __parent[__child] __rhs
+                     PUSH __rhs
+                  // Statement results can be ignored
+                  POP __void
+                  // Assignment - '='
+                     // RHS
+                        // Identifier - size
+                           PUSH __main____Vector__Vector__Vector__size
+                     // LHS
+                        // Member Accessor Assignment
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                              PUSH __field____main____Vector__Vector____size
+                           POP __child
+                           POP __parent
+                           POP __rhs
+                     ASSIGN __parent[__child] __rhs
+                     PUSH __rhs
+                  // Statement results can be ignored
+                  POP __void
+                  // Assignment - '='
+                     // RHS
+                        // Array Allocator
+                           // Member Accessor
+                              // LHS
+                                 // This keyword
+                                    PUSH __this
+                              // RHS
+                                 PUSH __field____main____Vector__Vector____capacity
+                              POP __child
+                              POP __parent
+                              PUSH __parent[__child]
+                           POP __size
+                           MALLOC __ptr __size
+                           PUSH __ptr
+                     // LHS
+                        // Member Accessor Assignment
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                              PUSH __field____main____Vector__Vector____data
+                           POP __child
+                           POP __parent
+                           POP __rhs
+                     ASSIGN __parent[__child] __rhs
+                     PUSH __rhs
+                  // Statement results can be ignored
+                  POP __void
+               //---------------------------------------------------------
+            RETURN __this
+         __end__ctor____main____Vector__Vector____Vector__int:
+         // End Constructor Declaration - __ctor____main____Vector__Vector____Vector__int
+         //---------------------------------------------------------------
+
+         //---------------------------------------------------------------
+         // Method Declaration - Vector<:Vector<:int:>:>::pushBack(Vector<:int:>) -> void
+         JUMP __end__method____main____Vector__Vector____pushBack__Vector
+         __method____main____Vector__Vector____pushBack__Vector:
+            // Class Instance
+               STACKGET __this 0
+            // Parameters
+               // Param: val
+               STACKGET __main____Vector__Vector__pushBack__val 1
+            // Body
+               //---------------------------------------------------------
+               // Code Block
+                  //------------------------------------------------------
+                  // If-Statement
+                     // Condition
+                        // Greater Than or Equal to
+                           // LHS
+                              // Addition
+                                 // LHS
+                                    // Member Accessor
+                                       // LHS
+                                          // This keyword
+                                             PUSH __this
+                                       // RHS
+                                          PUSH __field____main____Vector__Vector____size
+                                       POP __child
+                                       POP __parent
+                                       PUSH __parent[__child]
+                                 // RHS
+                                    // Int Literal
+                                       PUSH 1
+                                 POP __rhs
+                                 POP __lhs
+                                 ADD __res __lhs __rhs
+                                 PUSH __res
+                           // RHS
+                              // Member Accessor
+                                 // LHS
+                                    // This keyword
+                                       PUSH __this
+                                 // RHS
+                                    PUSH __field____main____Vector__Vector____capacity
+                                 POP __child
+                                 POP __parent
+                                 PUSH __parent[__child]
+                           POP __rhs
+                           POP __lhs
+                           GE __res __lhs __rhs
+                           PUSH __res
+                        POP __cond
+                        CMP __cond 0
+                        JEQ __endif__27
+                     // Body
+                        //------------------------------------------------
+                        // Code Block
+                           // Assignment - '='
+                              // RHS
+                                 // Multiplication
+                                    // LHS
+                                       // Member Accessor
+                                          // LHS
+                                             // This keyword
+                                                PUSH __this
+                                          // RHS
+                                             PUSH __field____main____Vector__Vector____capacity
+                                          POP __child
+                                          POP __parent
+                                          PUSH __parent[__child]
+                                    // RHS
+                                       // Int Literal
+                                          PUSH 2
+                                    POP __rhs
+                                    POP __lhs
+                                    MULTIPLY __res __lhs __rhs
+                                    PUSH __res
+                              // LHS
+                                 // Member Accessor Assignment
+                                    // LHS
+                                       // This keyword
+                                          PUSH __this
+                                    // RHS
+                                       PUSH __field____main____Vector__Vector____capacity
+                                    POP __child
+                                    POP __parent
+                                    POP __rhs
+                              ASSIGN __parent[__child] __rhs
+                              PUSH __rhs
+                           // Statement results can be ignored
+                           POP __void
+                           // Assignment - '='
+                              // RHS
+                                 // Array Allocator
+                                    // Member Accessor
+                                       // LHS
+                                          // This keyword
+                                             PUSH __this
+                                       // RHS
+                                          PUSH __field____main____Vector__Vector____capacity
+                                       POP __child
+                                       POP __parent
+                                       PUSH __parent[__child]
+                                    POP __size
+                                    MALLOC __ptr __size
+                                    PUSH __ptr
+                              // LHS
+                                 // Variable Declaration
+                                    ASSIGN __main____Vector__Vector__pushBack__block__26__if__27__block__28__nData 0
+                              POP __rhs
+                              ASSIGN __main____Vector__Vector__pushBack__block__26__if__27__block__28__nData __rhs
+                              PUSH __rhs
+                           // Statement results can be ignored
+                           POP __void
+                           //---------------------------------------------
+                           // For-Loop
+                           // Init
+                              // Assignment - '='
+                                 // RHS
+                                    // Int Literal
+                                       PUSH 0
+                                 // LHS
+                                    // Variable Declaration
+                                       ASSIGN __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i 0
+                                 POP __rhs
+                                 ASSIGN __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i __rhs
+                                 PUSH __rhs
+                           JUMP __forcond__29
+                           __for__29:
+                              // Update
+                                 // Pre-Increment
+                                    // RHS
+                                       // Identifier - i
+                                          PUSH __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i
+                                    POP __rhs
+                                    ADD __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i 1
+                                    ASSIGN __res __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i
+                                    PUSH __res
+                              __forcond__29:
+                              // Condition
+                                 // Less Than
+                                    // LHS
+                                       // Identifier - i
+                                          PUSH __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i
+                                    // RHS
+                                       // Member Accessor
+                                          // LHS
+                                             // This keyword
+                                                PUSH __this
+                                          // RHS
+                                             PUSH __field____main____Vector__Vector____size
+                                          POP __child
+                                          POP __parent
+                                          PUSH __parent[__child]
+                                    POP __rhs
+                                    POP __lhs
+                                    LT __res __lhs __rhs
+                                    PUSH __res
+                                 POP __cond
+                                 CMP __cond 0
+                                 JEQ __endfor__29
+                              // Body
+                                 //---------------------------------------
+                                 // Code Block
+                                    // Assignment - '='
+                                       // RHS
+                                          // Subscript
+                                             // LHS
+                                                // Member Accessor
+                                                   // LHS
+                                                      // This keyword
+                                                         PUSH __this
+                                                   // RHS
+                                                      PUSH __field____main____Vector__Vector____data
+                                                   POP __child
+                                                   POP __parent
+                                                   PUSH __parent[__child]
+                                             // OFFSET
+                                                // Identifier - i
+                                                   PUSH __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i
+                                             POP __offset
+                                             POP __pointer
+                                             PUSH __pointer[__offset]
+                                       // LHS
+                                          // Subscript assignment
+                                             // LHS
+                                                // Identifier - nData
+                                                   PUSH __main____Vector__Vector__pushBack__block__26__if__27__block__28__nData
+                                             // OFFSET
+                                                // Identifier - i
+                                                   PUSH __main____Vector__Vector__pushBack__block__26__if__27__block__28__for__29__i
+                                             POP __offset
+                                             POP __pointer
+                                       POP __rhs
+                                       ASSIGN __pointer[__offset] __rhs
+                                       PUSH __rhs
+                                    // Statement results can be ignored
+                                    POP __void
+                                 //---------------------------------------
+                              // Repeat
+                              JUMP __for__29
+                              // End of For
+                              __endfor__29:
+                           //---------------------------------------------
+                           // Free Operator
+                              // RHS
+                                 // Member Accessor
+                                    // LHS
+                                       // This keyword
+                                          PUSH __this
+                                    // RHS
+                                       PUSH __field____main____Vector__Vector____data
+                                    POP __child
+                                    POP __parent
+                                    PUSH __parent[__child]
+                              // Free array
+                              POP __array
+                              FREE __array
+                              PUSH __array
+                           // Statement results can be ignored
+                           POP __void
+                           // Assignment - '='
+                              // RHS
+                                 // Identifier - nData
+                                    PUSH __main____Vector__Vector__pushBack__block__26__if__27__block__28__nData
+                              // LHS
+                                 // Member Accessor Assignment
+                                    // LHS
+                                       // This keyword
+                                          PUSH __this
+                                    // RHS
+                                       PUSH __field____main____Vector__Vector____data
+                                    POP __child
+                                    POP __parent
+                                    POP __rhs
+                              ASSIGN __parent[__child] __rhs
+                              PUSH __rhs
+                           // Statement results can be ignored
+                           POP __void
+                        //------------------------------------------------
+                     JUMP __endif__27
+                     // End of if
+                     __endif__27:
+                  //------------------------------------------------------
+                  // Assignment - '='
+                     // RHS
+                        // Identifier - val
+                           PUSH __main____Vector__Vector__pushBack__val
+                     // LHS
+                        // Subscript assignment
+                           // LHS
+                              // Member Accessor
+                                 // LHS
+                                    // This keyword
+                                       PUSH __this
+                                 // RHS
+                                    PUSH __field____main____Vector__Vector____data
+                                 POP __child
+                                 POP __parent
+                                 PUSH __parent[__child]
+                           // OFFSET
+                              // Member Accessor
+                                 // LHS
+                                    // This keyword
+                                       PUSH __this
+                                 // RHS
+                                    PUSH __field____main____Vector__Vector____size
+                                 POP __child
+                                 POP __parent
+                                 PUSH __parent[__child]
+                           POP __offset
+                           POP __pointer
+                     POP __rhs
+                     ASSIGN __pointer[__offset] __rhs
+                     PUSH __rhs
+                  // Statement results can be ignored
+                  POP __void
+                  // Pre-Increment
+                     // RHS
+                        // Member Accessor
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                              PUSH __field____main____Vector__Vector____size
+                           POP __child
+                           POP __parent
+                           PUSH __parent[__child]
+                     POP __rhs
+                     // LHS
+                        // Member Accessor Assignment
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                              PUSH __field____main____Vector__Vector____size
+                           POP __child
+                           POP __parent
+                           ADD __parent[__child] __parent[__child] 1
+                           ASSIGN __res __parent[__child]
+                     PUSH __res
+                  // Statement results can be ignored
+                  POP __void
+               //---------------------------------------------------------
+            RETURN 0
+         __end__method____main____Vector__Vector____pushBack__Vector:
+         // End Method Declaration - __method____main____Vector__Vector____pushBack__Vector
+         //---------------------------------------------------------------
+
+         //---------------------------------------------------------------
+         // Method Declaration - Vector<:Vector<:int:>:>::popBack() -> Vector<:int:>
+         JUMP __end__method____main____Vector__Vector____popBack
+         __method____main____Vector__Vector____popBack:
+            // Class Instance
+               STACKGET __this 0
+            // Parameters
+            // Body
+               //---------------------------------------------------------
+               // Code Block
+                  // Return
+                     // Subscript
+                        // LHS
+                           // Member Accessor
+                              // LHS
+                                 // This keyword
+                                    PUSH __this
+                              // RHS
+                                 PUSH __field____main____Vector__Vector____data
+                              POP __child
+                              POP __parent
+                              PUSH __parent[__child]
+                        // OFFSET
+                           // Pre-Decrement
+                              // RHS
+                                 // Member Accessor
+                                    // LHS
+                                       // This keyword
+                                          PUSH __this
+                                    // RHS
+                                       PUSH __field____main____Vector__Vector____size
+                                    POP __child
+                                    POP __parent
+                                    PUSH __parent[__child]
+                              POP __rhs
+                              // LHS
+                                 // Member Accessor Assignment
+                                    // LHS
+                                       // This keyword
+                                          PUSH __this
+                                    // RHS
+                                       PUSH __field____main____Vector__Vector____size
+                                    POP __child
+                                    POP __parent
+                                    SUBTRACT __parent[__child] __parent[__child] 1
+                                    ASSIGN __res __parent[__child]
+                              PUSH __res
+                        POP __offset
+                        POP __pointer
+                        PUSH __pointer[__offset]
+                     POP __rVal
+                     RETURN __rVal
+               //---------------------------------------------------------
+            RETURN 0
+         __end__method____main____Vector__Vector____popBack:
+         // End Method Declaration - __method____main____Vector__Vector____popBack
+         //---------------------------------------------------------------
+
+         //---------------------------------------------------------------
+         // Method Declaration - Vector<:Vector<:int:>:>::clear() -> void
+         JUMP __end__method____main____Vector__Vector____clear
+         __method____main____Vector__Vector____clear:
+            // Class Instance
+               STACKGET __this 0
+            // Parameters
+            // Body
+               //---------------------------------------------------------
+               // Code Block
+                  //------------------------------------------------------
+                  // While-Loop
+                  __while__33:
+                     // Condition
+                        // Greater Than
+                           // LHS
+                              // Member Accessor
+                                 // LHS
+                                    // This keyword
+                                       PUSH __this
+                                 // RHS
+                                    PUSH __field____main____Vector__Vector____size
+                                 POP __child
+                                 POP __parent
+                                 PUSH __parent[__child]
+                           // RHS
+                              // Int Literal
+                                 PUSH 0
+                           POP __rhs
+                           POP __lhs
+                           GT __res __lhs __rhs
+                           PUSH __res
+                        POP __cond
+                        CMP __cond 0
+                        JEQ __endwhile__33
+                     // Body
+                        // Method Call - Vector<:Vector<:int:>:>::popBack() -> Vector<:int:>
+                           // LHS
+                              // This keyword
+                                 PUSH __this
+                           // RHS
+                           // Arguments
+                           POP __obj
+                           // Pushing args in reverse order
+                           PUSH __obj
+                           CALL __method____main____Vector__Vector____popBack
+                           POP __void
+                           // Remove args
+                           RESPONSE __retval
+                           PUSH __retval
+                        // Statement results can be ignored
+                        POP __void
+                     JUMP __while__33
+                     // End of While
+                     __endwhile__33:
+                  //------------------------------------------------------
+               //---------------------------------------------------------
+            RETURN 0
+         __end__method____main____Vector__Vector____clear:
+         // End Method Declaration - __method____main____Vector__Vector____clear
+         //---------------------------------------------------------------
+
+         //---------------------------------------------------------------
+         // Method Declaration - Vector<:Vector<:int:>:>::get(int) -> Vector<:int:>
+         JUMP __end__method____main____Vector__Vector____get__int
+         __method____main____Vector__Vector____get__int:
+            // Class Instance
+               STACKGET __this 0
+            // Parameters
+               // Param: index
+               STACKGET __main____Vector__Vector__get__index 1
+            // Body
+               //---------------------------------------------------------
+               // Code Block
+                  // Return
+                     // Subscript
+                        // LHS
+                           // Member Accessor
+                              // LHS
+                                 // This keyword
+                                    PUSH __this
+                              // RHS
+                                 PUSH __field____main____Vector__Vector____data
+                              POP __child
+                              POP __parent
+                              PUSH __parent[__child]
+                        // OFFSET
+                           // Identifier - index
+                              PUSH __main____Vector__Vector__get__index
+                        POP __offset
+                        POP __pointer
+                        PUSH __pointer[__offset]
+                     POP __rVal
+                     RETURN __rVal
+               //---------------------------------------------------------
+            RETURN 0
+         __end__method____main____Vector__Vector____get__int:
+         // End Method Declaration - __method____main____Vector__Vector____get__int
+         //---------------------------------------------------------------
+
+         //---------------------------------------------------------------
+         // Method Declaration - Vector<:Vector<:int:>:>::set(int, Vector<:int:>) -> void
+         JUMP __end__method____main____Vector__Vector____set__int__Vector
+         __method____main____Vector__Vector____set__int__Vector:
+            // Class Instance
+               STACKGET __this 0
+            // Parameters
+               // Param: index
+               STACKGET __main____Vector__Vector__set__index 1
+               // Param: value
+               STACKGET __main____Vector__Vector__set__value 2
+            // Body
+               //---------------------------------------------------------
+               // Code Block
+                  // Assignment - '='
+                     // RHS
+                        // Identifier - value
+                           PUSH __main____Vector__Vector__set__value
+                     // LHS
+                        // Subscript assignment
+                           // LHS
+                              // Member Accessor
+                                 // LHS
+                                    // This keyword
+                                       PUSH __this
+                                 // RHS
+                                    PUSH __field____main____Vector__Vector____data
+                                 POP __child
+                                 POP __parent
+                                 PUSH __parent[__child]
+                           // OFFSET
+                              // Identifier - index
+                                 PUSH __main____Vector__Vector__set__index
+                           POP __offset
+                           POP __pointer
+                     POP __rhs
+                     ASSIGN __pointer[__offset] __rhs
+                     PUSH __rhs
+                  // Statement results can be ignored
+                  POP __void
+               //---------------------------------------------------------
+            RETURN 0
+         __end__method____main____Vector__Vector____set__int__Vector:
+         // End Method Declaration - __method____main____Vector__Vector____set__int__Vector
+         //---------------------------------------------------------------
+
+      __endclass____main____Vector__Vector:
+      // End Class Declaration - __main____Vector__Vector
       //==================================================================
 
 // End Class Template - 

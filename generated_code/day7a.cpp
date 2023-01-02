@@ -232,256 +232,299 @@ class __builtin____main__Object
     // all objects will have a dispatch table
     void** dtable;
 };
-// Add forward decl for any inner functions and methods
-class __main____Vector__char__1;
 //=========================================================================
+//### Header section #####################################################
+//=========================================================================
+
 // Class Declaration - __main____Vector__char__1 inherits __builtin____main__Object
-// Creating Dispatch Table (will be populated later)
 void* __dtable____main____Vector__char__1[5];
 class __main____Vector__char__1 : public __builtin____main__Object
 {
     public:
-    //---------------------------------------------------------------------
     // Field - char[][] Vector<:char[]:>::data
-    // __field____main____Vector__char__1____data = 1
     char** __field____main____Vector__char__1____data;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
     // Field - int Vector<:char[]:>::size
-    // __field____main____Vector__char__1____size = 2
     long __field____main____Vector__char__1____size;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
     // Field - int Vector<:char[]:>::capacity
-    // __field____main____Vector__char__1____capacity = 3
     long __field____main____Vector__char__1____capacity;
+    __main____Vector__char__1 ();
+    __main____Vector__char__1 (long __main____Vector__char__1__size);
+};
+class __main____File; // File
+// Class Declaration - __main____Vector__File inherits __builtin____main__Object
+void* __dtable____main____Vector__File[5];
+class __main____Vector__File : public __builtin____main__Object
+{
+    public:
+    // Field - File[] Vector<:File:>::data
+    __main____File** __field____main____Vector__File____data;
+    // Field - int Vector<:File:>::size
+    long __field____main____Vector__File____size;
+    // Field - int Vector<:File:>::capacity
+    long __field____main____Vector__File____capacity;
+    __main____Vector__File ();
+    __main____Vector__File (long __main____Vector__File__size);
+};
+long __main____strlen__char__1 (char* __main__strlen__str);
+long __main____strcmp__char__1__char__1 (char* __main__strcmp__a, char* __main__strcmp__b);
+char* __main____substr__char__1__int__int (char* __main__substr__a, long __main__substr__start, long __main__substr__end);
+long __main____first_index_of__char__1__char (char* __main__first_index_of__arr, char __main__first_index_of__c);
+__main____Vector__char__1* __main____split__char__1__char (char* __main__split__str, char __main__split__delim);
+long __main____max__int__int (long __main__max__a, long __main__max__b);
+double __main____max__float__float (double __main__max__a, double __main__max__b);
+long __main____min__int__int (long __main__min__a, long __main__min__b);
+double __main____min__float__float (double __main__min__a, double __main__min__b);
+long __main____abs__int (long __main__abs__v);
+double __main____abs__float (double __main__abs__v);
+// Class Declaration - __main____File inherits __builtin____main__Object
+void* __dtable____main____File[0];
+class __main____File : public __builtin____main__Object
+{
+    public:
+    // Field - char[] File::name
+    char* __field____main____File____name;
+    // Field - File File::parent
+    __main____File* __field____main____File____parent;
+    // Field - Vector<:File:> File::children
+    __main____Vector__File* __field____main____File____children;
+    // Field - int File::size
+    long __field____main____File____size;
+    // Field - int File::is_dir
+    long __field____main____File____is_dir;
+    __main____File (char* __main____File__name);
+};
+void __main____printfs__File__int (__main____File* __main__printfs__fs, long __main__printfs__indent);
+void __main____sum_sizes__File (__main____File* __main__sum_sizes__fs);
+long __main____sum_small_dirs__File (__main____File* __main__sum_small_dirs__fs);
+//=========================================================================
+//### Functions section ##################################################
+//=========================================================================
+
+//-------------------------------------------------------------------------
+// Constructor Declaration - Vector<:char[]:>::Vector() -> Vector<:char[]:>
+__main____Vector__char__1::__main____Vector__char__1 ()
+{
+    // Function Header
+    // This stack is used to store results of expressions
+    std::vector<long> stack;
+    // Declare general purpose variables
+    // These are longs and can store anything up to 8 bytes via casting
+    long __stackval = 0;
+    long __pointer = 0;
+    long __offset = 0;
+    long __parent = 0;
+    long __child = 0;
+    long __obj = 0;
+    long __lhs = 0;
+    long __rhs = 0;
+    long __res = 0;
+    // Add dispatch table to instance
+    dtable = __dtable____main____Vector__char__1;
+    __main____Vector__char__1* __this = this;
+    // Body
     //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Constructor Declaration - Vector<:char[]:>::Vector() -> Vector<:char[]:>
-    __main____Vector__char__1 ()
+    // Code Block
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Int Literal
+    stack.push_back (10);
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Int Literal
+    stack.push_back (0);
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____size = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____size));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Array Allocator
     {
-        // Function Header
-        // This stack is used to store results of expressions
-        std::vector<long> stack;
-        // Declare general purpose variables
-        // These are longs and can store anything up to 8 bytes via casting
-        long __stackval = 0;
-        long __pointer = 0;
-        long __offset = 0;
-        long __parent = 0;
-        long __child = 0;
-        long __obj = 0;
-        long __lhs = 0;
-        long __rhs = 0;
-        long __res = 0;
-        // Add dispatch table to instance
-        dtable = __dtable____main____Vector__char__1;
-        __main____Vector__char__1* __this = this;
-        // Body
-        //-----------------------------------------------------------------
-        // Code Block
-        // Statement
-        // Assignment - '='
+        // Member Accessor obj.capacity
+        {
+            // LHS
+            stack.push_back (reinterpret_cast<long>(__this));
+            // RHS
+            __parent = stack.back ();
+            stack.pop_back ();
+            long __res = (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity;
+            stack.push_back (*reinterpret_cast<long*>(&__res));
+        }
+        __stackval = stack.back ();
+        stack.pop_back ();
+        char** __res = new char*[__stackval];
+        stack.push_back (reinterpret_cast<long>(__res));
+    }
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data = *reinterpret_cast<char***>(&__rhs);
+    // Result of assignment
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    //---------------------------------------------------------------------
+}
+// End Constructor Declaration - __ctor____main____Vector__char__1____Vector
+//-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+// Constructor Declaration - Vector<:char[]:>::Vector(int) -> Vector<:char[]:>
+__main____Vector__char__1::__main____Vector__char__1 (long __main____Vector__char__1__Vector__size)
+{
+    // Function Header
+    // This stack is used to store results of expressions
+    std::vector<long> stack;
+    // Declare general purpose variables
+    // These are longs and can store anything up to 8 bytes via casting
+    long __stackval = 0;
+    long __pointer = 0;
+    long __offset = 0;
+    long __parent = 0;
+    long __child = 0;
+    long __obj = 0;
+    long __lhs = 0;
+    long __rhs = 0;
+    long __res = 0;
+    // Add dispatch table to instance
+    dtable = __dtable____main____Vector__char__1;
+    __main____Vector__char__1* __this = this;
+    // Body
+    //---------------------------------------------------------------------
+    // Code Block
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Addition
+    {
+        // LHS
+        stack.push_back (*reinterpret_cast<long*>(&__main____Vector__char__1__Vector__size));
         // RHS
         // Int Literal
         stack.push_back (10);
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
         __rhs = stack.back ();
         stack.pop_back ();
-        (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity));
-        // Statement results can be ignored
+        __lhs = stack.back ();
         stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Int Literal
-        stack.push_back (0);
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____size = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____size));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Array Allocator
-        {
-            // Member Accessor obj.capacity
-            {
-                // LHS
-                stack.push_back (reinterpret_cast<long>(__this));
-                // RHS
-                __parent = stack.back ();
-                stack.pop_back ();
-                long __res = (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity;
-                stack.push_back (*reinterpret_cast<long*>(&__res));
-            }
-            __stackval = stack.back ();
-            stack.pop_back ();
-            char** __res = new char*[__stackval];
-            stack.push_back (reinterpret_cast<long>(__res));
-        }
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data = *reinterpret_cast<char***>(&__rhs);
-        // Result of assignment
-        stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        //-----------------------------------------------------------------
+        long __res = *reinterpret_cast<long*>(&__lhs) + *reinterpret_cast<long*>(&__rhs);
+        stack.push_back (*reinterpret_cast<long*>(&__res));
     }
-    // End Constructor Declaration - __ctor____main____Vector__char__1____Vector
-    //---------------------------------------------------------------------
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
 
-    //---------------------------------------------------------------------
-    // Constructor Declaration - Vector<:char[]:>::Vector(int) -> Vector<:char[]:>
-    __main____Vector__char__1 (long __main____Vector__char__1__Vector__size)
+    // Statement
+    // Assignment - '='
+    // RHS
+    stack.push_back (*reinterpret_cast<long*>(&__main____Vector__char__1__Vector__size));
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____size = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____size));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Array Allocator
     {
-        // Function Header
-        // This stack is used to store results of expressions
-        std::vector<long> stack;
-        // Declare general purpose variables
-        // These are longs and can store anything up to 8 bytes via casting
-        long __stackval = 0;
-        long __pointer = 0;
-        long __offset = 0;
-        long __parent = 0;
-        long __child = 0;
-        long __obj = 0;
-        long __lhs = 0;
-        long __rhs = 0;
-        long __res = 0;
-        // Add dispatch table to instance
-        dtable = __dtable____main____Vector__char__1;
-        __main____Vector__char__1* __this = this;
-        // Body
-        //-----------------------------------------------------------------
-        // Code Block
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Addition
+        // Member Accessor obj.capacity
         {
             // LHS
-            stack.push_back (*reinterpret_cast<long*>(&__main____Vector__char__1__Vector__size));
+            stack.push_back (reinterpret_cast<long>(__this));
             // RHS
-            // Int Literal
-            stack.push_back (10);
-            __rhs = stack.back ();
+            __parent = stack.back ();
             stack.pop_back ();
-            __lhs = stack.back ();
-            stack.pop_back ();
-            long __res = *reinterpret_cast<long*>(&__lhs) + *reinterpret_cast<long*>(&__rhs);
+            long __res = (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
+        __stackval = stack.back ();
         stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        stack.push_back (*reinterpret_cast<long*>(&__main____Vector__char__1__Vector__size));
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____size = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____size));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Array Allocator
-        {
-            // Member Accessor obj.capacity
-            {
-                // LHS
-                stack.push_back (reinterpret_cast<long>(__this));
-                // RHS
-                __parent = stack.back ();
-                stack.pop_back ();
-                long __res = (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____capacity;
-                stack.push_back (*reinterpret_cast<long*>(&__res));
-            }
-            __stackval = stack.back ();
-            stack.pop_back ();
-            char** __res = new char*[__stackval];
-            stack.push_back (reinterpret_cast<long>(__res));
-        }
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data = *reinterpret_cast<char***>(&__rhs);
-        // Result of assignment
-        stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        //-----------------------------------------------------------------
+        char** __res = new char*[__stackval];
+        stack.push_back (reinterpret_cast<long>(__res));
     }
-    // End Constructor Declaration - __ctor____main____Vector__char__1____Vector__int
-    //---------------------------------------------------------------------
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data = *reinterpret_cast<char***>(&__rhs);
+    // Result of assignment
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
 
-};
+    //---------------------------------------------------------------------
+}
+// End Constructor Declaration - __ctor____main____Vector__char__1____Vector__int
+//-------------------------------------------------------------------------
+
 //-------------------------------------------------------------------------
 // Method Declaration - Vector<:char[]:>::pushBack(char[]) -> void
 void __method____main____Vector__char__1____pushBack__char__1 (__main____Vector__char__1* __this, char* __main____Vector__char__1__pushBack__val)
@@ -649,6 +692,8 @@ void __method____main____Vector__char__1____pushBack__char__1 (__main____Vector_
         __main____Vector__char__1__pushBack__block__2__if__3__block__4__for__5__i = *reinterpret_cast<long*>(&__rhs);
         // Result of assignment
         stack.push_back (*reinterpret_cast<long*>(&__main____Vector__char__1__pushBack__block__2__if__3__block__4__for__5__i));
+        // We can ignore the init result
+        stack.pop_back ();
         // Using an infinite loop so we can write a separate multi-line condition
         while (1)
         {
@@ -738,6 +783,8 @@ void __method____main____Vector__char__1____pushBack__char__1 (__main____Vector_
                 __res = __main____Vector__char__1__pushBack__block__2__if__3__block__4__for__5__i;
                 stack.push_back (*reinterpret_cast<long*>(&__res));
             }
+            // We can ignore the update result
+            stack.pop_back ();
         }
         //-----------------------------------------------------------------
         // Statement
@@ -931,7 +978,7 @@ char* __method____main____Vector__char__1____popBack (__main____Vector__char__1*
     }
     __res = stack.back ();
     stack.pop_back ();
-    return reinterpret_cast<void*>(__res);
+    return *reinterpret_cast<char**>(&__res);
     //---------------------------------------------------------------------
 }
 // End Method Declaration - __method____main____Vector__char__1____popBack
@@ -1062,7 +1109,7 @@ char* __method____main____Vector__char__1____get__int (__main____Vector__char__1
     }
     __res = stack.back ();
     stack.pop_back ();
-    return reinterpret_cast<void*>(__res);
+    return *reinterpret_cast<char**>(&__res);
     //---------------------------------------------------------------------
 }
 // End Method Declaration - __method____main____Vector__char__1____get__int
@@ -1126,262 +1173,234 @@ void __method____main____Vector__char__1____set__int__char__1 (__main____Vector_
 // End Method Declaration - __method____main____Vector__char__1____set__int__char__1
 //-------------------------------------------------------------------------
 
-// End Class Declaration - __main____Vector__char__1
-//=========================================================================
-
-// Add forward decl for any inner functions and methods
-class __main____Vector__File;
-//=========================================================================
-// Class Declaration - __main____Vector__File inherits __builtin____main__Object
-// Creating Dispatch Table (will be populated later)
-void* __dtable____main____Vector__File[5];
-class __main____Vector__File : public __builtin____main__Object
+//-------------------------------------------------------------------------
+// Constructor Declaration - Vector<:File:>::Vector() -> Vector<:File:>
+__main____Vector__File::__main____Vector__File ()
 {
-    public:
+    // Function Header
+    // This stack is used to store results of expressions
+    std::vector<long> stack;
+    // Declare general purpose variables
+    // These are longs and can store anything up to 8 bytes via casting
+    long __stackval = 0;
+    long __pointer = 0;
+    long __offset = 0;
+    long __parent = 0;
+    long __child = 0;
+    long __obj = 0;
+    long __lhs = 0;
+    long __rhs = 0;
+    long __res = 0;
+    // Add dispatch table to instance
+    dtable = __dtable____main____Vector__File;
+    __main____Vector__File* __this = this;
+    // Body
     //---------------------------------------------------------------------
-    // Field - File[] Vector<:File:>::data
-    // __field____main____Vector__File____data = 1
-    ** __field____main____Vector__File____data;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Field - int Vector<:File:>::size
-    // __field____main____Vector__File____size = 2
-    long __field____main____Vector__File____size;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Field - int Vector<:File:>::capacity
-    // __field____main____Vector__File____capacity = 3
-    long __field____main____Vector__File____capacity;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Constructor Declaration - Vector<:File:>::Vector() -> Vector<:File:>
-    __main____Vector__File ()
+    // Code Block
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Int Literal
+    stack.push_back (10);
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Int Literal
+    stack.push_back (0);
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____size = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____size));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Array Allocator
     {
-        // Function Header
-        // This stack is used to store results of expressions
-        std::vector<long> stack;
-        // Declare general purpose variables
-        // These are longs and can store anything up to 8 bytes via casting
-        long __stackval = 0;
-        long __pointer = 0;
-        long __offset = 0;
-        long __parent = 0;
-        long __child = 0;
-        long __obj = 0;
-        long __lhs = 0;
-        long __rhs = 0;
-        long __res = 0;
-        // Add dispatch table to instance
-        dtable = __dtable____main____Vector__File;
-        __main____Vector__File* __this = this;
-        // Body
-        //-----------------------------------------------------------------
-        // Code Block
-        // Statement
-        // Assignment - '='
+        // Member Accessor obj.capacity
+        {
+            // LHS
+            stack.push_back (reinterpret_cast<long>(__this));
+            // RHS
+            __parent = stack.back ();
+            stack.pop_back ();
+            long __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity;
+            stack.push_back (*reinterpret_cast<long*>(&__res));
+        }
+        __stackval = stack.back ();
+        stack.pop_back ();
+        __main____File** __res = new __main____File*[__stackval];
+        stack.push_back (reinterpret_cast<long>(__res));
+    }
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data = reinterpret_cast<__main____File**>(__rhs);
+    // Result of assignment
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    //---------------------------------------------------------------------
+}
+// End Constructor Declaration - __ctor____main____Vector__File____Vector
+//-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+// Constructor Declaration - Vector<:File:>::Vector(int) -> Vector<:File:>
+__main____Vector__File::__main____Vector__File (long __main____Vector__File__Vector__size)
+{
+    // Function Header
+    // This stack is used to store results of expressions
+    std::vector<long> stack;
+    // Declare general purpose variables
+    // These are longs and can store anything up to 8 bytes via casting
+    long __stackval = 0;
+    long __pointer = 0;
+    long __offset = 0;
+    long __parent = 0;
+    long __child = 0;
+    long __obj = 0;
+    long __lhs = 0;
+    long __rhs = 0;
+    long __res = 0;
+    // Add dispatch table to instance
+    dtable = __dtable____main____Vector__File;
+    __main____Vector__File* __this = this;
+    // Body
+    //---------------------------------------------------------------------
+    // Code Block
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Addition
+    {
+        // LHS
+        stack.push_back (*reinterpret_cast<long*>(&__main____Vector__File__Vector__size));
         // RHS
         // Int Literal
         stack.push_back (10);
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
         __rhs = stack.back ();
         stack.pop_back ();
-        (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity));
-        // Statement results can be ignored
+        __lhs = stack.back ();
         stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Int Literal
-        stack.push_back (0);
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____size = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____size));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Array Allocator
-        {
-            // Member Accessor obj.capacity
-            {
-                // LHS
-                stack.push_back (reinterpret_cast<long>(__this));
-                // RHS
-                __parent = stack.back ();
-                stack.pop_back ();
-                long __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity;
-                stack.push_back (*reinterpret_cast<long*>(&__res));
-            }
-            __stackval = stack.back ();
-            stack.pop_back ();
-            ** __res = new *[__stackval];
-            stack.push_back (reinterpret_cast<long>(__res));
-        }
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data = reinterpret_cast<**>(__rhs);
-        // Result of assignment
-        stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        //-----------------------------------------------------------------
+        long __res = *reinterpret_cast<long*>(&__lhs) + *reinterpret_cast<long*>(&__rhs);
+        stack.push_back (*reinterpret_cast<long*>(&__res));
     }
-    // End Constructor Declaration - __ctor____main____Vector__File____Vector
-    //---------------------------------------------------------------------
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
 
-    //---------------------------------------------------------------------
-    // Constructor Declaration - Vector<:File:>::Vector(int) -> Vector<:File:>
-    __main____Vector__File (long __main____Vector__File__Vector__size)
+    // Statement
+    // Assignment - '='
+    // RHS
+    stack.push_back (*reinterpret_cast<long*>(&__main____Vector__File__Vector__size));
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____size = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____size));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Array Allocator
     {
-        // Function Header
-        // This stack is used to store results of expressions
-        std::vector<long> stack;
-        // Declare general purpose variables
-        // These are longs and can store anything up to 8 bytes via casting
-        long __stackval = 0;
-        long __pointer = 0;
-        long __offset = 0;
-        long __parent = 0;
-        long __child = 0;
-        long __obj = 0;
-        long __lhs = 0;
-        long __rhs = 0;
-        long __res = 0;
-        // Add dispatch table to instance
-        dtable = __dtable____main____Vector__File;
-        __main____Vector__File* __this = this;
-        // Body
-        //-----------------------------------------------------------------
-        // Code Block
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Addition
+        // Member Accessor obj.capacity
         {
             // LHS
-            stack.push_back (*reinterpret_cast<long*>(&__main____Vector__File__Vector__size));
+            stack.push_back (reinterpret_cast<long>(__this));
             // RHS
-            // Int Literal
-            stack.push_back (10);
-            __rhs = stack.back ();
+            __parent = stack.back ();
             stack.pop_back ();
-            __lhs = stack.back ();
-            stack.pop_back ();
-            long __res = *reinterpret_cast<long*>(&__lhs) + *reinterpret_cast<long*>(&__rhs);
+            long __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
+        __stackval = stack.back ();
         stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        stack.push_back (*reinterpret_cast<long*>(&__main____Vector__File__Vector__size));
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____size = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____size));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Array Allocator
-        {
-            // Member Accessor obj.capacity
-            {
-                // LHS
-                stack.push_back (reinterpret_cast<long>(__this));
-                // RHS
-                __parent = stack.back ();
-                stack.pop_back ();
-                long __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____capacity;
-                stack.push_back (*reinterpret_cast<long*>(&__res));
-            }
-            __stackval = stack.back ();
-            stack.pop_back ();
-            ** __res = new *[__stackval];
-            stack.push_back (reinterpret_cast<long>(__res));
-        }
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data = reinterpret_cast<**>(__rhs);
-        // Result of assignment
-        stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        //-----------------------------------------------------------------
+        __main____File** __res = new __main____File*[__stackval];
+        stack.push_back (reinterpret_cast<long>(__res));
     }
-    // End Constructor Declaration - __ctor____main____Vector__File____Vector__int
-    //---------------------------------------------------------------------
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data = reinterpret_cast<__main____File**>(__rhs);
+    // Result of assignment
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
 
-};
+    //---------------------------------------------------------------------
+}
+// End Constructor Declaration - __ctor____main____Vector__File____Vector__int
+//-------------------------------------------------------------------------
+
 //-------------------------------------------------------------------------
 // Method Declaration - Vector<:File:>::pushBack(File) -> void
-void __method____main____Vector__File____pushBack__File (__main____Vector__File* __this, * __main____Vector__File__pushBack__val)
+void __method____main____Vector__File____pushBack__File (__main____Vector__File* __this, __main____File* __main____Vector__File__pushBack__val)
 {
     // Function Header
     // This stack is used to store results of expressions
@@ -1516,15 +1535,15 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
             }
             __stackval = stack.back ();
             stack.pop_back ();
-            ** __res = new *[__stackval];
+            __main____File** __res = new __main____File*[__stackval];
             stack.push_back (reinterpret_cast<long>(__res));
         }
         // LHS
         // Variable declaration
-        ** __main____Vector__File__pushBack__block__14__if__15__block__16__nData;
+        __main____File** __main____Vector__File__pushBack__block__14__if__15__block__16__nData;
         __rhs = stack.back ();
         stack.pop_back ();
-        __main____Vector__File__pushBack__block__14__if__15__block__16__nData = reinterpret_cast<**>(__rhs);
+        __main____Vector__File__pushBack__block__14__if__15__block__16__nData = reinterpret_cast<__main____File**>(__rhs);
         // Result of assignment
         stack.push_back (reinterpret_cast<long>(__main____Vector__File__pushBack__block__14__if__15__block__16__nData));
         // Statement results can be ignored
@@ -1546,6 +1565,8 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
         __main____Vector__File__pushBack__block__14__if__15__block__16__for__17__i = *reinterpret_cast<long*>(&__rhs);
         // Result of assignment
         stack.push_back (*reinterpret_cast<long*>(&__main____Vector__File__pushBack__block__14__if__15__block__16__for__17__i));
+        // We can ignore the init result
+        stack.pop_back ();
         // Using an infinite loop so we can write a separate multi-line condition
         while (1)
         {
@@ -1592,7 +1613,7 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
                     // RHS
                     __parent = stack.back ();
                     stack.pop_back ();
-                    ** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
+                    __main____File** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
                     stack.push_back (reinterpret_cast<long>(__res));
                 }
                 // OFFSET
@@ -1601,7 +1622,7 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
                 stack.pop_back ();
                 __pointer = stack.back ();
                 stack.pop_back ();
-                * __res = (reinterpret_cast<**>(__pointer))[*reinterpret_cast<long*>(&__offset)];
+                __main____File* __res = (reinterpret_cast<__main____File**>(__pointer))[*reinterpret_cast<long*>(&__offset)];
                 stack.push_back (reinterpret_cast<long>(__res));
             }
             // LHS
@@ -1616,9 +1637,9 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
             stack.pop_back ();
             __rhs = stack.back ();
             stack.pop_back ();
-            (reinterpret_cast<**>(__pointer))[__offset] = reinterpret_cast<*>(__rhs);
+            (reinterpret_cast<__main____File**>(__pointer))[__offset] = reinterpret_cast<__main____File*>(__rhs);
             // Result of assignment
-            stack.push_back (reinterpret_cast<long>((reinterpret_cast<**>(__pointer))[__offset]));
+            stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File**>(__pointer))[__offset]));
             // Statement results can be ignored
             stack.pop_back ();
             // End Statement
@@ -1635,6 +1656,8 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
                 __res = __main____Vector__File__pushBack__block__14__if__15__block__16__for__17__i;
                 stack.push_back (*reinterpret_cast<long*>(&__res));
             }
+            // We can ignore the update result
+            stack.pop_back ();
         }
         //-----------------------------------------------------------------
         // Statement
@@ -1645,12 +1668,12 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
             // RHS
             __parent = stack.back ();
             stack.pop_back ();
-            ** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
+            __main____File** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
             stack.push_back (reinterpret_cast<long>(__res));
         }
         __stackval = stack.back ();
         stack.pop_back ();
-        delete reinterpret_cast<**>(__stackval);
+        delete reinterpret_cast<__main____File**>(__stackval);
         stack.push_back (0);
         // Statement results can be ignored
         stack.pop_back ();
@@ -1669,7 +1692,7 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
         stack.pop_back ();
         __rhs = stack.back ();
         stack.pop_back ();
-        (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data = reinterpret_cast<**>(__rhs);
+        (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data = reinterpret_cast<__main____File**>(__rhs);
         // Result of assignment
         stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data));
         // Statement results can be ignored
@@ -1694,7 +1717,7 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
         // RHS
         __parent = stack.back ();
         stack.pop_back ();
-        ** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
+        __main____File** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
         stack.push_back (reinterpret_cast<long>(__res));
     }
     // OFFSET
@@ -1714,9 +1737,9 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
     stack.pop_back ();
     __rhs = stack.back ();
     stack.pop_back ();
-    (reinterpret_cast<**>(__pointer))[__offset] = reinterpret_cast<*>(__rhs);
+    (reinterpret_cast<__main____File**>(__pointer))[__offset] = reinterpret_cast<__main____File*>(__rhs);
     // Result of assignment
-    stack.push_back (reinterpret_cast<long>((reinterpret_cast<**>(__pointer))[__offset]));
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File**>(__pointer))[__offset]));
     // Statement results can be ignored
     stack.pop_back ();
     // End Statement
@@ -1759,7 +1782,7 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
 
 //-------------------------------------------------------------------------
 // Method Declaration - Vector<:File:>::popBack() -> File
-* __method____main____Vector__File____popBack (__main____Vector__File* __this)
+__main____File* __method____main____Vector__File____popBack (__main____Vector__File* __this)
 {
     // Function Header
     // This stack is used to store results of expressions
@@ -1789,7 +1812,7 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
             // RHS
             __parent = stack.back ();
             stack.pop_back ();
-            ** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
+            __main____File** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
             stack.push_back (reinterpret_cast<long>(__res));
         }
         // OFFSET
@@ -1823,12 +1846,12 @@ void __method____main____Vector__File____pushBack__File (__main____Vector__File*
         stack.pop_back ();
         __pointer = stack.back ();
         stack.pop_back ();
-        * __res = (reinterpret_cast<**>(__pointer))[*reinterpret_cast<long*>(&__offset)];
+        __main____File* __res = (reinterpret_cast<__main____File**>(__pointer))[*reinterpret_cast<long*>(&__offset)];
         stack.push_back (reinterpret_cast<long>(__res));
     }
     __res = stack.back ();
     stack.pop_back ();
-    return reinterpret_cast<void*>(__res);
+    return reinterpret_cast<__main____File*>(__res);
     //---------------------------------------------------------------------
 }
 // End Method Declaration - __method____main____Vector__File____popBack
@@ -1898,7 +1921,7 @@ void __method____main____Vector__File____clear (__main____Vector__File* __this)
             // Arguments
             __obj = stack.back ();
             stack.pop_back ();
-            * __res = __method____main____Vector__File____popBack (reinterpret_cast<__main____Vector__File*>(__obj));
+            __main____File* __res = __method____main____Vector__File____popBack (reinterpret_cast<__main____Vector__File*>(__obj));
             stack.push_back (reinterpret_cast<long>(__res));
         }
         // Statement results can be ignored
@@ -1915,7 +1938,7 @@ void __method____main____Vector__File____clear (__main____Vector__File* __this)
 
 //-------------------------------------------------------------------------
 // Method Declaration - Vector<:File:>::get(int) -> File
-* __method____main____Vector__File____get__int (__main____Vector__File* __this, long __main____Vector__File__get__index)
+__main____File* __method____main____Vector__File____get__int (__main____Vector__File* __this, long __main____Vector__File__get__index)
 {
     // Function Header
     // This stack is used to store results of expressions
@@ -1945,7 +1968,7 @@ void __method____main____Vector__File____clear (__main____Vector__File* __this)
             // RHS
             __parent = stack.back ();
             stack.pop_back ();
-            ** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
+            __main____File** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
             stack.push_back (reinterpret_cast<long>(__res));
         }
         // OFFSET
@@ -1954,12 +1977,12 @@ void __method____main____Vector__File____clear (__main____Vector__File* __this)
         stack.pop_back ();
         __pointer = stack.back ();
         stack.pop_back ();
-        * __res = (reinterpret_cast<**>(__pointer))[*reinterpret_cast<long*>(&__offset)];
+        __main____File* __res = (reinterpret_cast<__main____File**>(__pointer))[*reinterpret_cast<long*>(&__offset)];
         stack.push_back (reinterpret_cast<long>(__res));
     }
     __res = stack.back ();
     stack.pop_back ();
-    return reinterpret_cast<void*>(__res);
+    return reinterpret_cast<__main____File*>(__res);
     //---------------------------------------------------------------------
 }
 // End Method Declaration - __method____main____Vector__File____get__int
@@ -1967,7 +1990,7 @@ void __method____main____Vector__File____clear (__main____Vector__File* __this)
 
 //-------------------------------------------------------------------------
 // Method Declaration - Vector<:File:>::set(int, File) -> void
-void __method____main____Vector__File____set__int__File (__main____Vector__File* __this, long __main____Vector__File__set__index, * __main____Vector__File__set__value)
+void __method____main____Vector__File____set__int__File (__main____Vector__File* __this, long __main____Vector__File__set__index, __main____File* __main____Vector__File__set__value)
 {
     // Function Header
     // This stack is used to store results of expressions
@@ -2000,7 +2023,7 @@ void __method____main____Vector__File____set__int__File (__main____Vector__File*
         // RHS
         __parent = stack.back ();
         stack.pop_back ();
-        ** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
+        __main____File** __res = (reinterpret_cast<__main____Vector__File*>(__parent))->__field____main____Vector__File____data;
         stack.push_back (reinterpret_cast<long>(__res));
     }
     // OFFSET
@@ -2011,9 +2034,9 @@ void __method____main____Vector__File____set__int__File (__main____Vector__File*
     stack.pop_back ();
     __rhs = stack.back ();
     stack.pop_back ();
-    (reinterpret_cast<**>(__pointer))[__offset] = reinterpret_cast<*>(__rhs);
+    (reinterpret_cast<__main____File**>(__pointer))[__offset] = reinterpret_cast<__main____File*>(__rhs);
     // Result of assignment
-    stack.push_back (reinterpret_cast<long>((reinterpret_cast<**>(__pointer))[__offset]));
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File**>(__pointer))[__offset]));
     // Statement results can be ignored
     stack.pop_back ();
     // End Statement
@@ -2022,9 +2045,6 @@ void __method____main____Vector__File____set__int__File (__main____Vector__File*
 }
 // End Method Declaration - __method____main____Vector__File____set__int__File
 //-------------------------------------------------------------------------
-
-// End Class Declaration - __main____Vector__File
-//=========================================================================
 
 //=========================================================================
 // Function Declaration - strlen(char[]) -> int
@@ -2058,12 +2078,12 @@ long __main____strlen__char__1 (char* __main__strlen__str)
         stack.push_back (reinterpret_cast<long>(__main__strlen__str));
         // RHS
         // Null Literal
-        stack.push_back (None)
+        stack.push_back ((long)nullptr);
         __rhs = stack.back ();
         stack.pop_back ();
         __lhs = stack.back ();
         stack.pop_back ();
-        long __res = *reinterpret_cast<char**>(&__lhs) == <unknown-conversion>*;
+        long __res = *reinterpret_cast<char**>(&__lhs) == nullptr;
         stack.push_back (*reinterpret_cast<long*>(&__res));
     }
     long __if__25__cond = stack.back ();
@@ -2299,6 +2319,8 @@ long __main____strcmp__char__1__char__1 (char* __main__strcmp__a, char* __main__
     __main__strcmp__block__27__for__29__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__strcmp__block__27__for__29__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -2395,6 +2417,8 @@ long __main____strcmp__char__1__char__1 (char* __main__strcmp__a, char* __main__
             __res = __main__strcmp__block__27__for__29__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
     // Return
@@ -2492,6 +2516,8 @@ char* __main____substr__char__1__int__int (char* __main__substr__a, long __main_
     __main__substr__block__33__for__34__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__substr__block__33__for__34__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -2587,6 +2613,8 @@ char* __main____substr__char__1__int__int (char* __main__substr__a, long __main_
             __res = __main__substr__block__33__for__34__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
     // Statement
@@ -2629,7 +2657,7 @@ char* __main____substr__char__1__int__int (char* __main__substr__a, long __main_
     stack.push_back (reinterpret_cast<long>(__main__substr__block__33__res));
     __res = stack.back ();
     stack.pop_back ();
-    return reinterpret_cast<void*>(__res);
+    return *reinterpret_cast<char**>(&__res);
     //---------------------------------------------------------------------
 };
 // End Function Declaration - __main____substr__char__1__int__int
@@ -2699,6 +2727,8 @@ long __main____first_index_of__char__1__char (char* __main__first_index_of__arr,
     __main__first_index_of__block__36__for__37__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__first_index_of__block__36__for__37__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -2779,6 +2809,8 @@ long __main____first_index_of__char__1__char (char* __main__first_index_of__arr,
             __res = __main__first_index_of__block__36__for__37__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
     // Return
@@ -2825,8 +2857,10 @@ __main____Vector__char__1* __main____split__char__1__char (char* __main__split__
     // Assignment - '='
     // RHS
     // Constructor Call - Vector<:char[]:>::Vector() -> Vector<:char[]:>
-    // Arguments
-    stack.push_back (reinterpret_cast<long>(new __main____Vector__char__1 ()));
+    {
+        // Arguments
+        stack.push_back (reinterpret_cast<long>(new __main____Vector__char__1 ()));
+    }
     // LHS
     // Variable declaration
     __main____Vector__char__1* __main__split__block__40__tokens;
@@ -3149,6 +3183,8 @@ __main____Vector__char__1* __main____split__char__1__char (char* __main__split__
             __main__split__block__40__while__41__block__42__if__43__block__44__for__47__k = *reinterpret_cast<long*>(&__rhs);
             // Result of assignment
             stack.push_back (*reinterpret_cast<long*>(&__main__split__block__40__while__41__block__42__if__43__block__44__for__47__k));
+            // We can ignore the init result
+            stack.pop_back ();
             // Using an infinite loop so we can write a separate multi-line condition
             while (1)
             {
@@ -3246,6 +3282,8 @@ __main____Vector__char__1* __main____split__char__1__char (char* __main__split__
                     __res = __main__split__block__40__while__41__block__42__if__43__block__44__for__47__k;
                     stack.push_back (*reinterpret_cast<long*>(&__res));
                 }
+                // We can ignore the update result
+                stack.pop_back ();
             }
             //-------------------------------------------------------------
             // Statement
@@ -3335,7 +3373,7 @@ __main____Vector__char__1* __main____split__char__1__char (char* __main__split__
     stack.push_back (reinterpret_cast<long>(__main__split__block__40__tokens));
     __res = stack.back ();
     stack.pop_back ();
-    return reinterpret_cast<void*>(__res);
+    return reinterpret_cast<__main____Vector__char__1*>(__res);
     //---------------------------------------------------------------------
 };
 // End Function Declaration - __main____split__char__1__char
@@ -3740,177 +3778,141 @@ double __main____abs__float (double __main__abs__v)
 // End Function Declaration - __main____abs__float
 //=========================================================================
 
-// Add forward decl for any inner functions and methods
-class __main____File;
-//=========================================================================
-// Class Declaration - __main____File inherits __builtin____main__Object
-// Creating Dispatch Table (will be populated later)
-void* __dtable____main____File[0];
-class __main____File : public __builtin____main__Object
+//-------------------------------------------------------------------------
+// Constructor Declaration - File::File(char[]) -> File
+__main____File::__main____File (char* __main____File__File__name)
 {
-    public:
+    // Function Header
+    // This stack is used to store results of expressions
+    std::vector<long> stack;
+    // Declare general purpose variables
+    // These are longs and can store anything up to 8 bytes via casting
+    long __stackval = 0;
+    long __pointer = 0;
+    long __offset = 0;
+    long __parent = 0;
+    long __child = 0;
+    long __obj = 0;
+    long __lhs = 0;
+    long __rhs = 0;
+    long __res = 0;
+    // Add dispatch table to instance
+    dtable = __dtable____main____File;
+    __main____File* __this = this;
+    // Body
     //---------------------------------------------------------------------
-    // Field - char[] File::name
-    // __field____main____File____name = 1
-    char* __field____main____File____name;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Field - File File::parent
-    // __field____main____File____parent = 2
-    __main____File* __field____main____File____parent;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Field - Vector<:File:> File::children
-    // __field____main____File____children = 3
-    __main____Vector__File* __field____main____File____children;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Field - int File::size
-    // __field____main____File____size = 4
-    long __field____main____File____size;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Field - int File::is_dir
-    // __field____main____File____is_dir = 5
-    long __field____main____File____is_dir;
-    //---------------------------------------------------------------------
-    //---------------------------------------------------------------------
-    // Constructor Declaration - File::File(char[]) -> File
-    __main____File (char* __main____File__File__name)
+    // Code Block
+    // Statement
+    // Assignment - '='
+    // RHS
+    stack.push_back (reinterpret_cast<long>(__main____File__File__name));
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____File*>(__parent))->__field____main____File____name = *reinterpret_cast<char**>(&__rhs);
+    // Result of assignment
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File*>(__parent))->__field____main____File____name));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Null Literal
+    stack.push_back ((long)nullptr);
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____File*>(__parent))->__field____main____File____parent = reinterpret_cast<__main____File*>(__rhs);
+    // Result of assignment
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File*>(__parent))->__field____main____File____parent));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Constructor Call - Vector<:File:>::Vector() -> Vector<:File:>
     {
-        // Function Header
-        // This stack is used to store results of expressions
-        std::vector<long> stack;
-        // Declare general purpose variables
-        // These are longs and can store anything up to 8 bytes via casting
-        long __stackval = 0;
-        long __pointer = 0;
-        long __offset = 0;
-        long __parent = 0;
-        long __child = 0;
-        long __obj = 0;
-        long __lhs = 0;
-        long __rhs = 0;
-        long __res = 0;
-        // Add dispatch table to instance
-        dtable = __dtable____main____File;
-        __main____File* __this = this;
-        // Body
-        //-----------------------------------------------------------------
-        // Code Block
-        // Statement
-        // Assignment - '='
-        // RHS
-        stack.push_back (reinterpret_cast<long>(__main____File__File__name));
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____File*>(__parent))->__field____main____File____name = *reinterpret_cast<char**>(&__rhs);
-        // Result of assignment
-        stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File*>(__parent))->__field____main____File____name));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Null Literal
-        stack.push_back (None)
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____File*>(__parent))->__field____main____File____parent = reinterpret_cast<__main____File*>(__rhs);
-        // Result of assignment
-        stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File*>(__parent))->__field____main____File____parent));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Constructor Call - Vector<:File:>::Vector() -> Vector<:File:>
         // Arguments
         stack.push_back (reinterpret_cast<long>(new __main____Vector__File ()));
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____File*>(__parent))->__field____main____File____children = reinterpret_cast<__main____Vector__File*>(__rhs);
-        // Result of assignment
-        stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File*>(__parent))->__field____main____File____children));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Int Literal
-        stack.push_back (0);
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____File*>(__parent))->__field____main____File____size = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____File*>(__parent))->__field____main____File____size));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        // Statement
-        // Assignment - '='
-        // RHS
-        // Int Literal
-        stack.push_back (0);
-        // LHS
-        // Member Accessor Assignment
-        // LHS
-        stack.push_back (reinterpret_cast<long>(__this));
-        // RHS
-        __parent = stack.back ();
-        stack.pop_back ();
-        __rhs = stack.back ();
-        stack.pop_back ();
-        (reinterpret_cast<__main____File*>(__parent))->__field____main____File____is_dir = *reinterpret_cast<long*>(&__rhs);
-        // Result of assignment
-        stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____File*>(__parent))->__field____main____File____is_dir));
-        // Statement results can be ignored
-        stack.pop_back ();
-        // End Statement
-
-        //-----------------------------------------------------------------
     }
-    // End Constructor Declaration - __ctor____main____File____File__char__1
-    //---------------------------------------------------------------------
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____File*>(__parent))->__field____main____File____children = reinterpret_cast<__main____Vector__File*>(__rhs);
+    // Result of assignment
+    stack.push_back (reinterpret_cast<long>((reinterpret_cast<__main____File*>(__parent))->__field____main____File____children));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
 
-};
-// End Class Declaration - __main____File
-//=========================================================================
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Int Literal
+    stack.push_back (0);
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____File*>(__parent))->__field____main____File____size = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____File*>(__parent))->__field____main____File____size));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    // Statement
+    // Assignment - '='
+    // RHS
+    // Int Literal
+    stack.push_back (0);
+    // LHS
+    // Member Accessor Assignment
+    // LHS
+    stack.push_back (reinterpret_cast<long>(__this));
+    // RHS
+    __parent = stack.back ();
+    stack.pop_back ();
+    __rhs = stack.back ();
+    stack.pop_back ();
+    (reinterpret_cast<__main____File*>(__parent))->__field____main____File____is_dir = *reinterpret_cast<long*>(&__rhs);
+    // Result of assignment
+    stack.push_back (*reinterpret_cast<long*>(&(reinterpret_cast<__main____File*>(__parent))->__field____main____File____is_dir));
+    // Statement results can be ignored
+    stack.pop_back ();
+    // End Statement
+
+    //---------------------------------------------------------------------
+}
+// End Constructor Declaration - __ctor____main____File____File__char__1
+//-------------------------------------------------------------------------
 
 //=========================================================================
 // Function Declaration - printfs(File, int) -> void
@@ -3944,12 +3946,12 @@ void __main____printfs__File__int (__main____File* __main__printfs__fs, long __m
         stack.push_back (reinterpret_cast<long>(__main__printfs__fs));
         // RHS
         // Null Literal
-        stack.push_back (None)
+        stack.push_back ((long)nullptr);
         __rhs = stack.back ();
         stack.pop_back ();
         __lhs = stack.back ();
         stack.pop_back ();
-        long __res = reinterpret_cast<__main____File*>(__lhs) == <unknown-conversion>*;
+        long __res = reinterpret_cast<__main____File*>(__lhs) == nullptr;
         stack.push_back (*reinterpret_cast<long*>(&__res));
     }
     long __if__86__cond = stack.back ();
@@ -3978,6 +3980,8 @@ void __main____printfs__File__int (__main____File* __main__printfs__fs, long __m
     __main__printfs__block__85__for__87__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__printfs__block__85__for__87__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -4054,6 +4058,8 @@ void __main____printfs__File__int (__main____File* __main__printfs__fs, long __m
             __res = __main__printfs__block__85__for__87__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
     // Statement
@@ -4215,6 +4221,8 @@ void __main____printfs__File__int (__main____File* __main__printfs__fs, long __m
     __main__printfs__block__85__for__89__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__printfs__block__85__for__89__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -4337,6 +4345,8 @@ void __main____printfs__File__int (__main____File* __main__printfs__fs, long __m
             __res = __main__printfs__block__85__for__89__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
     //---------------------------------------------------------------------
@@ -4376,12 +4386,12 @@ void __main____sum_sizes__File (__main____File* __main__sum_sizes__fs)
         stack.push_back (reinterpret_cast<long>(__main__sum_sizes__fs));
         // RHS
         // Null Literal
-        stack.push_back (None)
+        stack.push_back ((long)nullptr);
         __rhs = stack.back ();
         stack.pop_back ();
         __lhs = stack.back ();
         stack.pop_back ();
-        long __res = reinterpret_cast<__main____File*>(__lhs) == <unknown-conversion>*;
+        long __res = reinterpret_cast<__main____File*>(__lhs) == nullptr;
         stack.push_back (*reinterpret_cast<long*>(&__res));
     }
     long __if__92__cond = stack.back ();
@@ -4410,6 +4420,8 @@ void __main____sum_sizes__File (__main____File* __main__sum_sizes__fs)
     __main__sum_sizes__block__91__for__93__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__sum_sizes__block__91__for__93__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -4572,6 +4584,8 @@ void __main____sum_sizes__File (__main____File* __main__sum_sizes__fs)
             __res = __main__sum_sizes__block__91__for__93__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
     //---------------------------------------------------------------------
@@ -4611,12 +4625,12 @@ long __main____sum_small_dirs__File (__main____File* __main__sum_small_dirs__fs)
         stack.push_back (reinterpret_cast<long>(__main__sum_small_dirs__fs));
         // RHS
         // Null Literal
-        stack.push_back (None)
+        stack.push_back ((long)nullptr);
         __rhs = stack.back ();
         stack.pop_back ();
         __lhs = stack.back ();
         stack.pop_back ();
-        long __res = reinterpret_cast<__main____File*>(__lhs) == <unknown-conversion>*;
+        long __res = reinterpret_cast<__main____File*>(__lhs) == nullptr;
         stack.push_back (*reinterpret_cast<long*>(&__res));
     }
     long __if__96__cond = stack.back ();
@@ -4763,6 +4777,8 @@ long __main____sum_small_dirs__File (__main____File* __main__sum_small_dirs__fs)
     __main__sum_small_dirs__block__95__for__99__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__sum_small_dirs__block__95__for__99__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -4872,6 +4888,8 @@ long __main____sum_small_dirs__File (__main____File* __main__sum_small_dirs__fs)
             __res = __main__sum_small_dirs__block__95__for__99__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
     // Return
@@ -4889,10 +4907,6 @@ long __main____sum_small_dirs__File (__main____File* __main__sum_small_dirs__fs)
 //=========================================================================
 
 int main () {
-    //=====================================================================
-    //### SETUP EXPRESSION RESULT STACK ##################################
-    //=====================================================================
-
     // Function Header
     // This stack is used to store results of expressions
     std::vector<long> stack;
@@ -4907,10 +4921,9 @@ int main () {
     long __lhs = 0;
     long __rhs = 0;
     long __res = 0;
-    //=====================================================================
-    //### COMPILED CODE ##################################################
-    //=====================================================================
 
+    // Main body
+    //---------------------------------------------------------------------
     //=====================================================================
     // Class Template - 
     // Class Declaration - __main____Vector__char__1 inherits __builtin____main__Object
@@ -5003,8 +5016,10 @@ int main () {
     // Assignment - '='
     // RHS
     // Constructor Call - Vector<:char[]:>::Vector() -> Vector<:char[]:>
-    // Arguments
-    stack.push_back (reinterpret_cast<long>(new __main____Vector__char__1 ()));
+    {
+        // Arguments
+        stack.push_back (reinterpret_cast<long>(new __main____Vector__char__1 ()));
+    }
     // LHS
     // Variable declaration
     __main____Vector__char__1* __main__lines;
@@ -5029,12 +5044,12 @@ int main () {
             stack.push_back (reinterpret_cast<long>(__main__line));
             // RHS
             // Null Literal
-            stack.push_back (None)
+            stack.push_back ((long)nullptr);
             __rhs = stack.back ();
             stack.pop_back ();
             __lhs = stack.back ();
             stack.pop_back ();
-            long __res = *reinterpret_cast<char**>(&__lhs) != <unknown-conversion>*;
+            long __res = *reinterpret_cast<char**>(&__lhs) != nullptr;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
         long __cond = stack.back ();
@@ -5097,19 +5112,23 @@ int main () {
     // Assignment - '='
     // RHS
     // Constructor Call - File::File(char[]) -> File
-    // Arguments
-    // String Literal
     {
-        char str_literal[] = "/\n";
-        // convert to a heap string
-        char* str = new char[4];
-        // copy string to heap allocation
-        std::memcpy (str, &str_literal, 4);
-        stack.push_back (reinterpret_cast<long> (str));
+        // Arguments
+        // String Literal
+        {
+            char str_literal[] = "/\n";
+            // convert to a heap string
+            char* str = new char[4];
+            // copy string to heap allocation
+            std::memcpy (str, &str_literal, 4);
+            stack.push_back (reinterpret_cast<long> (str));
+        }
+        __stackval = stack.back ();
+        stack.pop_back ();
+        // Reinterpret from general register
+        char* __arg0 = *reinterpret_cast<char**>(&__stackval);
+        stack.push_back (reinterpret_cast<long>(new __main____File (__arg0)));
     }
-    __arg0 = stack.back ();
-    stack.pop_back ();
-    stack.push_back (reinterpret_cast<long>(new __main____File (__arg0)));
     // LHS
     // Variable declaration
     __main____File* __main__root;
@@ -5174,6 +5193,8 @@ int main () {
     __main__for__64__i = *reinterpret_cast<long*>(&__rhs);
     // Result of assignment
     stack.push_back (*reinterpret_cast<long*>(&__main__for__64__i));
+    // We can ignore the init result
+    stack.pop_back ();
     // Using an infinite loop so we can write a separate multi-line condition
     while (1)
     {
@@ -5621,6 +5642,8 @@ int main () {
                     __main__for__64__block__65__if__66__block__67__if__68__block__69__else__70__block__73__for__74__j = *reinterpret_cast<long*>(&__rhs);
                     // Result of assignment
                     stack.push_back (*reinterpret_cast<long*>(&__main__for__64__block__65__if__66__block__67__if__68__block__69__else__70__block__73__for__74__j));
+                    // We can ignore the init result
+                    stack.pop_back ();
                     // Using an infinite loop so we can write a separate multi-line condition
                     while (1)
                     {
@@ -5817,6 +5840,8 @@ int main () {
                             __res = __main__for__64__block__65__if__66__block__67__if__68__block__69__else__70__block__73__for__74__j;
                             stack.push_back (*reinterpret_cast<long*>(&__res));
                         }
+                        // We can ignore the update result
+                        stack.pop_back ();
                     }
                     //-----------------------------------------------------
                     //-----------------------------------------------------
@@ -6070,33 +6095,37 @@ int main () {
                         // Assignment - '='
                         // RHS
                         // Constructor Call - File::File(char[]) -> File
-                        // Arguments
-                        // Subscript Expression
                         {
-                            // LHS
-                            // Member Accessor obj.data
+                            // Arguments
+                            // Subscript Expression
                             {
                                 // LHS
-                                stack.push_back (reinterpret_cast<long>(__main__for__64__block__65__if__66__block__67__elif__68x0__block__78__while__79__block__80__tokens));
-                                // RHS
-                                __parent = stack.back ();
+                                // Member Accessor obj.data
+                                {
+                                    // LHS
+                                    stack.push_back (reinterpret_cast<long>(__main__for__64__block__65__if__66__block__67__elif__68x0__block__78__while__79__block__80__tokens));
+                                    // RHS
+                                    __parent = stack.back ();
+                                    stack.pop_back ();
+                                    char** __res = (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data;
+                                    stack.push_back (reinterpret_cast<long>(__res));
+                                }
+                                // OFFSET
+                                // Int Literal
+                                stack.push_back (1);
+                                __offset = stack.back ();
                                 stack.pop_back ();
-                                char** __res = (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data;
+                                __pointer = stack.back ();
+                                stack.pop_back ();
+                                char* __res = (*reinterpret_cast<char***>(&__pointer))[*reinterpret_cast<long*>(&__offset)];
                                 stack.push_back (reinterpret_cast<long>(__res));
                             }
-                            // OFFSET
-                            // Int Literal
-                            stack.push_back (1);
-                            __offset = stack.back ();
+                            __stackval = stack.back ();
                             stack.pop_back ();
-                            __pointer = stack.back ();
-                            stack.pop_back ();
-                            char* __res = (*reinterpret_cast<char***>(&__pointer))[*reinterpret_cast<long*>(&__offset)];
-                            stack.push_back (reinterpret_cast<long>(__res));
+                            // Reinterpret from general register
+                            char* __arg0 = *reinterpret_cast<char**>(&__stackval);
+                            stack.push_back (reinterpret_cast<long>(new __main____File (__arg0)));
                         }
-                        __arg0 = stack.back ();
-                        stack.pop_back ();
-                        stack.push_back (reinterpret_cast<long>(new __main____File (__arg0)));
                         // LHS
                         // Variable declaration
                         __main____File* __main__for__64__block__65__if__66__block__67__elif__68x0__block__78__while__79__block__80__if__82__block__83__dir;
@@ -6243,33 +6272,37 @@ int main () {
                         // Assignment - '='
                         // RHS
                         // Constructor Call - File::File(char[]) -> File
-                        // Arguments
-                        // Subscript Expression
                         {
-                            // LHS
-                            // Member Accessor obj.data
+                            // Arguments
+                            // Subscript Expression
                             {
                                 // LHS
-                                stack.push_back (reinterpret_cast<long>(__main__for__64__block__65__if__66__block__67__elif__68x0__block__78__while__79__block__80__tokens));
-                                // RHS
-                                __parent = stack.back ();
+                                // Member Accessor obj.data
+                                {
+                                    // LHS
+                                    stack.push_back (reinterpret_cast<long>(__main__for__64__block__65__if__66__block__67__elif__68x0__block__78__while__79__block__80__tokens));
+                                    // RHS
+                                    __parent = stack.back ();
+                                    stack.pop_back ();
+                                    char** __res = (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data;
+                                    stack.push_back (reinterpret_cast<long>(__res));
+                                }
+                                // OFFSET
+                                // Int Literal
+                                stack.push_back (1);
+                                __offset = stack.back ();
                                 stack.pop_back ();
-                                char** __res = (reinterpret_cast<__main____Vector__char__1*>(__parent))->__field____main____Vector__char__1____data;
+                                __pointer = stack.back ();
+                                stack.pop_back ();
+                                char* __res = (*reinterpret_cast<char***>(&__pointer))[*reinterpret_cast<long*>(&__offset)];
                                 stack.push_back (reinterpret_cast<long>(__res));
                             }
-                            // OFFSET
-                            // Int Literal
-                            stack.push_back (1);
-                            __offset = stack.back ();
+                            __stackval = stack.back ();
                             stack.pop_back ();
-                            __pointer = stack.back ();
-                            stack.pop_back ();
-                            char* __res = (*reinterpret_cast<char***>(&__pointer))[*reinterpret_cast<long*>(&__offset)];
-                            stack.push_back (reinterpret_cast<long>(__res));
+                            // Reinterpret from general register
+                            char* __arg0 = *reinterpret_cast<char**>(&__stackval);
+                            stack.push_back (reinterpret_cast<long>(new __main____File (__arg0)));
                         }
-                        __arg0 = stack.back ();
-                        stack.pop_back ();
-                        stack.push_back (reinterpret_cast<long>(new __main____File (__arg0)));
                         // LHS
                         // Variable declaration
                         __main____File* __main__for__64__block__65__if__66__block__67__elif__68x0__block__78__while__79__block__80__else__82__block__84__f;
@@ -6434,6 +6467,8 @@ int main () {
             __res = __main__for__64__i;
             stack.push_back (*reinterpret_cast<long*>(&__res));
         }
+        // We can ignore the update result
+        stack.pop_back ();
     }
     //---------------------------------------------------------------------
     // Function Declaration - printfs(File, int) -> void
@@ -6494,11 +6529,6 @@ int main () {
     // Statement results can be ignored
     stack.pop_back ();
     // End Statement
-
-
-    //=====================================================================
-    //### END OF CODE ####################################################
-    //=====================================================================
 
 }
 //=========================================================================
